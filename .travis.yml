@@ -11,8 +11,6 @@ install:
 script:
   - bundle exec rake db:create:all
   - bundle exec rake db:migrate RAILS_ENV=test
-  - ruby -Itest test/models/article_test.rb
-  - ruby -Itest test/models/comment_test.rb
   - bundle exec rails webpacker:compile
   - ruby -S bundle exec cucumber --profile default
 services:
