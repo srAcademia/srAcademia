@@ -1,6 +1,6 @@
 class UsuariosController < ApplicationController
-  #before_action :correct_user?, only: [:show, :edit, :update, :destroy]
-  #before_action :authorize, except: [:new, :create]
+  before_action :correct_user?, only: [:show, :edit, :update, :destroy]
+  before_action :authorize, except: [:new, :create]
 
   # GET /usuarios
   # GET /usuarios.json

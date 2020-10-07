@@ -172,3 +172,31 @@ Migrating to AddIndexToUsuariosEmail (20201007135054)
   [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2020-10-07 11:15:36 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 121)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1376ms (Views: 1342.4ms | ActiveRecord: 0.0ms | Allocations: 21159)
+
+
+Started GET "/usuarios/new" for 127.0.0.1 at 2020-10-07 11:15:48 -0300
+Processing by UsuariosController#new as HTML
+  Rendering usuarios/new.html.erb within layouts/application
+  Rendered usuarios/_form.html.erb (Duration: 722.3ms | Allocations: 6112)
+  Rendered usuarios/new.html.erb within layouts/application (Duration: 724.1ms | Allocations: 6480)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 775ms (Views: 760.1ms | ActiveRecord: 0.9ms | Allocations: 18433)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2020-10-07 11:26:07 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 37.9ms | Allocations: 765)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 225ms (Views: 223.5ms | ActiveRecord: 0.0ms | Allocations: 16794)
+
+
