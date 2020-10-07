@@ -3,12 +3,12 @@
 
 
 *Time:*
-*  [*As 3 mosqueteiras*](https://github.com/srAcademia)
+*   [*As 3 mosqueteiras*](https://github.com/srAcademia)
 
 *Membros:*
-*  [Kelwin Jonas](https://github.com/KelwinJonas)
-*  [Milena Macedo](https://github.com/MilenaMaced)
-*  [Nathalia Santos](https://github.com/wtfnath)
+*    [Kelwin Jonas](https://github.com/KelwinJonas)
+*    [Milena Macedo](https://github.com/MilenaMaced)
+*    [Nathalia Santos](https://github.com/wtfnath)
 
 ## Informações do projeto
 
