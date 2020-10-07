@@ -13,6 +13,7 @@
 </p>
 <hr>
 <p>
+  <%= link_to "Administrar outros usuarios", usuarios_path %> |
   <%= link_to "Sair", sign_out_path, method: "delete" %> |
   <%= link_to 'Editar Conta', edit_usuario_path(@usuario) %> |
   <%= link_to 'Apagar Conta', usuario_path, method: :delete, data: { confirm: 'Tem certeza?' } %>

@@ -5,7 +5,11 @@ class UsuariosController < ApplicationController
   # GET /usuarios
   # GET /usuarios.json
   def index
-    @usuarios = Usuario.all
+    if current_user.admin?
+      @usuarios = Usuario.all
+    else
+      redirect_to current_user
+    end
   end
 
   # GET /usuarios/1
