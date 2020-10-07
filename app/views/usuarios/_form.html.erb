@@ -41,6 +41,11 @@
     <%= form.password_field :password_confirmation %>
   </div>
 
+  <div class="field">
+    <%= form.label :tipo %>
+    <%= form.select :tipo, options_for_select([:aluno, :professor, :admin])%>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

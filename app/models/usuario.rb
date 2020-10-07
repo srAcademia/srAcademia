@@ -7,4 +7,6 @@ class Usuario < ApplicationRecord
   before_save { self.email = email.downcase }
   # Validar a data de nascimento
   # Validar telefone
+
+  enum tipo: [:aluno, :professor, :admin]
 end

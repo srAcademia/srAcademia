@@ -11,6 +11,13 @@ class UsuariosController < ApplicationController
   # GET /usuarios/1
   # GET /usuarios/1.json
   def show
+    if current_user.aluno?
+      render 'show_aluno'
+    elsif current_user.professor?
+      render 'show_professor'
+    else
+      render 'show_admin'
+    end
   end
 
   # GET /usuarios/new
@@ -20,6 +27,11 @@ class UsuariosController < ApplicationController
 
   # GET /usuarios/1/edit
   def edit
+    if current_user.admin?
+      render 'edit_admin'
+    else
+      render 'edit'
+    end
   end
 
   # POST /usuarios
@@ -69,6 +81,6 @@ class UsuariosController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def usuario_params
-    params.require(:usuario).permit(:nome, :email, :telefone, :data_nascimento, :password, :password_confirmation)
+    params.require(:usuario).permit(:nome, :email, :telefone, :data_nascimento, :password, :password_confirmation, :tipo)
   end
 end

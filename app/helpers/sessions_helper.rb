@@ -7,7 +7,7 @@ module SessionsHelper
   end
   def block_access
     if current_user.present?
-      redirect_to @usuario
+      redirect_to current_user
     end
   end
   def logged_in?
