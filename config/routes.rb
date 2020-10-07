@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'usuarios/new'
 	root 'welcome#index'
+
+  resources :usuarios
 	# For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
