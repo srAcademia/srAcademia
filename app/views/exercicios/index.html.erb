@@ -19,8 +19,8 @@
         <td><%= exercicio.grupo_muscular %></td>
         <td><%= exercicio.descricao %></td>
         <td><%= link_to 'Exibir', exercicio %></td>
-        <td><%= link_to 'Editar', edit_exercicio_path(exercicio) %></td>
-        <td><%= link_to 'Deletar', exercicio, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+        <td><%= link_to 'Editar', edit_exercicio_path(exercicio), id:"e-#{exercicio.nome}" %></td>
+        <td><%= link_to 'Deletar', exercicio, id:"d-#{exercicio.nome}", method: :delete %></td>
       </tr>
     <% end %>
   </tbody>

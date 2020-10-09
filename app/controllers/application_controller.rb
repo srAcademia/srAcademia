@@ -10,6 +10,16 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def authorize_admin_professor
+    if logged_in?
+      unless current_user.admin? or current_user.professor?
+        redirect_to current_user
+      end
+    else
+      redirect_to root_url
+    end
+  end
+
   def correct_user?
     if logged_in?
       @usuario = Usuario.find(params[:id])

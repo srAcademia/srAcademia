@@ -1,5 +1,7 @@
 class ExerciciosController < ApplicationController
   before_action :set_exercicio, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_admin_professor
+
 
   # GET /exercicios
   # GET /exercicios.json
