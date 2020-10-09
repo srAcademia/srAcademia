@@ -9779,3 +9779,415 @@ Processing by UsuariosController#index as HTML
 Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 0.3ms | Allocations: 6363)
 
 
+  [1m[35m (16.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateExercicios (20201008172857)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "exercicios" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "grupo_muscular" varchar, "descricao" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201008172857"]]
+  [1m[35m (134.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2020-10-08 14:43:12 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 89.1ms | Allocations: 3674)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 513ms (Views: 445.0ms | ActiveRecord: 1.2ms | Allocations: 33420)
+
+
+Started GET "/exercicios" for 127.0.0.1 at 2020-10-08 14:43:24 -0300
+Processing by ExerciciosController#index as HTML
+  Rendering exercicios/index.html.erb within layouts/application
+  [1m[36mExercicio Load (0.1ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/exercicios/index.html.erb:16
+  Rendered exercicios/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1330)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.4ms | Allocations: 5807)
+
+
+Started GET "/exercicios/new" for 127.0.0.1 at 2020-10-08 14:43:28 -0300
+Processing by ExerciciosController#new as HTML
+  Rendering exercicios/new.html.erb within layouts/application
+  Rendered exercicios/_form.html.erb (Duration: 3.8ms | Allocations: 1507)
+  Rendered exercicios/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1869)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 12.3ms | ActiveRecord: 0.6ms | Allocations: 9546)
+
+
+Started POST "/exercicios" for 127.0.0.1 at 2020-10-08 14:43:52 -0300
+Processing by ExerciciosController#create as HTML
+  Parameters: {"authenticity_token"=>"TEqxZ3d6kgpn7gpFBlo/rLOOkAKZBVCpXGnQqcYiRoc/vJcg0pHx6/uJi3oVagk1hz5O06yVwNvplDDSfuYyiA==", "exercicio"=>{"nome"=>"Cricificado", "grupo_muscular"=>"Abdomen", "descricao"=>"Pau de arara"}, "commit"=>"Create Exercicio"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/exercicios_controller.rb:30:in `block in create'
+  [1m[36mExercicio Create (0.6ms)[0m  [1m[32mINSERT INTO "exercicios" ("nome", "grupo_muscular", "descricao", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Cricificado"], ["grupo_muscular", "Abdomen"], ["descricao", "Pau de arara"], ["created_at", "2020-10-08 17:43:52.266317"], ["updated_at", "2020-10-08 17:43:52.266317"]]
+  ↳ app/controllers/exercicios_controller.rb:30:in `block in create'
+  [1m[35m (198.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/exercicios_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/exercicios/1
+Completed 302 Found in 210ms (ActiveRecord: 199.6ms | Allocations: 4064)
+
+
+Started GET "/exercicios/1" for 127.0.0.1 at 2020-10-08 14:43:52 -0300
+Processing by ExerciciosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mExercicio Load (0.3ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exercicios_controller.rb:67:in `set_exercicio'
+  Rendering exercicios/show.html.erb within layouts/application
+  Rendered exercicios/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 284)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 9.4ms | ActiveRecord: 0.3ms | Allocations: 4756)
+
+
+Started GET "/exercicios" for 127.0.0.1 at 2020-10-08 14:43:55 -0300
+Processing by ExerciciosController#index as HTML
+  Rendering exercicios/index.html.erb within layouts/application
+  [1m[36mExercicio Load (0.1ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/exercicios/index.html.erb:16
+  Rendered exercicios/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 790)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.1ms | Allocations: 4412)
+
+
+Started GET "/exercicios/new" for 127.0.0.1 at 2020-10-08 14:44:01 -0300
+Processing by ExerciciosController#new as HTML
+  Rendering exercicios/new.html.erb within layouts/application
+  Rendered exercicios/_form.html.erb (Duration: 1.9ms | Allocations: 916)
+  Rendered exercicios/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1010)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 4631)
+
+
+Started GET "/exercicios" for 127.0.0.1 at 2020-10-08 14:45:13 -0300
+Processing by ExerciciosController#index as HTML
+  Rendering exercicios/index.html.erb within layouts/application
+  [1m[36mExercicio Load (0.1ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/exercicios/index.html.erb:16
+  Rendered exercicios/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 785)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 4390)
+
+
+Started GET "/exercicios/1/edit" for 127.0.0.1 at 2020-10-08 14:45:15 -0300
+Processing by ExerciciosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mExercicio Load (0.1ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exercicios_controller.rb:67:in `set_exercicio'
+  Rendering exercicios/edit.html.erb within layouts/application
+  Rendered exercicios/_form.html.erb (Duration: 1.6ms | Allocations: 996)
+  Rendered exercicios/edit.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1258)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 5573)
+
+
+Started PATCH "/exercicios/1" for 127.0.0.1 at 2020-10-08 14:45:28 -0300
+Processing by ExerciciosController#update as HTML
+  Parameters: {"authenticity_token"=>"okxUcsd4syXr30AX4mFk/Jph9AZhmDufQlNyy9EP7Rpgf9cwiTvRDyOiTQ7ZszY1UoAkd8dR20IMdDMQIRWl4w==", "exercicio"=>{"nome"=>"Crucificado", "grupo_muscular"=>"Abdomen", "descricao"=>"Pau de arara"}, "commit"=>"Update Exercicio", "id"=>"1"}
+  [1m[36mExercicio Load (0.1ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exercicios_controller.rb:67:in `set_exercicio'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/exercicios_controller.rb:44:in `block in update'
+  [1m[36mExercicio Update (0.2ms)[0m  [1m[33mUPDATE "exercicios" SET "nome" = ?, "updated_at" = ? WHERE "exercicios"."id" = ?[0m  [["nome", "Crucificado"], ["updated_at", "2020-10-08 17:45:28.349622"], ["id", 1]]
+  ↳ app/controllers/exercicios_controller.rb:44:in `block in update'
+  [1m[35m (216.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/exercicios_controller.rb:44:in `block in update'
+Redirected to http://localhost:3000/exercicios/1
+Completed 302 Found in 224ms (ActiveRecord: 217.3ms | Allocations: 4473)
+
+
+Started GET "/exercicios/1" for 127.0.0.1 at 2020-10-08 14:45:28 -0300
+Processing by ExerciciosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mExercicio Load (0.4ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exercicios_controller.rb:67:in `set_exercicio'
+  Rendering exercicios/show.html.erb within layouts/application
+  Rendered exercicios/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 88)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 10.5ms | ActiveRecord: 0.4ms | Allocations: 4253)
+
+
+Started GET "/exercicios" for 127.0.0.1 at 2020-10-08 14:46:20 -0300
+Processing by ExerciciosController#index as HTML
+  Rendering exercicios/index.html.erb within layouts/application
+  [1m[36mExercicio Load (0.1ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/exercicios/index.html.erb:16
+  Rendered exercicios/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 786)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.1ms | Allocations: 4403)
+
+
+Started GET "/exercicios/new" for 127.0.0.1 at 2020-10-08 14:46:22 -0300
+Processing by ExerciciosController#new as HTML
+  Rendering exercicios/new.html.erb within layouts/application
+  Rendered exercicios/_form.html.erb (Duration: 4.3ms | Allocations: 914)
+  Rendered exercicios/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1007)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 4624)
+
+
+Started GET "/exercicios/new" for 127.0.0.1 at 2020-10-08 14:46:36 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ExerciciosController#new as HTML
+  Rendering exercicios/new.html.erb within layouts/application
+  Rendered exercicios/_form.html.erb (Duration: 2.9ms | Allocations: 3079)
+  Rendered exercicios/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 3660)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 10.5ms | ActiveRecord: 0.4ms | Allocations: 18724)
+
+
+Started GET "/exercicios" for 127.0.0.1 at 2020-10-08 14:46:40 -0300
+Processing by ExerciciosController#index as HTML
+  Rendering exercicios/index.html.erb within layouts/application
+  [1m[36mExercicio Load (0.2ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/exercicios/index.html.erb:16
+  Rendered exercicios/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1122)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.2ms | Allocations: 4915)
+
+
+Started GET "/exercicios/new" for 127.0.0.1 at 2020-10-08 14:46:41 -0300
+Processing by ExerciciosController#new as HTML
+  Rendering exercicios/new.html.erb within layouts/application
+  Rendered exercicios/_form.html.erb (Duration: 2.0ms | Allocations: 917)
+  Rendered exercicios/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1011)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 4632)
+
+
+Started GET "/exercicios" for 127.0.0.1 at 2020-10-08 14:46:43 -0300
+Processing by ExerciciosController#index as HTML
+  Rendering exercicios/index.html.erb within layouts/application
+  [1m[36mExercicio Load (0.1ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/exercicios/index.html.erb:16
+  Rendered exercicios/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 795)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.1ms | Allocations: 4416)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-08 16:28:22 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2492)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 9.2ms | ActiveRecord: 0.3ms | Allocations: 15782)
+
+
+Started GET "/exercicios" for 127.0.0.1 at 2020-10-08 16:28:33 -0300
+Processing by ExerciciosController#index as HTML
+  Rendering exercicios/index.html.erb within layouts/application
+  [1m[36mExercicio Load (0.1ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/exercicios/index.html.erb:16
+  Rendered exercicios/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 5456)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.5ms | Allocations: 9910)
+
+
+Started GET "/exercicios/new" for 127.0.0.1 at 2020-10-08 16:28:36 -0300
+Processing by ExerciciosController#new as HTML
+  Rendering exercicios/new.html.erb within layouts/application
+  Rendered exercicios/_form.html.erb (Duration: 1.9ms | Allocations: 1441)
+  Rendered exercicios/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1798)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 5562)
+
+
+Started POST "/exercicios" for 127.0.0.1 at 2020-10-08 16:28:44 -0300
+Processing by ExerciciosController#create as HTML
+  Parameters: {"authenticity_token"=>"pVft3jBRrJSkidNb8sOe0r/KCBubCqJhgRKy/BK1bBTWocuZlbrPdTjuUmTh86hLi3rWyq6aMhM071KHqnEYGw==", "exercicio"=>{"nome"=>"bal", "grupo_muscular"=>"blabla", "descricao"=>"blalba"}, "commit"=>"Create Exercicio"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/exercicios_controller.rb:30:in `block in create'
+  [1m[36mExercicio Create (0.2ms)[0m  [1m[32mINSERT INTO "exercicios" ("nome", "grupo_muscular", "descricao", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "bal"], ["grupo_muscular", "blabla"], ["descricao", "blalba"], ["created_at", "2020-10-08 19:28:44.990185"], ["updated_at", "2020-10-08 19:28:44.990185"]]
+  ↳ app/controllers/exercicios_controller.rb:30:in `block in create'
+  [1m[35m (209.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/exercicios_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/exercicios/2
+Completed 302 Found in 216ms (ActiveRecord: 209.6ms | Allocations: 4064)
+
+
+Started GET "/exercicios/2" for 127.0.0.1 at 2020-10-08 16:28:45 -0300
+Processing by ExerciciosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mExercicio Load (0.5ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/exercicios_controller.rb:67:in `set_exercicio'
+  Rendering exercicios/show.html.erb within layouts/application
+  Rendered exercicios/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 288)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 8.2ms | ActiveRecord: 0.5ms | Allocations: 4754)
+
+
+Started GET "/exercicios" for 127.0.0.1 at 2020-10-08 16:29:23 -0300
+Processing by ExerciciosController#index as HTML
+  Rendering exercicios/index.html.erb within layouts/application
+  [1m[36mExercicio Load (0.1ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/exercicios/index.html.erb:16
+  Rendered exercicios/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 929)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 4557)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-08 16:56:57 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 427)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 4749)
+
+
+Started GET "/exercicios" for 127.0.0.1 at 2020-10-08 16:57:03 -0300
+Processing by ExerciciosController#index as HTML
+  Rendering exercicios/index.html.erb within layouts/application
+  [1m[36mExercicio Load (0.2ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/exercicios/index.html.erb:16
+  Rendered exercicios/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 941)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.2ms | Allocations: 4554)
+
+
+Started GET "/exercicios/new" for 127.0.0.1 at 2020-10-08 17:02:45 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ExerciciosController#new as HTML
+  Rendering exercicios/new.html.erb within layouts/application
+  Rendered exercicios/_form.html.erb (Duration: 1.5ms | Allocations: 916)
+  Rendered exercicios/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1009)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 4629)
+
+
+Started GET "/exercicios" for 127.0.0.1 at 2020-10-08 17:07:38 -0300
+Processing by ExerciciosController#index as HTML
+  Rendering exercicios/index.html.erb within layouts/application
+  [1m[36mExercicio Load (0.1ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/exercicios/index.html.erb:16
+  Rendered exercicios/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 936)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.1ms | Allocations: 4545)
+
+
+Started GET "/exercicios/1" for 127.0.0.1 at 2020-10-08 17:07:41 -0300
+Processing by ExerciciosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mExercicio Load (0.2ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exercicios_controller.rb:67:in `set_exercicio'
+  Rendering exercicios/show.html.erb within layouts/application
+  Rendered exercicios/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 84)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.2ms | Allocations: 4260)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-08 18:36:39 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2353)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 10.1ms | ActiveRecord: 0.3ms | Allocations: 15738)
+
+
+Started GET "/usuarios/new" for 127.0.0.1 at 2020-10-08 18:36:43 -0300
+Processing by UsuariosController#new as HTML
+  Rendering usuarios/new.html.erb within layouts/application
+  Rendered usuarios/_form.html.erb (Duration: 46.2ms | Allocations: 2893)
+  Rendered usuarios/new.html.erb within layouts/application (Duration: 47.7ms | Allocations: 3251)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 80ms (Views: 59.5ms | ActiveRecord: 1.0ms | Allocations: 13387)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2020-10-08 18:37:01 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"aj0WrdCQPSFNPMtH+2NLBGCy4Fm3KytFItHXITaGL2P873QBhJzYeio6nlJBA/bcjZh+e+RfxT/1y5H3wRLV2A==", "session"=>{"email"=>"nathalia@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."email" = ? LIMIT ?[0m  [["email", "nathalia@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 424)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 211ms (Views: 3.8ms | ActiveRecord: 0.2ms | Allocations: 5494)
+
+
+Started GET "/usuarios/new" for 127.0.0.1 at 2020-10-08 18:37:07 -0300
+Processing by UsuariosController#new as HTML
+  Rendering usuarios/new.html.erb within layouts/application
+  Rendered usuarios/_form.html.erb (Duration: 3.1ms | Allocations: 1764)
+  Rendered usuarios/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1858)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.0ms | Allocations: 5492)
+
+
+Started POST "/usuarios" for 127.0.0.1 at 2020-10-08 18:37:59 -0300
+Processing by UsuariosController#create as HTML
+  Parameters: {"authenticity_token"=>"mEfO34pS+TF9o6iB/+4p/e8vQJBWq+wjoai0DNw/V/m/4N61bUstER8bFClNnK+18ofKUUmQzRm2z78EsSWZtw==", "usuario"=>{"nome"=>"Nathalia", "email"=>"nathalia@gmail.com", "telefone"=>"87996418129", "data_nascimento"=>"1999-06-11", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "tipo"=>"aluno"}, "commit"=>"Create Usuario"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/usuarios_controller.rb:46:in `create'
+  [1m[36mUsuario Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "usuarios" WHERE "usuarios"."nome" = ? LIMIT ?[0m  [["nome", "Nathalia"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:46:in `create'
+  [1m[36mUsuario Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "usuarios" WHERE LOWER("usuarios"."email") = LOWER(?) LIMIT ?[0m  [["email", "nathalia@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:46:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/usuarios_controller.rb:46:in `create'
+  Rendering usuarios/new.html.erb within layouts/application
+  Rendered usuarios/_form.html.erb (Duration: 2.2ms | Allocations: 2094)
+  Rendered usuarios/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2188)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 236ms (Views: 5.3ms | ActiveRecord: 0.3ms | Allocations: 11081)
+
+
+Started GET "/usuarios" for 127.0.0.1 at 2020-10-08 18:38:13 -0300
+Processing by UsuariosController#index as HTML
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+Redirected to http://localhost:3000/
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1045)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-08 18:38:13 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 418)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.1ms | Allocations: 4732)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2020-10-08 18:38:15 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"krNiEZ/WCnhccYE7SD3/M/4Lt/AT+d+hQ7szfauKvqbsZ2H8ASfQuUuVmHYIGV2SKlTHXyNwAq35kCFeiBv61g==", "session"=>{"email"=>"nathalia@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."email" = ? LIMIT ?[0m  [["email", "nathalia@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 414)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 212ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 5355)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-08 18:40:11 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 418)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 4712)
+
+
