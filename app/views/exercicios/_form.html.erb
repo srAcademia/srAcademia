@@ -1,0 +1,32 @@
+<%= form_with(model: exercicio, local: true) do |form| %>
+  <% if exercicio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(exercicio.errors.count, "error") %> prohibited this exercicio from being saved:</h2>
+
+      <ul>
+        <% exercicio.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :grupo_muscular %>
+    <%= form.text_field :grupo_muscular %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descricao %>
+    <%= form.text_field :descricao %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

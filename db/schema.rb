@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_07_154002) do
+ActiveRecord::Schema.define(version: 2020_10_08_172857) do
+
+  create_table "exercicios", force: :cascade do |t|
+    t.string "nome"
+    t.string "grupo_muscular"
+    t.string "descricao"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "usuarios", force: :cascade do |t|
     t.string "nome"
