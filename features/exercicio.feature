@@ -1,24 +1,45 @@
-# Feature: Exercicio
-#   As a usuario do sistema
-#   I want to criar exercicios, editar exercicios, deletar exercicios e visualizar exercicios
-#   So that eu possa interagir com os treinos dos alunos da academia
+Feature: Exercicio
+  As a usuario do sistema
+  I want to criar exercicios, editar exercicios, deletar exercicios e visualizar exercicios
+  So that eu possa interagir com os treinos dos alunos da academia
 
-#   Scenario: Criando um novo exercicio
-#     Given Eu estou na pagina de exercicios
-#     And Eu clico no botao novo exercicio
-#     When Eu preencho o nome do exercico com 'exercicio 1' com grupo muscular 'abdomen' e descricao 'manter coluna ereta e suportar o peso do corpo'
-#     Then Eu vejo que o exercicio de titulo 'exercicio 1' foi criado com sucesso
+  Scenario: Criando um novo exercicio
+    Given Um usuario administrador existe
+    And Eu estou logado como administrador com email 'admin@example.com' e senha 'password'
+    And Eu estou na pagina de exercicios
+    And Eu clico no botao novo exercicio
+    When Eu preencho o nome do exercico com 'exercicio 1' com grupo muscular 'abdomen' e descricao 'manter coluna ereta e suportar o peso do corpo'
+    Then Eu vejo que o exercicio de titulo 'exercicio 1' foi criado com sucesso
 
-#   Scenario: Excluindo um exercicio existente
-#     Given O exercicio de titulo 'exercicio 1', grupo muscular 'abdomen' e descricao 'exercicio ereto' existe
-#     And Eu estou na pagina de exercicios
-#     When Eu clico em excluir exercicio de titulo 'exercicio 1'
-#     Then Eu vejo uma mensagem 'Exercicio deletado com sucesso.'
+  Scenario: Excluindo um exercicio existente
+    Given Um usuario administrador existe
+    And Eu estou logado como administrador com email 'admin@example.com' e senha 'password'
+    And O exercicio de titulo 'exercicio 1', grupo muscular 'abdomen' e descricao 'exemplo' existe
+    And Eu estou na pagina de exercicios
+    When Eu clico em excluir exercicio de titulo 'exercicio 1'
+    Then Eu vejo uma mensagem 'Exercicio deletado com sucesso.'
 
-#   Scenario: Criando um novo exercicio com campo nome vazio
-#     Given Eu estou na pagina de exercicios
-#     And Eu clico no botao novo exercicio
-#     When Eu deixo os campos nome '', grupo muscular '' e descricao '' como vazio
-#     Then Eu vejo uma mensagem de exercicio invalido
+   Scenario: Criando um novo exercicio com campo nome vazio
+    Given Um usuario administrador existe
+    And Eu estou logado como administrador com email 'admin@example.com' e senha 'password'
+    Given Eu estou na pagina de exercicios
+    And Eu clico no botao novo exercicio
+    When Eu deixo os campos nome vazio '', grupo muscular 'abdomen' e descricao 'exemplo'
+    Then Eu vejo uma mensagem de exercicio invalido
 
-#   Scenario: Editando 
+   Scenario: Editando a descricao de um exercicio existente
+    Given Um usuario administrador existe
+    And Eu estou logado como administrador com email 'admin@example.com' e senha 'password'
+    And Eu estou na pagina de exercicios
+    And O exercicio de titulo 'exercicio 1', grupo muscular 'abdomen' e descricao 'exemplo' existe
+    And Eu estou na pagina para editar o exercicio
+    When Eu renomeio a descricao com 'descricao exemplo' e clico no botao de update exercicio
+    Then Eu vejo uma mensagem de 'Exercicio editado com sucesso.'
+
+  Scenario: Criando um exercicio invalido
+    Given Um usuario administrador existe
+    And Eu estou logado como administrador com email 'admin@example.com' e senha 'password'
+    And Eu estou na pagina de exercicios
+    And Eu clico no botao novo exercicio
+    When Eu preencho o nome do exercico com 'abc' com grupo muscular 'abd' e descricao 'a'
+    Then Eu vejo uma mensagem de erro

@@ -1,7 +1,8 @@
 class Exercicio < ApplicationRecord
-  validates :nome, presence: true, uniqueness: true
-  validates :grupo_muscular, presence: true
-  validates :descricao, presence: true
+  validates :nome, presence: true, uniqueness: true, length: {minimum:3}
+  validates :grupo_muscular, presence: true, length: {minimum:3}
+  validates :descricao, presence: true, length: {minimum:3}
+  
   before_save { 
     self.nome = nome.downcase
     self.grupo_muscular = grupo_muscular.downcase
