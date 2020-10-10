@@ -5,8 +5,7 @@ class Usuario < ApplicationRecord
   VALID_EMAIL_FORMAT= /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
   validates :email, presence: true, length: {maximum: 260}, format: { with: VALID_EMAIL_FORMAT}, uniqueness: {case_sensitive: false}
   before_save { self.email = email.downcase }
-  # Validar a data de nascimento
-  # Validar telefone
-
+  validates :telefone, presence: true, length: {minimum: 9, maximum: 50}
+  validates :data_nascimento,presence: true, length: {minimum: 10, maximum: 10}
   enum tipo: [:aluno, :professor, :admin]
 end
