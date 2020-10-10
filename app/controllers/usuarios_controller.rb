@@ -1,6 +1,6 @@
 class UsuariosController < ApplicationController
   before_action :correct_user?, only: [:show, :edit, :update, :destroy]
-  before_action :authorize, except: [:new, :create]
+  before_action :authorize
 
   # GET /usuarios
   # GET /usuarios.json
@@ -26,7 +26,11 @@ class UsuariosController < ApplicationController
 
   # GET /usuarios/new
   def new
-    @usuario = Usuario.new
+    if current_user.admin?
+      @usuario = Usuario.new
+    else
+      redirect_to current_user
+    end
   end
 
   # GET /usuarios/1/edit
