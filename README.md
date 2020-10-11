@@ -15,4 +15,12 @@
 
 Sistema para gerenciamento de treinos de academia orientado pelo professor Rodrigo Cardoso Amaral de Andrade da disciplina de Engenharia de Software do curso de Ciência da Computação na Universidade Federal do Agreste de Pernambuco - UFAPE.
 
-*   [Site no Heroku](https://serene-plains-68369.herokuapp.com)
+*   [Site no Heroku](https://sr-academia.herokuapp.com)
+
+## Inicializando a aplicação na sua máquina
+
+Execute o comando a seguir para inicializar o banco de dados com um admin padrão.
+```bash
+rails db:seed
+```
+Você poderá acessar o sistema logando-se com e-mail: *admin<span>@</span>example.com* e senha: *password*.

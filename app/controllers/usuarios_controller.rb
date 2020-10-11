@@ -48,7 +48,7 @@ class UsuariosController < ApplicationController
     @usuario = Usuario.new(usuario_params)
 
     if @usuario.save
-      redirect_to sign_in_path
+      redirect_to usuarios_path
     else
       render :new
     end
@@ -72,11 +72,12 @@ class UsuariosController < ApplicationController
   # DELETE /usuarios/1
   # DELETE /usuarios/1.json
   def destroy
-    @usuario.destroy
-    sign_out
-    respond_to do |format|
-      format.html { redirect_to root_path, notice: 'Usuário foi apagado com sucesso.' }
-      format.json { head :no_content }
+    if current_user == @usuario
+      @usuario.destroy
+      sign_out
+    else
+      @usuario.destroy
+      redirect_to usuarios_path
     end
   end
 
