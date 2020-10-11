@@ -23,4 +23,4 @@ Execute o comando a seguir para inicializar o banco de dados com um admin padrã
 ```bash
 rails db:seed
 ```
-Você poderá acessar o sistema logando-se com e-mail: *admin@example.com* e senha: *password*.
+Você poderá acessar o sistema logando-se com e-mail: *<admin@example.com>* e senha: *password*.
