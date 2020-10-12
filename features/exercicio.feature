@@ -32,7 +32,7 @@ Feature: Exercicio
     And Eu estou logado como administrador com email 'admin@example.com' e senha 'password'
     And Eu estou na pagina de exercicios
     And O exercicio de titulo 'exercicio 1', grupo muscular 'abdomen' e descricao 'exemplo' existe
-    And Eu estou na pagina para editar o exercicio
+    And Eu estou na pagina para editar o exercicio de titulo 'exercicio 1'
     When Eu renomeio a descricao com 'descricao exemplo' e clico no botao de update exercicio
     Then Eu vejo uma mensagem de 'Exercicio editado com sucesso.'
 

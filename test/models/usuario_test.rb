@@ -20,4 +20,11 @@ class UsuarioTest < ActiveSupport::TestCase
     admin.save 
     assert admin.delete
   end
+  test 'alterando usuario admin com nome invalido' do
+    admin = Usuario.new(nome: 'admin', email: 'admin@example.com', 
+    telefone: '8799999999', data_nascimento: Date.new(1999, 9, 9), 
+    password: 'password', password_confirmation: 'password', tipo: 2)
+    admin.save 
+    assert_not admin.update nome: 'ad'
+  end
  end
