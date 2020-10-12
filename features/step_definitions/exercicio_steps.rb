@@ -1,15 +1,3 @@
-Given('Um usuario administrador existe') do
-  Usuario.create(nome: 'admin', email: 'admin@example.com', telefone: '8799999999', data_nascimento: Date.new(1999, 9, 9), password: 'password', password_confirmation: 'password', tipo: 2)
-end
-
-And('Eu estou logado como administrador com email {string} e senha {string}') do |email, senha|
-  visit "/sign_in"
-  fill_in 'session[email]', :with => email
-  fill_in 'session[password]', :with => senha
-  click_button 'Entrar'
-  expect(page).to have_content('Admin')
-end
-
 And('Eu estou na pagina de exercicios') do
   visit '/exercicios'
   expect(page).to have_current_path('/exercicios')
@@ -71,8 +59,8 @@ And ('O exercicio de nome {string} existe') do |titulo|
   click_button 'commit'
 end
 
-And ('Eu estou na pagina para editar o exercicio') do
-  click_link 'Editar'
+And ('Eu estou na pagina para editar o exercicio de titulo {string}') do |titulo|
+  click_link "e-#{titulo}"
   expect(page).to have_content('Editando Exercicio')
 end
 
