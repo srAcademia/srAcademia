@@ -19,8 +19,8 @@
         <td><%= usuario.email %></td>
         <td><%= usuario.tipo %></td>
         <td><%= link_to 'Exibir', usuario %></td>
-        <td><%= link_to 'Editar', edit_usuario_path(usuario) %></td>
-        <td><%= link_to 'Apagar', usuario, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+        <td><%= link_to 'Editar', edit_usuario_path(usuario), id:"e-#{usuario.nome}" %></td>
+        <td><%= link_to 'Apagar', usuario, method: :delete, data: { confirm: 'Tem certeza?' }, id:"d-#{usuario.nome}" %></td>
       </tr>
     <% end %>
   </tbody>
