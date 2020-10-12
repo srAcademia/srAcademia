@@ -11736,3 +11736,248 @@ Completed 200 OK in 269ms (Views: 197.2ms | ActiveRecord: 9.2ms | Allocations: 6
   [1m[36mUsuario Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "usuarios" WHERE LOWER("usuarios"."email") = LOWER(?) LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
   [1m[36mUsuario Create (5.9ms)[0m  [1m[32mINSERT INTO "usuarios" ("nome", "email", "telefone", "data_nascimento", "created_at", "updated_at", "password_digest", "tipo") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "admin"], ["email", "admin@example.com"], ["telefone", "8799999999"], ["data_nascimento", "1999-09-09"], ["created_at", "2020-10-11 16:08:06.692716"], ["updated_at", "2020-10-11 16:08:06.692716"], ["password_digest", "$2a$12$lwrwceeFGBJ/wwBkdQ.0c./JlSk1dk9OGoE77jAeeDRkGLfjrpJiq"], ["tipo", 2]]
   [1m[35m (117.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUsuario Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "usuarios" WHERE "usuarios"."nome" = ? LIMIT ?[0m  [["nome", "admin"], ["LIMIT", 1]]
+  [1m[36mUsuario Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "usuarios" WHERE LOWER("usuarios"."email") = LOWER(?) LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-10-11 17:11:00 -0300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+Redirected to http://localhost:3000/usuarios/6
+Filter chain halted as :block_access rendered or redirected
+Completed 302 Found in 14ms (ActiveRecord: 0.6ms | Allocations: 9884)
+
+
+Started GET "/usuarios/6" for 127.0.0.1 at 2020-10-11 17:11:00 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_admin.html.erb within layouts/application
+  Rendered usuarios/show_admin.html.erb within layouts/application (Duration: 48.8ms | Allocations: 596)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 323ms (Views: 319.7ms | ActiveRecord: 0.3ms | Allocations: 10025)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2020-10-11 17:11:05 -0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"26xshMq+PVXQxeqbPzfP0Ab8FbD9kigLgeupUo83y5lY+mMtEICSoF7W9i83O9NxwERTFxPAaEDRGozyiZL+ig=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 350)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-11 17:11:05 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 62.1ms | Allocations: 2149)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 71ms (Views: 69.2ms | ActiveRecord: 0.2ms | Allocations: 7009)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2020-10-11 17:11:15 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"1dNjeB7EGakYKpF9Qt44p+RX77Rm7XTvDtlD2LtDS8BWhWzRxPq2XJY5jclK0iQGIu+pE4i/NKReKGZ4veZ+0w==", "session"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."email" = ? LIMIT ?[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 393)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 206ms (Views: 3.0ms | ActiveRecord: 0.2ms | Allocations: 5442)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2020-10-11 17:11:31 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"FJqQdNwxfO0P81o1o986F8WCpF+8RQqwY7B2f/duvBCXzJ/dBg/TGIHgRoGr0ya2Azri+FIXSvszQVPf8cuJAw==", "session"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."email" = ? LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 393)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 5257)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2020-10-11 17:11:50 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"kwZ6qyeVtX9INqRbw65yyJTHeuVAw8a3Lbh0u0D5TGkQUHUC/asaisYluO/Lom5pUn88Qq6Rhvx9SVEbRlx5eg==", "session"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."email" = ? LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 393)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.2ms | Allocations: 5254)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUsuario Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "usuarios" WHERE "usuarios"."nome" = ? LIMIT ?[0m  [["nome", "admin"], ["LIMIT", 1]]
+  [1m[36mUsuario Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "usuarios" WHERE LOWER("usuarios"."email") = LOWER(?) LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUsuario Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "usuarios" WHERE "usuarios"."nome" = ? LIMIT ?[0m  [["nome", "admin"], ["LIMIT", 1]]
+  [1m[36mUsuario Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "usuarios" WHERE LOWER("usuarios"."email") = LOWER(?) LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUsuario Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "usuarios" WHERE "usuarios"."nome" = ? LIMIT ?[0m  [["nome", "admin"], ["LIMIT", 1]]
+  [1m[36mUsuario Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "usuarios" WHERE LOWER("usuarios"."email") = LOWER(?) LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/sign_in" for 127.0.0.1 at 2020-10-11 17:12:40 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 2465)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 9.2ms | ActiveRecord: 0.3ms | Allocations: 15600)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2020-10-11 17:13:04 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"5YPNha25RIfu3B/WgOcvNShhclEZXorQUexUmurL4t9m1cIsd4frcmDPA2KI6zOU7tk09vcMypsBHXE67G7XzA==", "session"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."email" = ? LIMIT ?[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 398)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.2ms | Allocations: 5404)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-11 17:13:24 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 397)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 4681)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2020-10-11 17:13:28 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"1n8YleGjI5bJvQVhYint9qWKtFcD5x09dKESouWkRZpVKRc8O52MY0euGdVqJfFXYzLy8O21XXYkUDcC4wFwiQ==", "session"=>{"email"=>"nathalia@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."email" = ? LIMIT ?[0m  [["email", "nathalia@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Redirected to http://localhost:3000/usuarios/3
+Completed 302 Found in 210ms (ActiveRecord: 0.4ms | Allocations: 7663)
+
+
+Started GET "/usuarios/3" for 127.0.0.1 at 2020-10-11 17:13:28 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_aluno.html.erb within layouts/application
+  Rendered usuarios/show_aluno.html.erb within layouts/application (Duration: 7.7ms | Allocations: 383)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.2ms | Allocations: 5909)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2020-10-11 17:13:38 -0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2E32DmcYQBnZMN8Q/WO3jMFA1MWD+mHOjDkVBBkT81JbG/mnvSbv7Fcjw6T1b6stB/iSYm2oIYXcyDCkH7bGQQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-11 17:13:38 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 404)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 4693)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2020-10-11 17:13:42 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"QhtabzoU3DiaQo09/UlA0UBJJfyLMyG0pPuz1Tgst/rBTVXG4CpzzRRRkYn1RVxwhvFjW2VhYf/0CpZ1PomC6Q==", "session"=>{"email"=>"kelwinjonas@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."email" = ? LIMIT ?[0m  [["email", "kelwinjonas@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 392)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 208ms (Views: 3.2ms | ActiveRecord: 0.2ms | Allocations: 5298)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2020-10-11 17:13:49 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"gEmC+xGHLf3qG/vbKfVR5OU+z0XMRb5unbB6S9ZlPewDH41Sy7mCCGQI528h+U1FI4aJ4iIX/iXNQV/r0MAI/w==", "session"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."email" = ? LIMIT ?[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Redirected to http://localhost:3000/usuarios/6
+Completed 302 Found in 204ms (ActiveRecord: 0.1ms | Allocations: 1661)
+
+
+Started GET "/usuarios/6" for 127.0.0.1 at 2020-10-11 17:13:49 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_admin.html.erb within layouts/application
+  Rendered usuarios/show_admin.html.erb within layouts/application (Duration: 0.6ms | Allocations: 456)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 5274)
+
+
+Started GET "/usuarios" for 127.0.0.1 at 2020-10-11 17:13:54 -0300
+Processing by UsuariosController#index as HTML
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering usuarios/index.html.erb within layouts/application
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/usuarios/index.html.erb:16
+  Rendered usuarios/index.html.erb within layouts/application (Duration: 46.3ms | Allocations: 1534)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 57ms (Views: 53.6ms | ActiveRecord: 0.6ms | Allocations: 5842)
+
+
+Started GET "/exercicios" for 127.0.0.1 at 2020-10-11 17:13:58 -0300
+Processing by ExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering exercicios/index.html.erb within layouts/application
+  [1m[36mExercicio Load (9.3ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/exercicios/index.html.erb:16
+  Rendered exercicios/index.html.erb within layouts/application (Duration: 28.5ms | Allocations: 5531)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 60ms (Views: 27.0ms | ActiveRecord: 10.9ms | Allocations: 10914)
+
+
