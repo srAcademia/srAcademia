@@ -19916,3 +19916,49 @@ FOREIGN KEY ("exercicio_id")
   [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 12:39:36 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  Rendered treinos/_form.html.erb (Duration: 3.0ms | Allocations: 3744)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 3838)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 77ms (Views: 66.9ms | ActiveRecord: 0.0ms | Allocations: 17473)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 12:39:38 -0300
+Processing by TreinosController#index as HTML
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.2ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  Rendered treinos/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 681)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 47ms (Views: 46.3ms | ActiveRecord: 0.2ms | Allocations: 5944)
+
+
+Started GET "/usuarios" for 127.0.0.1 at 2020-10-13 12:39:44 -0300
+Processing by UsuariosController#index as HTML
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering usuarios/index.html.erb within layouts/application
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/usuarios/index.html.erb:16
+  Rendered usuarios/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1063)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 61ms (Views: 50.2ms | ActiveRecord: 0.5ms | Allocations: 15124)
+
+
+Started GET "/usuarios/5" for 127.0.0.1 at 2020-10-13 12:39:46 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_admin.html.erb within layouts/application
+  Rendered usuarios/show_admin.html.erb within layouts/application (Duration: 0.3ms | Allocations: 212)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 45ms (Views: 42.7ms | ActiveRecord: 0.3ms | Allocations: 6627)
+
+

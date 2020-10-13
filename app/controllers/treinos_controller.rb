@@ -15,6 +15,7 @@ class TreinosController < ApplicationController
   # GET /treinos/new
   def new
     @treino = Treino.new
+    @usuarios = Usuario.all
   end
 
   # GET /treinos/1/edit
@@ -25,6 +26,8 @@ class TreinosController < ApplicationController
   # POST /treinos.json
   def create
     @treino = Treino.new(treino_params)
+    @usuarios = Usuario.all
+    @treino.professor_id = current_user.id
 
     respond_to do |format|
       if @treino.save
@@ -69,6 +72,6 @@ class TreinosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def treino_params
-      params.require(:treino).permit(:tipo_treino, :descricao, :data_inicio, :data_final, :quantidade_dias, :aluno_id, :professor_id)
+      params.require(:treino).permit(:tipo_treino, :descricao, :data_inicio, :data_final, :quantidade_dias, :aluno_id)
     end
 end

@@ -23,12 +23,12 @@
 
   <div class="field">
     <%= form.label :data_inicio %>
-    <%= form.date_select :data_inicio %>
+    <%= form.date_field :data_inicio %>
   </div>
 
   <div class="field">
     <%= form.label :data_final %>
-    <%= form.date_select :data_final %>
+    <%= form.date_field :data_final %>
   </div>
 
   <div class="field">
@@ -38,12 +38,7 @@
 
   <div class="field">
     <%= form.label :aluno_id %>
-    <%= form.text_field :aluno_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :professor_id %>
-    <%= form.text_field :professor_id %>
+    <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }), {}, {} %>
   </div>
 
   <div class="actions">

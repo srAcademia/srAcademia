@@ -1,0 +1,27 @@
+<%= form_with(model: treino_exercicio, local: true) do |form| %>
+  <% if treino_exercicio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(treino_exercicio.errors.count, "error") %> prohibited this treino_exercicio from being saved:</h2>
+
+      <ul>
+        <% treino_exercicio.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :serie %>
+    <%= form.number_field :serie %>
+  </div>
+
+  <div class="field">
+    <%= form.label :repeticoes %>
+    <%= form.number_field :repeticoes %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -24,6 +24,8 @@
         <td><%= treino.data_inicio %></td>
         <td><%= treino.data_final %></td>
         <td><%= treino.quantidade_dias %></td>
+        <% usuario_aluno = Usuario.find(treino.aluno_id) %>
+        <% usuario_professor = Usuario.find(treino.professor_id) %>
         <td><%= treino.aluno_id %></td>
         <td><%= treino.professor_id %></td>
         <td><%= link_to 'Show', treino %></td>
