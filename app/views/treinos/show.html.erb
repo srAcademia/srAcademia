@@ -27,13 +27,14 @@
 
 <p>
   <strong>Aluno:</strong>
-  <%= @treino.aluno_id %>
+  <%= Usuario.find(@treino.aluno_id).nome %>
 </p>
 
 <p>
   <strong>Professor:</strong>
-  <%= @treino.professor_id %>
+  <%= Usuario.find(@treino.professor_id).nome %>
 </p>
 
+<%= link_to 'Adicionar exercicio ao treino', new_treino_exercicio_path %> |
 <%= link_to 'Edit', edit_treino_path(@treino) %> |
 <%= link_to 'Back', treinos_path %>

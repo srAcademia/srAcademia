@@ -23459,3 +23459,1117 @@ Processing by TreinoExerciciosController#create as HTML
 Completed 200 OK in 154ms (Views: 126.2ms | ActiveRecord: 5.3ms | Allocations: 27935)
 
 
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 17:31:19 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.8ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 51.5ms | Allocations: 13386)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 189ms (Views: 119.8ms | ActiveRecord: 2.4ms | Allocations: 39493)
+
+
+Started GET "/treinos/1" for 127.0.0.1 at 2020-10-13 17:31:41 -0300
+Processing by TreinosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreino Load (0.5ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:71:in `set_treino'
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/show.html.erb within layouts/application
+  Rendered treinos/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 84ms (Views: 76.8ms | ActiveRecord: 0.9ms | Allocations: 19383)
+
+
+Started GET "/treinos/1" for 127.0.0.1 at 2020-10-13 17:33:55 -0300
+Processing by TreinosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreino Load (0.5ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:71:in `set_treino'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/show.html.erb within layouts/application
+  Rendered treinos/show.html.erb within layouts/application (Duration: 1335.0ms | Allocations: 165459)
+Completed 500 Internal Server Error in 1355ms (ActiveRecord: 0.8ms | Allocations: 168586)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `treino_exercicio' for #<#<Class:0x00000000101170c8>:0x0000000010114968>
+Did you mean?  treino_exercicio_url):
+    38: <%= link_to 'Edit', edit_treino_path(@treino) %> |
+    39: <%= link_to 'Back', treinos_path %>
+    40: 
+    41: <%= form_with(model: treino_exercicio, local: true) do |form| %>
+    42:   <% if treino_exercicio.errors.any? %>
+    43:     <div id="error_explanation">
+    44:       <h2><%= pluralize(treino_exercicio.errors.count, "error") %> prohibited this treino_exercicio from being saved:</h2>
+  
+app/views/treinos/show.html.erb:41
+Started GET "/treinos/1" for 127.0.0.1 at 2020-10-13 17:34:28 -0300
+Processing by TreinosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreino Load (0.4ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:71:in `set_treino'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/show.html.erb within layouts/application
+  Rendered treinos/show.html.erb within layouts/application (Duration: 271.4ms | Allocations: 81111)
+Completed 500 Internal Server Error in 288ms (ActiveRecord: 0.7ms | Allocations: 83686)
+
+
+  
+ActionView::Template::Error (undefined method `http://127.0.0.1:3000/treino_exercicios/1_path' for #<#<Class:0x0000000010934b48>:0x000000001093ead0>):
+    38: <%= link_to 'Edit', edit_treino_path(@treino) %> |
+    39: <%= link_to 'Back', treinos_path %>
+    40: 
+    41: <%= form_with(model: treino_exercicio_url, local: true) do |form| %>
+    42:   <% if treino_exercicio.errors.any? %>
+    43:     <div id="error_explanation">
+    44:       <h2><%= pluralize(treino_exercicio.errors.count, "error") %> prohibited this treino_exercicio from being saved:</h2>
+  
+app/views/treinos/show.html.erb:41
+Started GET "/treinos/1" for 127.0.0.1 at 2020-10-13 17:36:25 -0300
+Processing by TreinosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreino Load (0.4ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:71:in `set_treino'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/show.html.erb within layouts/application
+  Rendered treinos/show.html.erb within layouts/application (Duration: 467.7ms | Allocations: 154168)
+Completed 500 Internal Server Error in 485ms (ActiveRecord: 0.7ms | Allocations: 156775)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `treino_exercicio' for #<#<Class:0x000000000f80f458>:0x000000000f80d928>
+Did you mean?  treino_exercicio_url):
+    39: <%= link_to 'Back', treinos_path %>
+    40: 
+    41: <%= form_with(model: @treino_exercicio, local: true) do |form| %>
+    42:   <% if treino_exercicio.errors.any? %>
+    43:     <div id="error_explanation">
+    44:       <h2><%= pluralize(treino_exercicio.errors.count, "error") %> prohibited this treino_exercicio from being saved:</h2>
+    45: 
+  
+app/views/treinos/show.html.erb:42
+app/views/treinos/show.html.erb:41
+Started GET "/treinos/1" for 127.0.0.1 at 2020-10-13 17:36:49 -0300
+Processing by TreinosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreino Load (0.5ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:71:in `set_treino'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/show.html.erb within layouts/application
+  Rendered treinos/show.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1990)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.8ms | Allocations: 4336)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    39: <%= link_to 'Back', treinos_path %>
+    40: 
+    41: <%= form_with(model: @treino_exercicio, local: true) do |form| %>
+    42:   <% if @treino_exercicio.errors.any? %>
+    43:     <div id="error_explanation">
+    44:       <h2><%= pluralize(@treino_exercicio.errors.count, "error") %> prohibited this treino_exercicio from being saved:</h2>
+    45: 
+  
+app/views/treinos/show.html.erb:42
+app/views/treinos/show.html.erb:41
+Started GET "/treinos/1" for 127.0.0.1 at 2020-10-13 17:38:26 -0300
+Processing by TreinosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreino Load (0.4ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:71:in `set_treino'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/show.html.erb within layouts/application
+  Rendered treinos/show.html.erb within layouts/application (Duration: 583.7ms | Allocations: 152063)
+Completed 500 Internal Server Error in 601ms (ActiveRecord: 0.7ms | Allocations: 154443)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `treino_exercicio' for #<#<Class:0x00000000101c9840>:0x00000000101d3bb0>
+Did you mean?  treino_exercicio_url):
+    39: <%= link_to 'Back', treinos_path %>
+    40: 
+    41: <%= form_for :treino_exercicio, url: treino_exercicio_path do |form| %>
+    42:   <% if treino_exercicio.errors.any? %>
+    43:     <div id="error_explanation">
+    44:       <h2><%= pluralize(treino_exercicio.errors.count, "error") %> prohibited this treino_exercicio from being saved:</h2>
+    45: 
+  
+app/views/treinos/show.html.erb:42
+app/views/treinos/show.html.erb:41
+Started GET "/treinos/1" for 127.0.0.1 at 2020-10-13 17:49:47 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TreinosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreino Load (0.4ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:71:in `set_treino'
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/show.html.erb within layouts/application
+  Rendered treinos/show.html.erb within layouts/application (Duration: 489.6ms | Allocations: 153888)
+Completed 500 Internal Server Error in 540ms (ActiveRecord: 0.8ms | Allocations: 175965)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `treino_exercicio' for #<#<Class:0x000000000cdab888>:0x000000000cda9920>
+Did you mean?  treino_exercicio_url):
+    38: <%= link_to 'Edit', edit_treino_path(@treino) %> |
+    39: <%= link_to 'Back', treinos_path %>
+    40: 
+    41: <%= form_with(model: treino_exercicio, local: true) do |form| %>
+    42:   <% if treino_exercicio.errors.any? %>
+    43:     <div id="error_explanation">
+    44:       <h2><%= pluralize(treino_exercicio.errors.count, "error") %> prohibited this treino_exercicio from being saved:</h2>
+  
+app/views/treinos/show.html.erb:41
+Started GET "/treinos/1" for 127.0.0.1 at 2020-10-13 17:50:10 -0300
+Processing by TreinosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreino Load (0.7ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:71:in `set_treino'
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/show.html.erb within layouts/application
+  Rendered treinos/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 384)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 133ms (Views: 117.7ms | ActiveRecord: 1.3ms | Allocations: 15342)
+
+
+Started GET "/treino_exercicios/new" for 127.0.0.1 at 2020-10-13 17:54:40 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TreinoExerciciosController#new as HTML
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/new.html.erb within layouts/application
+  [1m[36mTreino Load (0.7ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:26:in `collect'
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mExercicio Load (0.7ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:31:in `collect'
+  Rendered treino_exercicios/_form.html.erb (Duration: 72.0ms | Allocations: 15547)
+  Rendered treino_exercicios/new.html.erb within layouts/application (Duration: 76.8ms | Allocations: 15859)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 267ms (Views: 163.7ms | ActiveRecord: 13.9ms | Allocations: 40921)
+
+
+Started GET "/treino_exercicios/1" for 127.0.0.1 at 2020-10-13 17:54:42 -0300
+Processing by TreinoExerciciosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreinoExercicio Load (1.3ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios" WHERE "treino_exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:40:in `set_treino_exercicio'
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/show.html.erb within layouts/application
+  [1m[36mTreino Load (1.1ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/show.html.erb:15
+  [1m[36mExercicio Load (0.9ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/show.html.erb:20
+  Rendered treino_exercicios/show.html.erb within layouts/application (Duration: 23.5ms | Allocations: 3173)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 114ms (Views: 95.4ms | ActiveRecord: 4.0ms | Allocations: 9879)
+
+
+Started GET "/treino_exercicios" for 127.0.0.1 at 2020-10-13 17:59:05 -0300
+Processing by TreinoExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/index.html.erb within layouts/application
+  [1m[36mTreinoExercicio Load (0.9ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios"[0m
+  ↳ app/views/treino_exercicios/index.html.erb:17
+  [1m[36mTreino Load (0.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mExercicio Load (0.6ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  [1m[36mTreino Load (0.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mCACHE Exercicio Load (0.0ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  [1m[36mCACHE Treino Load (0.0ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mCACHE Exercicio Load (0.0ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  Rendered treino_exercicios/index.html.erb within layouts/application (Duration: 38.0ms | Allocations: 5565)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 139ms (Views: 125.8ms | ActiveRecord: 3.6ms | Allocations: 12482)
+
+
+Started GET "/treino_exercicios/1" for 127.0.0.1 at 2020-10-13 17:59:10 -0300
+Processing by TreinoExerciciosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreinoExercicio Load (0.4ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios" WHERE "treino_exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:40:in `set_treino_exercicio'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/show.html.erb within layouts/application
+  [1m[36mTreino Load (0.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/show.html.erb:15
+  [1m[36mExercicio Load (0.5ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/show.html.erb:20
+  Rendered treino_exercicios/show.html.erb within layouts/application (Duration: 10.2ms | Allocations: 1768)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 93ms (Views: 84.0ms | ActiveRecord: 1.8ms | Allocations: 8432)
+
+
+Started GET "/treino_exercicios/1" for 127.0.0.1 at 2020-10-13 17:59:14 -0300
+Processing by TreinoExerciciosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreinoExercicio Load (0.3ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios" WHERE "treino_exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:40:in `set_treino_exercicio'
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/show.html.erb within layouts/application
+  [1m[36mTreino Load (0.2ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/show.html.erb:15
+  [1m[36mExercicio Load (0.2ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/show.html.erb:20
+  Rendered treino_exercicios/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1555)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 60ms (Views: 55.9ms | ActiveRecord: 1.0ms | Allocations: 8074)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 17:59:28 -0300
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 35.8ms | Allocations: 7057)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 146ms (Views: 136.2ms | ActiveRecord: 2.3ms | Allocations: 24186)
+
+
+Started DELETE "/treinos/3" for 127.0.0.1 at 2020-10-13 17:59:47 -0300
+Processing by TreinosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"yzrQzgtDL4TUr7B10MtF/NC5bTJQIMuiUKURJNIxn+jjkEqFVdKlPSgfWc0NiijN13Bv7PsnL23QuLFt7vqyCQ==", "id"=>"3"}
+  [1m[36mTreino Load (0.4ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:71:in `set_treino'
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/treinos_controller.rb:61:in `destroy'
+  [1m[36mTreinoExercicio Load (0.9ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios" WHERE "treino_exercicios"."treino_id" = ?[0m  [["treino_id", 3]]
+  ↳ app/controllers/treinos_controller.rb:61:in `destroy'
+  [1m[36mTreino Destroy (92.1ms)[0m  [1m[31mDELETE FROM "treinos" WHERE "treinos"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/treinos_controller.rb:61:in `destroy'
+  [1m[35m (112.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/treinos_controller.rb:61:in `destroy'
+Redirected to http://127.0.0.1:3000/treinos
+Completed 302 Found in 1099ms (ActiveRecord: 206.7ms | Allocations: 17256)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 17:59:48 -0300
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (1.0ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  [1m[36mUsuario Load (1.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 34.8ms | Allocations: 6389)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 134ms (Views: 119.7ms | ActiveRecord: 2.9ms | Allocations: 13118)
+
+
+Started GET "/treino_exercicios" for 127.0.0.1 at 2020-10-13 17:59:56 -0300
+Processing by TreinoExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/index.html.erb within layouts/application
+  [1m[36mTreinoExercicio Load (0.3ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios"[0m
+  ↳ app/views/treino_exercicios/index.html.erb:17
+  [1m[36mTreino Load (0.7ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mExercicio Load (0.6ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  [1m[36mTreino Load (0.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mCACHE Exercicio Load (0.0ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  [1m[36mCACHE Treino Load (0.0ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mCACHE Exercicio Load (0.0ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  Rendered treino_exercicios/index.html.erb within layouts/application (Duration: 28.9ms | Allocations: 5277)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 112ms (Views: 106.1ms | ActiveRecord: 2.7ms | Allocations: 11255)
+
+
+Started GET "/treino_exercicios" for 127.0.0.1 at 2020-10-13 18:00:01 -0300
+Processing by TreinoExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/index.html.erb within layouts/application
+  [1m[36mTreinoExercicio Load (0.5ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios"[0m
+  ↳ app/views/treino_exercicios/index.html.erb:17
+  [1m[36mTreino Load (0.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mExercicio Load (0.6ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  [1m[36mTreino Load (0.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mCACHE Exercicio Load (0.0ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  [1m[36mCACHE Treino Load (0.1ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mCACHE Exercicio Load (0.0ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  Rendered treino_exercicios/index.html.erb within layouts/application (Duration: 46.0ms | Allocations: 5269)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 139ms (Views: 131.3ms | ActiveRecord: 3.1ms | Allocations: 22992)
+
+
+Started GET "/treino_exercicios" for 127.0.0.1 at 2020-10-13 18:01:50 -0300
+Processing by TreinoExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/index.html.erb within layouts/application
+  [1m[36mTreinoExercicio Load (0.3ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios"[0m
+  ↳ app/views/treino_exercicios/index.html.erb:17
+  [1m[36mTreino Load (0.3ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mExercicio Load (0.6ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  [1m[36mTreino Load (0.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mCACHE Exercicio Load (0.0ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  [1m[36mCACHE Treino Load (0.1ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mCACHE Exercicio Load (0.1ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  Rendered treino_exercicios/index.html.erb within layouts/application (Duration: 49.6ms | Allocations: 5292)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 143ms (Views: 137.8ms | ActiveRecord: 2.4ms | Allocations: 11274)
+
+
+Started GET "/treino_exercicios" for 127.0.0.1 at 2020-10-13 18:01:53 -0300
+Processing by TreinoExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/index.html.erb within layouts/application
+  [1m[36mTreinoExercicio Load (0.4ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios"[0m
+  ↳ app/views/treino_exercicios/index.html.erb:17
+  [1m[36mTreino Load (0.3ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mExercicio Load (0.4ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  [1m[36mTreino Load (0.4ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mCACHE Exercicio Load (0.0ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  [1m[36mCACHE Treino Load (0.0ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mCACHE Exercicio Load (0.0ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  Rendered treino_exercicios/index.html.erb within layouts/application (Duration: 21.6ms | Allocations: 5269)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 83ms (Views: 78.3ms | ActiveRecord: 2.0ms | Allocations: 11249)
+
+
+Started GET "/treino_exercicios" for 127.0.0.1 at 2020-10-13 18:01:54 -0300
+Processing by TreinoExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/index.html.erb within layouts/application
+  [1m[36mTreinoExercicio Load (0.3ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios"[0m
+  ↳ app/views/treino_exercicios/index.html.erb:17
+  [1m[36mTreino Load (0.3ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mExercicio Load (0.4ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  [1m[36mTreino Load (0.4ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mCACHE Exercicio Load (0.0ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  [1m[36mCACHE Treino Load (0.0ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mCACHE Exercicio Load (0.0ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  Rendered treino_exercicios/index.html.erb within layouts/application (Duration: 22.1ms | Allocations: 5269)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 77ms (Views: 72.7ms | ActiveRecord: 1.9ms | Allocations: 11248)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 18:02:04 -0300
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.3ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 12.3ms | Allocations: 3121)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 88ms (Views: 83.2ms | ActiveRecord: 1.1ms | Allocations: 9091)
+
+
+Started GET "/treino_exercicios" for 127.0.0.1 at 2020-10-13 18:02:10 -0300
+Processing by TreinoExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/index.html.erb within layouts/application
+  [1m[36mTreinoExercicio Load (0.5ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios"[0m
+  ↳ app/views/treino_exercicios/index.html.erb:17
+  [1m[36mTreino Load (0.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mExercicio Load (0.6ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  [1m[36mTreino Load (0.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mCACHE Exercicio Load (0.0ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  [1m[36mCACHE Treino Load (0.0ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mCACHE Exercicio Load (0.0ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  Rendered treino_exercicios/index.html.erb within layouts/application (Duration: 42.5ms | Allocations: 5269)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 120ms (Views: 113.4ms | ActiveRecord: 2.9ms | Allocations: 11234)
+
+
+Started GET "/treino_exercicios/3" for 127.0.0.1 at 2020-10-13 18:02:13 -0300
+Processing by TreinoExerciciosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTreinoExercicio Load (0.3ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios" WHERE "treino_exercicios"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:40:in `set_treino_exercicio'
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/show.html.erb within layouts/application
+  [1m[36mTreino Load (0.5ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/show.html.erb:15
+  [1m[36mExercicio Load (0.6ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/show.html.erb:20
+  Rendered treino_exercicios/show.html.erb within layouts/application (Duration: 14.3ms | Allocations: 1556)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 111ms (Views: 103.7ms | ActiveRecord: 1.8ms | Allocations: 8071)
+
+
+Started GET "/treino_exercicios" for 127.0.0.1 at 2020-10-13 18:02:23 -0300
+Processing by TreinoExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/index.html.erb within layouts/application
+  [1m[36mTreinoExercicio Load (0.3ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios"[0m
+  ↳ app/views/treino_exercicios/index.html.erb:17
+  [1m[36mTreino Load (0.3ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mExercicio Load (0.4ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  [1m[36mTreino Load (0.3ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mCACHE Exercicio Load (0.0ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  Rendered treino_exercicios/index.html.erb within layouts/application (Duration: 14.3ms | Allocations: 3816)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 95ms (Views: 89.6ms | ActiveRecord: 1.8ms | Allocations: 9804)
+
+
+Started GET "/treino_exercicios" for 127.0.0.1 at 2020-10-13 18:02:23 -0300
+Processing by TreinoExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/index.html.erb within layouts/application
+  [1m[36mTreinoExercicio Load (0.4ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios"[0m
+  ↳ app/views/treino_exercicios/index.html.erb:17
+  [1m[36mTreino Load (0.3ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mExercicio Load (0.3ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  [1m[36mTreino Load (0.3ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mCACHE Exercicio Load (0.0ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  Rendered treino_exercicios/index.html.erb within layouts/application (Duration: 18.6ms | Allocations: 3793)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 84ms (Views: 79.3ms | ActiveRecord: 1.6ms | Allocations: 9754)
+
+
+Started GET "/treino_exercicios/new" for 127.0.0.1 at 2020-10-13 18:03:57 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TreinoExerciciosController#new as HTML
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/new.html.erb within layouts/application
+  [1m[36mTreino Load (0.4ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:26:in `collect'
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mExercicio Load (0.6ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:31:in `collect'
+  Rendered treino_exercicios/_form.html.erb (Duration: 60.9ms | Allocations: 14902)
+  Rendered treino_exercicios/new.html.erb within layouts/application (Duration: 63.6ms | Allocations: 15214)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 166ms (Views: 111.1ms | ActiveRecord: 8.0ms | Allocations: 39712)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 18:04:06 -0300
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 16.7ms | Allocations: 3189)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 109ms (Views: 102.2ms | ActiveRecord: 1.9ms | Allocations: 13506)
+
+
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 18:04:09 -0300
+Processing by TreinosController#new as HTML
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:41:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 11.6ms | Allocations: 2759)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 14.8ms | Allocations: 3104)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 83ms (Views: 77.8ms | ActiveRecord: 0.9ms | Allocations: 9241)
+
+
+Started POST "/treinos" for 127.0.0.1 at 2020-10-13 18:04:23 -0300
+Processing by TreinosController#create as HTML
+  Parameters: {"authenticity_token"=>"2/vuNM9Zi9QZsiizTh4dwuoYtq6eWC7tM8RaffNcap0f8QS+Bx4wNy65IritelGqDKDMC5RKJlTmYpBUNimgow==", "treino"=>{"tipo_treino"=>"C", "descricao"=>"Nao sei", "data_inicio"=>"2020-10-14", "data_final"=>"2020-10-20", "quantidade_dias"=>"6", "aluno_id"=>"1"}, "commit"=>"Create Treino"}
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/treinos_controller.rb:34:in `block in create'
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:34:in `block in create'
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:34:in `block in create'
+  [1m[36mTreino Create (2.5ms)[0m  [1m[32mINSERT INTO "treinos" ("tipo_treino", "descricao", "data_inicio", "data_final", "quantidade_dias", "aluno_id", "professor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["tipo_treino", "C"], ["descricao", "Nao sei"], ["data_inicio", "2020-10-14"], ["data_final", "2020-10-20"], ["quantidade_dias", 6], ["aluno_id", 1], ["professor_id", 5], ["created_at", "2020-10-13 21:04:23.132326"], ["updated_at", "2020-10-13 21:04:23.132326"]]
+  ↳ app/controllers/treinos_controller.rb:34:in `block in create'
+  [1m[35m (108.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/treinos_controller.rb:34:in `block in create'
+Redirected to http://127.0.0.1:3000/treinos/4
+Completed 302 Found in 148ms (ActiveRecord: 112.5ms | Allocations: 8004)
+
+
+Started GET "/treinos/4" for 127.0.0.1 at 2020-10-13 18:04:23 -0300
+Processing by TreinosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTreino Load (1.1ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:71:in `set_treino'
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/show.html.erb within layouts/application
+  Rendered treinos/show.html.erb within layouts/application (Duration: 3.9ms | Allocations: 612)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 108ms (Views: 91.4ms | ActiveRecord: 1.6ms | Allocations: 13115)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 18:04:25 -0300
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.3ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 29.1ms | Allocations: 4389)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 123ms (Views: 118.3ms | ActiveRecord: 2.1ms | Allocations: 10950)
+
+
+Started GET "/treino_exercicios/new" for 127.0.0.1 at 2020-10-13 18:04:34 -0300
+Processing by TreinoExerciciosController#new as HTML
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/new.html.erb within layouts/application
+  [1m[36mTreino Load (0.7ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:26:in `collect'
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mExercicio Load (0.6ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:31:in `collect'
+  Rendered treino_exercicios/_form.html.erb (Duration: 26.4ms | Allocations: 4336)
+  Rendered treino_exercicios/new.html.erb within layouts/application (Duration: 27.3ms | Allocations: 4407)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 109ms (Views: 101.2ms | ActiveRecord: 3.0ms | Allocations: 10422)
+
+
+Started POST "/treino_exercicios" for 127.0.0.1 at 2020-10-13 18:04:41 -0300
+Processing by TreinoExerciciosController#create as HTML
+  Parameters: {"authenticity_token"=>"fpGEwZbE17tYYR6K/4fFO2tTI7r88SlYpGA/hst1GGpWOx6KyFVdAqTR9zIixqgKbJohZFf2zZckfZ/P9741iw==", "treino_exercicio"=>{"serie"=>"1", "repeticoes"=>"4", "treino_id"=>"4", "exercicio_id"=>"1"}, "commit"=>"Create Treino exercicio"}
+  [1m[36mUsuario Load (1.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/treino_exercicios_controller.rb:27:in `block in create'
+  [1m[36mTreino Load (0.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:27:in `block in create'
+  [1m[36mExercicio Load (0.6ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:27:in `block in create'
+  [1m[36mTreinoExercicio Create (3.2ms)[0m  [1m[32mINSERT INTO "treino_exercicios" ("serie", "repeticoes", "treino_id", "exercicio_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["serie", 1], ["repeticoes", 4], ["treino_id", 4], ["exercicio_id", 1], ["created_at", "2020-10-13 21:04:41.620480"], ["updated_at", "2020-10-13 21:04:41.620480"]]
+  ↳ app/controllers/treino_exercicios_controller.rb:27:in `block in create'
+  [1m[35m (113.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/treino_exercicios_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/treino_exercicios/4
+Completed 302 Found in 155ms (ActiveRecord: 119.2ms | Allocations: 7337)
+
+
+Started GET "/treino_exercicios/4" for 127.0.0.1 at 2020-10-13 18:04:41 -0300
+Processing by TreinoExerciciosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTreinoExercicio Load (0.8ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios" WHERE "treino_exercicios"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:40:in `set_treino_exercicio'
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/show.html.erb within layouts/application
+  [1m[36mTreino Load (0.5ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/show.html.erb:15
+  [1m[36mExercicio Load (0.6ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/show.html.erb:20
+  Rendered treino_exercicios/show.html.erb within layouts/application (Duration: 10.4ms | Allocations: 1561)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 103ms (Views: 92.5ms | ActiveRecord: 2.6ms | Allocations: 8239)
+
+
+Started GET "/treino_exercicios" for 127.0.0.1 at 2020-10-13 18:04:45 -0300
+Processing by TreinoExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/index.html.erb within layouts/application
+  [1m[36mTreinoExercicio Load (0.8ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios"[0m
+  ↳ app/views/treino_exercicios/index.html.erb:17
+  [1m[36mTreino Load (0.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mExercicio Load (0.8ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  [1m[36mTreino Load (0.8ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mCACHE Exercicio Load (0.0ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  [1m[36mTreino Load (0.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mCACHE Exercicio Load (0.1ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  Rendered treino_exercicios/index.html.erb within layouts/application (Duration: 41.2ms | Allocations: 5354)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 128ms (Views: 119.2ms | ActiveRecord: 4.3ms | Allocations: 11320)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 18:05:06 -0300
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 35.6ms | Allocations: 5370)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 143ms (Views: 134.3ms | ActiveRecord: 2.6ms | Allocations: 23302)
+
+
+Started DELETE "/treinos/4" for 127.0.0.1 at 2020-10-13 18:05:08 -0300
+Processing by TreinosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8GcJoDjiCKmfAJf0C/l1vO5NnD3jerBA8jUhhKgAAvjYzZPrZnOCEGOwfkzWuBiN6YSe40h9VI9yKIHNlMsvGQ==", "id"=>"4"}
+  [1m[36mTreino Load (0.4ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:71:in `set_treino'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/treinos_controller.rb:61:in `destroy'
+  [1m[36mTreinoExercicio Load (0.5ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios" WHERE "treino_exercicios"."treino_id" = ?[0m  [["treino_id", 4]]
+  ↳ app/controllers/treinos_controller.rb:61:in `destroy'
+  [1m[36mTreinoExercicio Destroy (25.6ms)[0m  [1m[31mDELETE FROM "treino_exercicios" WHERE "treino_exercicios"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/treinos_controller.rb:61:in `destroy'
+  [1m[36mExercicio Load (0.8ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" INNER JOIN "treino_exercicios" ON "exercicios"."id" = "treino_exercicios"."exercicio_id" WHERE "treino_exercicios"."treino_id" = ?[0m  [["treino_id", 4]]
+  ↳ app/controllers/treinos_controller.rb:61:in `destroy'
+  [1m[36mTreino Destroy (0.8ms)[0m  [1m[31mDELETE FROM "treinos" WHERE "treinos"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/treinos_controller.rb:61:in `destroy'
+  [1m[35m (127.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/treinos_controller.rb:61:in `destroy'
+Redirected to http://127.0.0.1:3000/treinos
+Completed 302 Found in 492ms (ActiveRecord: 155.5ms | Allocations: 20682)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 18:05:09 -0300
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.7ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 54.3ms | Allocations: 3319)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 148ms (Views: 138.2ms | ActiveRecord: 2.3ms | Allocations: 10157)
+
+
+Started GET "/treino_exercicios" for 127.0.0.1 at 2020-10-13 18:05:19 -0300
+Processing by TreinoExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/index.html.erb within layouts/application
+  [1m[36mTreinoExercicio Load (0.5ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios"[0m
+  ↳ app/views/treino_exercicios/index.html.erb:17
+  [1m[36mTreino Load (0.4ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mExercicio Load (0.5ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  [1m[36mTreino Load (0.7ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mCACHE Exercicio Load (0.0ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  Rendered treino_exercicios/index.html.erb within layouts/application (Duration: 24.3ms | Allocations: 3793)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 95ms (Views: 89.2ms | ActiveRecord: 2.5ms | Allocations: 9759)
+
+
+Started GET "/exercicios" for 127.0.0.1 at 2020-10-13 18:05:29 -0300
+Processing by ExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering exercicios/index.html.erb within layouts/application
+  [1m[36mExercicio Load (0.6ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/exercicios/index.html.erb:16
+  Rendered exercicios/index.html.erb within layouts/application (Duration: 35.6ms | Allocations: 1173)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 130ms (Views: 120.7ms | ActiveRecord: 1.2ms | Allocations: 7777)
+
+
+Started GET "/usuarios/5" for 127.0.0.1 at 2020-10-13 18:05:36 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_professor.html.erb within layouts/application
+  Rendered usuarios/show_professor.html.erb within layouts/application (Duration: 3.0ms | Allocations: 471)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 94ms (Views: 84.6ms | ActiveRecord: 1.3ms | Allocations: 7982)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 18:05:40 -0300
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.4ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 13.2ms | Allocations: 3130)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 84ms (Views: 79.8ms | ActiveRecord: 1.5ms | Allocations: 9095)
+
+
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 18:05:58 -0300
+Processing by TreinosController#new as HTML
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:41:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 4.8ms | Allocations: 2275)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2368)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 64ms (Views: 59.7ms | ActiveRecord: 1.0ms | Allocations: 8365)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 18:06:00 -0300
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.4ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 13.8ms | Allocations: 3121)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 90ms (Views: 85.9ms | ActiveRecord: 1.2ms | Allocations: 9093)
+
+
+Started GET "/treino_exercicios" for 127.0.0.1 at 2020-10-13 18:06:06 -0300
+Processing by TreinoExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/index.html.erb within layouts/application
+  [1m[36mTreinoExercicio Load (0.4ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios"[0m
+  ↳ app/views/treino_exercicios/index.html.erb:17
+  [1m[36mTreino Load (0.3ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mExercicio Load (0.3ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  [1m[36mTreino Load (0.4ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mCACHE Exercicio Load (0.1ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  Rendered treino_exercicios/index.html.erb within layouts/application (Duration: 16.5ms | Allocations: 3824)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 104ms (Views: 98.8ms | ActiveRecord: 1.9ms | Allocations: 9800)
+
+
+Started GET "/treino_exercicios" for 127.0.0.1 at 2020-10-13 18:06:58 -0300
+Processing by TreinoExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/index.html.erb within layouts/application
+  [1m[36mTreinoExercicio Load (0.7ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios"[0m
+  ↳ app/views/treino_exercicios/index.html.erb:17
+  [1m[36mTreino Load (0.7ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mExercicio Load (0.7ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  [1m[36mTreino Load (0.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mCACHE Exercicio Load (0.1ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  Rendered treino_exercicios/index.html.erb within layouts/application (Duration: 44.3ms | Allocations: 4065)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 147ms (Views: 138.1ms | ActiveRecord: 3.2ms | Allocations: 11369)
+
+
+Started GET "/treino_exercicios" for 127.0.0.1 at 2020-10-13 18:07:00 -0300
+Processing by TreinoExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/index.html.erb within layouts/application
+  [1m[36mTreinoExercicio Load (0.4ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios"[0m
+  ↳ app/views/treino_exercicios/index.html.erb:17
+  [1m[36mTreino Load (0.3ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mExercicio Load (0.6ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  [1m[36mTreino Load (0.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mCACHE Exercicio Load (0.0ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  Rendered treino_exercicios/index.html.erb within layouts/application (Duration: 16.4ms | Allocations: 3801)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 94ms (Views: 88.3ms | ActiveRecord: 2.2ms | Allocations: 9757)
+
+
+Started GET "/treino_exercicios" for 127.0.0.1 at 2020-10-13 18:07:15 -0300
+Processing by TreinoExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/index.html.erb within layouts/application
+  [1m[36mTreinoExercicio Load (0.7ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios"[0m
+  ↳ app/views/treino_exercicios/index.html.erb:17
+  [1m[36mTreino Load (0.7ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mExercicio Load (1.5ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  [1m[36mTreino Load (0.8ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mCACHE Exercicio Load (0.1ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  Rendered treino_exercicios/index.html.erb within layouts/application (Duration: 46.4ms | Allocations: 5809)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 203ms (Views: 187.6ms | ActiveRecord: 4.4ms | Allocations: 22406)
+
+
+Started GET "/treino_exercicios" for 127.0.0.1 at 2020-10-13 18:07:18 -0300
+Processing by TreinoExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/index.html.erb within layouts/application
+  [1m[36mTreinoExercicio Load (0.3ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios"[0m
+  ↳ app/views/treino_exercicios/index.html.erb:17
+  [1m[36mTreino Load (0.3ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mExercicio Load (0.3ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  [1m[36mTreino Load (0.4ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:21
+  [1m[36mCACHE Exercicio Load (0.0ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/index.html.erb:22
+  Rendered treino_exercicios/index.html.erb within layouts/application (Duration: 13.3ms | Allocations: 3801)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 72ms (Views: 67.1ms | ActiveRecord: 1.8ms | Allocations: 9766)
+
+
+Started GET "/exercicios" for 127.0.0.1 at 2020-10-13 18:07:30 -0300
+Processing by ExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering exercicios/index.html.erb within layouts/application
+  [1m[36mExercicio Load (0.6ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/exercicios/index.html.erb:16
+  Rendered exercicios/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1117)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 101ms (Views: 93.0ms | ActiveRecord: 1.0ms | Allocations: 8066)
+
+
+Started DELETE "/exercicios/1" for 127.0.0.1 at 2020-10-13 18:07:33 -0300
+Processing by ExerciciosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"TWQHOzgpwor3iiICBilR4RhV00pw/jyHxicJ1M4lzSJlzp1wZrhIMws6y7rbaDzQH5zRlNv52EhGOqmd8u7gww==", "id"=>"1"}
+  [1m[36mExercicio Load (0.4ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exercicios_controller.rb:69:in `set_exercicio'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/exercicios_controller.rb:59:in `destroy'
+  [1m[36mTreinoExercicio Load (1.0ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios" WHERE "treino_exercicios"."exercicio_id" = ?[0m  [["exercicio_id", 1]]
+  ↳ app/controllers/exercicios_controller.rb:59:in `destroy'
+  [1m[36mTreinoExercicio Destroy (3.4ms)[0m  [1m[31mDELETE FROM "treino_exercicios" WHERE "treino_exercicios"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/exercicios_controller.rb:59:in `destroy'
+  [1m[36mTreinoExercicio Destroy (0.4ms)[0m  [1m[31mDELETE FROM "treino_exercicios" WHERE "treino_exercicios"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/exercicios_controller.rb:59:in `destroy'
+  [1m[36mTreino Load (0.8ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" INNER JOIN "treino_exercicios" ON "treinos"."id" = "treino_exercicios"."treino_id" WHERE "treino_exercicios"."exercicio_id" = ?[0m  [["exercicio_id", 1]]
+  ↳ app/controllers/exercicios_controller.rb:59:in `destroy'
+  [1m[36mExercicio Destroy (0.7ms)[0m  [1m[31mDELETE FROM "exercicios" WHERE "exercicios"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/exercicios_controller.rb:59:in `destroy'
+  [1m[35m (151.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/exercicios_controller.rb:59:in `destroy'
+Redirected to http://127.0.0.1:3000/exercicios
+Completed 302 Found in 214ms (ActiveRecord: 158.9ms | Allocations: 8699)
+
+
+Started GET "/exercicios" for 127.0.0.1 at 2020-10-13 18:07:34 -0300
+Processing by ExerciciosController#index as HTML
+  [1m[36mUsuario Load (1.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering exercicios/index.html.erb within layouts/application
+  [1m[36mExercicio Load (0.7ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/exercicios/index.html.erb:16
+  Rendered exercicios/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1158)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 133ms (Views: 124.8ms | ActiveRecord: 2.0ms | Allocations: 17850)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 18:07:38 -0300
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.4ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 20.6ms | Allocations: 5036)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 103ms (Views: 95.1ms | ActiveRecord: 1.2ms | Allocations: 17352)
+
+
+Started GET "/treino_exercicios" for 127.0.0.1 at 2020-10-13 18:07:49 -0300
+Processing by TreinoExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/index.html.erb within layouts/application
+  [1m[36mTreinoExercicio Load (0.5ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios"[0m
+  ↳ app/views/treino_exercicios/index.html.erb:17
+  Rendered treino_exercicios/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 923)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 92ms (Views: 86.3ms | ActiveRecord: 0.9ms | Allocations: 7459)
+
+
