@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_08_172857) do
+ActiveRecord::Schema.define(version: 2020_10_13_151711) do
 
   create_table "exercicios", force: :cascade do |t|
     t.string "nome"
@@ -18,6 +18,31 @@ ActiveRecord::Schema.define(version: 2020_10_08_172857) do
     t.string "descricao"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "treino_exercicios", force: :cascade do |t|
+    t.integer "serie"
+    t.integer "repeticoes"
+    t.integer "treino_id", null: false
+    t.integer "exercicio_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["exercicio_id"], name: "index_treino_exercicios_on_exercicio_id"
+    t.index ["treino_id"], name: "index_treino_exercicios_on_treino_id"
+  end
+
+  create_table "treinos", force: :cascade do |t|
+    t.string "tipo_treino"
+    t.string "descricao"
+    t.date "data_inicio"
+    t.date "data_final"
+    t.integer "quantidade_dias"
+    t.integer "aluno_id", null: false
+    t.integer "professor_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["aluno_id"], name: "index_treinos_on_aluno_id"
+    t.index ["professor_id"], name: "index_treinos_on_professor_id"
   end
 
   create_table "usuarios", force: :cascade do |t|
@@ -31,4 +56,6 @@ ActiveRecord::Schema.define(version: 2020_10_08_172857) do
     t.integer "tipo"
   end
 
+  add_foreign_key "treino_exercicios", "exercicios"
+  add_foreign_key "treino_exercicios", "treinos"
 end
