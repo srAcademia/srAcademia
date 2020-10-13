@@ -7,6 +7,6 @@ class Exercicio < ApplicationRecord
     self.grupo_muscular = grupo_muscular.downcase
     self.descricao = descricao.downcase
   }
-  has_many :treino_exercicios
-  has_many :treinos, through: :treino_exercicios
+  has_many :treino_exercicios, dependent: :destroy
+  has_many :treinos, through: :treino_exercicios, dependent: :destroy
 end

@@ -21268,3 +21268,2194 @@ Processing by UsuariosController#show as HTML
 Completed 200 OK in 61ms (Views: 57.3ms | ActiveRecord: 0.3ms | Allocations: 16353)
 
 
+Started GET "/usuarios" for 127.0.0.1 at 2020-10-13 15:21:42 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsuariosController#index as HTML
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering usuarios/index.html.erb within layouts/application
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/usuarios/index.html.erb:16
+  Rendered usuarios/index.html.erb within layouts/application (Duration: 27.8ms | Allocations: 1304)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 117ms (Views: 105.4ms | ActiveRecord: 1.8ms | Allocations: 7435)
+
+
+Started GET "/usuarios/new" for 127.0.0.1 at 2020-10-13 15:21:44 -0300
+Processing by UsuariosController#new as HTML
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering usuarios/new.html.erb within layouts/application
+  Rendered usuarios/_form.html.erb (Duration: 480.0ms | Allocations: 2923)
+  Rendered usuarios/new.html.erb within layouts/application (Duration: 499.0ms | Allocations: 3279)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 590ms (Views: 584.1ms | ActiveRecord: 0.3ms | Allocations: 9394)
+
+
+Started POST "/usuarios" for 127.0.0.1 at 2020-10-13 15:22:19 -0300
+Processing by UsuariosController#create as HTML
+  Parameters: {"authenticity_token"=>"l2LfaGLzv9osEK2NZySzZl22b0bcVfVy7TFn/Sj0QsyGzlQVr3nJ3zgm6RDvGH77bD/Jxua2OKZa0YcL/vOwJA==", "usuario"=>{"nome"=>"Milena", "email"=>"milena@gmail.com", "telefone"=>"8799448289", "data_nascimento"=>"2020-10-07", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "tipo"=>"aluno"}, "commit"=>"Create Usuario"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/usuarios_controller.rb:50:in `create'
+  [1m[36mUsuario Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "usuarios" WHERE "usuarios"."nome" = ? LIMIT ?[0m  [["nome", "Milena"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:50:in `create'
+  [1m[36mUsuario Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "usuarios" WHERE LOWER("usuarios"."email") = LOWER(?) LIMIT ?[0m  [["email", "milena@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:50:in `create'
+  [1m[36mUsuario Create (8.0ms)[0m  [1m[32mINSERT INTO "usuarios" ("nome", "email", "telefone", "data_nascimento", "created_at", "updated_at", "password_digest", "tipo") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "Milena"], ["email", "milena@gmail.com"], ["telefone", "8799448289"], ["data_nascimento", "2020-10-07"], ["created_at", "2020-10-13 18:22:19.766254"], ["updated_at", "2020-10-13 18:22:19.766254"], ["password_digest", "$2a$12$pkkPyBYa4ogw/tpFQYnVD.v9M0J9FKPZ94.aqCyKF4WaCN1J8HuOK"], ["tipo", 0]]
+  ↳ app/controllers/usuarios_controller.rb:50:in `create'
+  [1m[35m (466.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/usuarios_controller.rb:50:in `create'
+Redirected to http://127.0.0.1:3000/usuarios
+Completed 302 Found in 926ms (ActiveRecord: 475.2ms | Allocations: 8883)
+
+
+Started GET "/usuarios" for 127.0.0.1 at 2020-10-13 15:22:20 -0300
+Processing by UsuariosController#index as HTML
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering usuarios/index.html.erb within layouts/application
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/usuarios/index.html.erb:16
+  Rendered usuarios/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1127)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 88ms (Views: 81.7ms | ActiveRecord: 1.1ms | Allocations: 7304)
+
+
+Started GET "/usuarios/5" for 127.0.0.1 at 2020-10-13 15:22:26 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_admin.html.erb within layouts/application
+  Rendered usuarios/show_admin.html.erb within layouts/application (Duration: 0.6ms | Allocations: 211)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 62ms (Views: 55.9ms | ActiveRecord: 0.8ms | Allocations: 6711)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2020-10-13 15:22:27 -0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"p22DN6VfP9KKvTtg5QlEC3Y5pYxw8TKn6iyzwfctH+mPxxl8+861a3YN0tg4SCk6cfCnUtv21mhqMROIy+YyCA=="}
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 335)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-13 15:22:27 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUsuario Load (1.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 620)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 111ms (Views: 98.2ms | ActiveRecord: 1.2ms | Allocations: 7258)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2020-10-13 15:22:34 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"c2dODcXt26lQYeUGRofqnyn7lva9unWrTZ8AzZWdDFFbzdRGm3xREKzRDL6bxoeuLjKUKBa9kWTNgqCEqVYhsA==", "session"=>{"email"=>"milena@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."email" = ? LIMIT ?[0m  [["email", "milena@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Completed 302 Found in 986ms (ActiveRecord: 1.1ms | Allocations: 2854)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:22:35 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (1.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_aluno.html.erb within layouts/application
+  Rendered usuarios/show_aluno.html.erb within layouts/application (Duration: 58.1ms | Allocations: 374)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 168ms (Views: 155.3ms | ActiveRecord: 1.9ms | Allocations: 7007)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 15:22:43 -0300
+Processing by TreinosController#index as HTML
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (1.0ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 20.5ms | Allocations: 2364)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 133ms (Views: 125.9ms | ActiveRecord: 1.8ms | Allocations: 21419)
+
+
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 15:22:49 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:41:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 17.1ms | Allocations: 2736)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 23.4ms | Allocations: 3081)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 116ms (Views: 108.1ms | ActiveRecord: 0.6ms | Allocations: 8634)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 15:22:54 -0300
+Processing by TreinosController#index as HTML
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.5ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 14.5ms | Allocations: 1925)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 70ms (Views: 66.8ms | ActiveRecord: 1.5ms | Allocations: 7339)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-13 15:22:56 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :block_access rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms | Allocations: 903)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:22:56 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_aluno.html.erb within layouts/application
+  Rendered usuarios/show_aluno.html.erb within layouts/application (Duration: 1.1ms | Allocations: 173)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 102ms (Views: 78.3ms | ActiveRecord: 1.4ms | Allocations: 6665)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 15:23:25 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :authorize_admin_professor rendered or redirected
+Completed 302 Found in 52ms (ActiveRecord: 2.6ms | Allocations: 9884)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:23:26 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_aluno.html.erb within layouts/application
+  Rendered usuarios/show_aluno.html.erb within layouts/application (Duration: 1.1ms | Allocations: 177)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 99ms (Views: 89.0ms | ActiveRecord: 1.2ms | Allocations: 6998)
+
+
+Started GET "/treinos/1" for 127.0.0.1 at 2020-10-13 15:23:31 -0300
+Processing by TreinosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreino Load (0.7ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:71:in `set_treino'
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :authorize_admin_professor rendered or redirected
+Completed 302 Found in 32ms (ActiveRecord: 2.7ms | Allocations: 9834)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:23:31 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_aluno.html.erb within layouts/application
+  Rendered usuarios/show_aluno.html.erb within layouts/application (Duration: 0.7ms | Allocations: 165)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 61ms (Views: 55.3ms | ActiveRecord: 0.8ms | Allocations: 6647)
+
+
+Started GET "/treino_exercicios" for 127.0.0.1 at 2020-10-13 15:23:53 -0300
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for TreinoExerciciosController):
+  
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/treino_exercicios/new" for 127.0.0.1 at 2020-10-13 15:24:01 -0300
+Processing by TreinoExerciciosController#new as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :authorize_admin_professor rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms | Allocations: 962)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:24:01 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_aluno.html.erb within layouts/application
+  Rendered usuarios/show_aluno.html.erb within layouts/application (Duration: 1.1ms | Allocations: 165)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 97ms (Views: 85.2ms | ActiveRecord: 1.6ms | Allocations: 6661)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:26:56 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_aluno.html.erb within layouts/application
+  Rendered usuarios/show_aluno.html.erb within layouts/application (Duration: 0.6ms | Allocations: 165)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 61ms (Views: 54.8ms | ActiveRecord: 0.8ms | Allocations: 6686)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2020-10-13 15:27:01 -0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"eUkOD+/OoztPKkOm6gCZd5C2Li1vk/RFTJDLePSwD8pR45REsV8pgrOaqh43QfRGl38s88SUEIrMjWsxyHsiKw=="}
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms | Allocations: 404)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-13 15:27:01 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUsuario Load (1.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 403)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 113ms (Views: 104.3ms | ActiveRecord: 1.0ms | Allocations: 6670)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2020-10-13 15:27:03 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"mOyX1z02DHCQ8vTv0rThDrIteyx3diZoNgaNhPDbf6OwRg2cY6eGyWxCHVcP9Yw/teR58txxwqe2Gy3NzBBSQg==", "session"=>{"email"=>"kelwinjonas@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."email" = ? LIMIT ?[0m  [["email", "kelwinjonas@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Redirected to http://127.0.0.1:3000/usuarios/5
+Completed 302 Found in 924ms (ActiveRecord: 0.9ms | Allocations: 2095)
+
+
+Started GET "/usuarios/5" for 127.0.0.1 at 2020-10-13 15:27:04 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_admin.html.erb within layouts/application
+  Rendered usuarios/show_admin.html.erb within layouts/application (Duration: 1.3ms | Allocations: 211)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 129ms (Views: 115.9ms | ActiveRecord: 1.1ms | Allocations: 21458)
+
+
+Started GET "/exercicios" for 127.0.0.1 at 2020-10-13 15:27:27 -0300
+Processing by ExerciciosController#index as HTML
+  [1m[36mUsuario Load (1.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering exercicios/index.html.erb within layouts/application
+  [1m[36mExercicio Load (1.0ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/exercicios/index.html.erb:16
+  Rendered exercicios/index.html.erb within layouts/application (Duration: 77.4ms | Allocations: 5189)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 207ms (Views: 176.3ms | ActiveRecord: 6.1ms | Allocations: 13955)
+
+
+Started GET "/usuarios/5" for 127.0.0.1 at 2020-10-13 15:27:37 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_admin.html.erb within layouts/application
+  Rendered usuarios/show_admin.html.erb within layouts/application (Duration: 0.6ms | Allocations: 219)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 63ms (Views: 57.7ms | ActiveRecord: 0.6ms | Allocations: 6701)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2020-10-13 15:28:14 -0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4ErkyteE+KPxqVjagcVqXYc01Y3YfnbbyBiPhWJU5AvI4H6BiRVyGg0ZsWJchAdsgP3XU3N5khRIBS/MXp/J6g=="}
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 339)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-13 15:28:14 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 403)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 56ms (Views: 53.3ms | ActiveRecord: 0.3ms | Allocations: 10925)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2020-10-13 15:28:20 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"QV0HZW0jltF43d7knZAkzER9Os+bpK+ABmCuyzHJtyVp950uM7IcaIRtN1xA0Un9Q7Q4ETCjS0+GfQ6CDQKaxA==", "session"=>{"email"=>"milena@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."email" = ? LIMIT ?[0m  [["email", "milena@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Completed 302 Found in 679ms (ActiveRecord: 1.0ms | Allocations: 2687)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:28:20 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_aluno.html.erb within layouts/application
+  Rendered usuarios/show_aluno.html.erb within layouts/application (Duration: 0.7ms | Allocations: 165)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 98ms (Views: 88.6ms | ActiveRecord: 0.8ms | Allocations: 17126)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 15:28:26 -0300
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :authorize_admin_professor rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms | Allocations: 891)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:28:26 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_aluno.html.erb within layouts/application
+  Rendered usuarios/show_aluno.html.erb within layouts/application (Duration: 0.9ms | Allocations: 165)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 77ms (Views: 70.9ms | ActiveRecord: 0.8ms | Allocations: 6669)
+
+
+Started GET "/treino_exercicios/new" for 127.0.0.1 at 2020-10-13 15:28:34 -0300
+Processing by TreinoExerciciosController#new as HTML
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :authorize_admin_professor rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms | Allocations: 893)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:28:34 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_aluno.html.erb within layouts/application
+  Rendered usuarios/show_aluno.html.erb within layouts/application (Duration: 1.3ms | Allocations: 165)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 90ms (Views: 79.7ms | ActiveRecord: 1.4ms | Allocations: 6647)
+
+
+Started GET "/exercicios" for 127.0.0.1 at 2020-10-13 15:28:38 -0300
+Processing by ExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :authorize_admin_professor rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 885)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:28:38 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_aluno.html.erb within layouts/application
+  Rendered usuarios/show_aluno.html.erb within layouts/application (Duration: 1.4ms | Allocations: 165)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 113ms (Views: 100.5ms | ActiveRecord: 1.5ms | Allocations: 12246)
+
+
+Started GET "/exercicios/new" for 127.0.0.1 at 2020-10-13 15:28:47 -0300
+Processing by ExerciciosController#new as HTML
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :authorize_admin_professor rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms | Allocations: 893)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:28:47 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_aluno.html.erb within layouts/application
+  Rendered usuarios/show_aluno.html.erb within layouts/application (Duration: 1.2ms | Allocations: 165)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 91ms (Views: 79.8ms | ActiveRecord: 1.5ms | Allocations: 6657)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2020-10-13 15:29:01 -0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"r6LV/nhTZC/WgNkLrHgwteX19fIURZGYUUcBc0J0KM2HCE+1JsLuliowMLNxOV2E4jz3LL9CdVfRWqE6fr8FLA=="}
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 341)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-13 15:29:01 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 396)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 66ms (Views: 62.5ms | ActiveRecord: 0.3ms | Allocations: 6464)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2020-10-13 15:29:04 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"xRIg3q62Y1uOdDfy6K1z/vmdAdV1D5j3si+zK1qsoQ/tuLqV8Cfp4nLE3ko17B7P/lQDC94IfDgyMhNiZmeM7g==", "session"=>{"email"=>"kelwinjonas@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Entrar"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."email" = ? LIMIT ?[0m  [["email", "kelwinjonas@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Redirected to http://127.0.0.1:3000/usuarios/5
+Completed 302 Found in 387ms (ActiveRecord: 0.9ms | Allocations: 1752)
+
+
+Started GET "/usuarios/5" for 127.0.0.1 at 2020-10-13 15:29:05 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_admin.html.erb within layouts/application
+  Rendered usuarios/show_admin.html.erb within layouts/application (Duration: 1.8ms | Allocations: 241)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 118ms (Views: 104.5ms | ActiveRecord: 1.4ms | Allocations: 15805)
+
+
+Started GET "/usuarios" for 127.0.0.1 at 2020-10-13 15:29:10 -0300
+Processing by UsuariosController#index as HTML
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering usuarios/index.html.erb within layouts/application
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/usuarios/index.html.erb:16
+  Rendered usuarios/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1149)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 64ms (Views: 60.3ms | ActiveRecord: 1.0ms | Allocations: 7119)
+
+
+Started GET "/usuarios/5/edit" for 127.0.0.1 at 2020-10-13 15:29:36 -0300
+Processing by UsuariosController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/edit_admin.html.erb within layouts/application
+  Rendered usuarios/edit_admin.html.erb within layouts/application (Duration: 236.2ms | Allocations: 2470)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 330ms (Views: 324.9ms | ActiveRecord: 0.7ms | Allocations: 9098)
+
+
+Started PATCH "/usuarios/5" for 127.0.0.1 at 2020-10-13 15:29:47 -0300
+Processing by UsuariosController#update as HTML
+  Parameters: {"authenticity_token"=>"lUiv/4PECgnB245O9iR0b4KrpzcFH1YtiBhnqMvOW6JNPxszhmlOK93gNkRizB/drFXnE8aPPRQtexXFFd01Qw==", "usuario"=>{"nome"=>"Kelwin", "email"=>"kelwinjonas@gmail.com", "telefone"=>"8799448289", "data_nascimento"=>"2001-01-30", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "tipo"=>"professor"}, "commit"=>"Update Usuario", "id"=>"5"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/usuarios_controller.rb:62:in `block in update'
+  [1m[36mUsuario Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "usuarios" WHERE "usuarios"."nome" = ? AND "usuarios"."id" != ? LIMIT ?[0m  [["nome", "Kelwin"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:62:in `block in update'
+  [1m[36mUsuario Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "usuarios" WHERE LOWER("usuarios"."email") = LOWER(?) AND "usuarios"."id" != ? LIMIT ?[0m  [["email", "kelwinjonas@gmail.com"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/usuarios_controller.rb:62:in `block in update'
+  [1m[36mUsuario Update (17.4ms)[0m  [1m[33mUPDATE "usuarios" SET "password_digest" = ?, "tipo" = ?, "updated_at" = ? WHERE "usuarios"."id" = ?[0m  [["password_digest", "$2a$12$QjoLghOpP25xKyy3ZTN6ROmne//JXcMtO2108WzBJDcHfJrRog0Ye"], ["tipo", 1], ["updated_at", "2020-10-13 18:29:47.602802"], ["id", 5]]
+  ↳ app/controllers/usuarios_controller.rb:62:in `block in update'
+  [1m[35m (257.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/usuarios_controller.rb:62:in `block in update'
+Redirected to http://127.0.0.1:3000/usuarios/5
+Completed 302 Found in 883ms (ActiveRecord: 277.1ms | Allocations: 10303)
+
+
+Started GET "/usuarios/5" for 127.0.0.1 at 2020-10-13 15:29:47 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_professor.html.erb within layouts/application
+  Rendered usuarios/show_professor.html.erb within layouts/application (Duration: 48.9ms | Allocations: 8396)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 150ms (Views: 134.1ms | ActiveRecord: 1.1ms | Allocations: 17281)
+
+
+Started GET "/exercicios" for 127.0.0.1 at 2020-10-13 15:29:53 -0300
+Processing by ExerciciosController#index as HTML
+  [1m[36mUsuario Load (1.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering exercicios/index.html.erb within layouts/application
+  [1m[36mExercicio Load (0.7ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/exercicios/index.html.erb:16
+  Rendered exercicios/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 826)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 115ms (Views: 107.2ms | ActiveRecord: 1.6ms | Allocations: 14794)
+
+
+Started GET "/usuarios/5" for 127.0.0.1 at 2020-10-13 15:29:54 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_professor.html.erb within layouts/application
+  Rendered usuarios/show_professor.html.erb within layouts/application (Duration: 0.6ms | Allocations: 187)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 77ms (Views: 72.1ms | ActiveRecord: 0.6ms | Allocations: 6663)
+
+
+Started GET "/exercicios" for 127.0.0.1 at 2020-10-13 15:29:55 -0300
+Processing by ExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering exercicios/index.html.erb within layouts/application
+  [1m[36mExercicio Load (0.3ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/exercicios/index.html.erb:16
+  Rendered exercicios/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 815)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 81ms (Views: 76.8ms | ActiveRecord: 0.7ms | Allocations: 6785)
+
+
+Started GET "/usuarios/5" for 127.0.0.1 at 2020-10-13 15:29:57 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_professor.html.erb within layouts/application
+  Rendered usuarios/show_professor.html.erb within layouts/application (Duration: 0.5ms | Allocations: 187)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 60ms (Views: 53.4ms | ActiveRecord: 0.9ms | Allocations: 6666)
+
+
+Started GET "/usuarios/5/edit" for 127.0.0.1 at 2020-10-13 15:30:00 -0300
+Processing by UsuariosController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/edit.html.erb within layouts/application
+  Rendered usuarios/edit.html.erb within layouts/application (Duration: 299.6ms | Allocations: 17997)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 405ms (Views: 397.4ms | ActiveRecord: 0.7ms | Allocations: 33507)
+
+
+Started GET "/usuarios/5" for 127.0.0.1 at 2020-10-13 15:30:01 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_professor.html.erb within layouts/application
+  Rendered usuarios/show_professor.html.erb within layouts/application (Duration: 0.8ms | Allocations: 191)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 70ms (Views: 64.7ms | ActiveRecord: 0.6ms | Allocations: 6679)
+
+
+Started GET "/exercicios" for 127.0.0.1 at 2020-10-13 15:30:05 -0300
+Processing by ExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering exercicios/index.html.erb within layouts/application
+  [1m[36mExercicio Load (0.4ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/exercicios/index.html.erb:16
+  Rendered exercicios/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 826)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 62ms (Views: 58.4ms | ActiveRecord: 0.7ms | Allocations: 6814)
+
+
+Started GET "/usuarios/5" for 127.0.0.1 at 2020-10-13 15:30:07 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_professor.html.erb within layouts/application
+  Rendered usuarios/show_professor.html.erb within layouts/application (Duration: 0.5ms | Allocations: 187)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 68ms (Views: 61.5ms | ActiveRecord: 0.6ms | Allocations: 6671)
+
+
+Started GET "/usuarios" for 127.0.0.1 at 2020-10-13 15:30:10 -0300
+Processing by UsuariosController#index as HTML
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/usuarios/5
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 886)
+
+
+Started GET "/usuarios/5" for 127.0.0.1 at 2020-10-13 15:30:10 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_professor.html.erb within layouts/application
+  Rendered usuarios/show_professor.html.erb within layouts/application (Duration: 0.7ms | Allocations: 187)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 72ms (Views: 66.0ms | ActiveRecord: 0.7ms | Allocations: 6674)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:21 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms | Allocations: 1456)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:21 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 0.7ms | Allocations: 1464)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:21 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 12ms (ActiveRecord: 1.0ms | Allocations: 1462)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:21 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.7ms | Allocations: 2223)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:21 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 12ms (ActiveRecord: 0.9ms | Allocations: 3751)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:21 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.7ms | Allocations: 2232)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:21 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 19ms (ActiveRecord: 1.3ms | Allocations: 1466)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:21 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 13ms (ActiveRecord: 1.4ms | Allocations: 1448)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:21 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 14ms (ActiveRecord: 1.3ms | Allocations: 1452)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:21 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 17ms (ActiveRecord: 1.6ms | Allocations: 1460)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:21 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (1.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 16ms (ActiveRecord: 2.1ms | Allocations: 1462)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:21 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 1.6ms | Allocations: 1462)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:22 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (1.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (1.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 22ms (ActiveRecord: 2.1ms | Allocations: 1456)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:22 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 1.4ms | Allocations: 1462)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:22 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (1.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 17ms (ActiveRecord: 1.8ms | Allocations: 1458)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:22 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 1.6ms | Allocations: 1458)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:22 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (1.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 16ms (ActiveRecord: 1.9ms | Allocations: 1466)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:22 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (1.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (1.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 19ms (ActiveRecord: 2.0ms | Allocations: 1454)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:22 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (1.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 21ms (ActiveRecord: 1.7ms | Allocations: 1462)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:22 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 14ms (ActiveRecord: 1.6ms | Allocations: 1454)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:24 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 28ms (ActiveRecord: 1.9ms | Allocations: 1458)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:24 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 14ms (ActiveRecord: 1.3ms | Allocations: 1442)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:24 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 17ms (ActiveRecord: 1.7ms | Allocations: 1456)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:24 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 12ms (ActiveRecord: 1.3ms | Allocations: 1450)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:24 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 20ms (ActiveRecord: 1.3ms | Allocations: 1450)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:24 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (1.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 19ms (ActiveRecord: 1.8ms | Allocations: 1460)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:24 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 27ms (ActiveRecord: 1.8ms | Allocations: 1448)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:24 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 1.8ms | Allocations: 1454)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:24 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 19ms (ActiveRecord: 1.3ms | Allocations: 1464)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:24 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 17ms (ActiveRecord: 1.3ms | Allocations: 2663)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:24 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 21ms (ActiveRecord: 1.3ms | Allocations: 2240)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:24 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 19ms (ActiveRecord: 1.5ms | Allocations: 2952)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:24 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 1.3ms | Allocations: 2181)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:24 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 18ms (ActiveRecord: 1.3ms | Allocations: 2388)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:24 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (1.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 24ms (ActiveRecord: 1.7ms | Allocations: 1462)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:25 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (1.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 26ms (ActiveRecord: 2.1ms | Allocations: 1460)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:25 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (1.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (1.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 1.9ms | Allocations: 1454)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:25 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (1.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 16ms (ActiveRecord: 2.1ms | Allocations: 1468)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:25 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 1.6ms | Allocations: 1454)
+
+
+Started GET "/usuarios/7" for 127.0.0.1 at 2020-10-13 15:30:25 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUsuario Load (1.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (1.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+Redirected to http://127.0.0.1:3000/usuarios/7
+Filter chain halted as :correct_user? rendered or redirected
+Completed 302 Found in 37ms (ActiveRecord: 2.1ms | Allocations: 1470)
+
+
+Started GET "/usuarios/5" for 127.0.0.1 at 2020-10-13 15:30:26 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_professor.html.erb within layouts/application
+  Rendered usuarios/show_professor.html.erb within layouts/application (Duration: 1.2ms | Allocations: 187)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 62ms (Views: 56.4ms | ActiveRecord: 0.7ms | Allocations: 6675)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 15:33:23 -0300
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.5ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1949)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 72ms (Views: 65.7ms | ActiveRecord: 1.1ms | Allocations: 8085)
+
+
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 15:33:26 -0300
+Processing by TreinosController#new as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (1.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:41:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 8.7ms | Allocations: 2601)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 2890)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 82ms (Views: 77.1ms | ActiveRecord: 1.4ms | Allocations: 12395)
+
+
+Started GET "/exercicios" for 127.0.0.1 at 2020-10-13 15:34:17 -0300
+Processing by ExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering exercicios/index.html.erb within layouts/application
+  [1m[36mExercicio Load (0.4ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/exercicios/index.html.erb:16
+  Rendered exercicios/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 838)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 77ms (Views: 73.1ms | ActiveRecord: 0.9ms | Allocations: 6810)
+
+
+Started GET "/usuarios/5" for 127.0.0.1 at 2020-10-13 15:34:21 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_professor.html.erb within layouts/application
+  Rendered usuarios/show_professor.html.erb within layouts/application (Duration: 0.7ms | Allocations: 187)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 57ms (Views: 49.1ms | ActiveRecord: 0.8ms | Allocations: 6675)
+
+
+Started GET "/treino_exercicios/new" for 127.0.0.1 at 2020-10-13 15:34:32 -0300
+Processing by TreinoExerciciosController#new as HTML
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/new.html.erb within layouts/application
+  [1m[36mTreino Load (0.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:26:in `collect'
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mExercicio Load (0.7ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:31:in `collect'
+  Rendered treino_exercicios/_form.html.erb (Duration: 136.0ms | Allocations: 15312)
+  Rendered treino_exercicios/new.html.erb within layouts/application (Duration: 143.1ms | Allocations: 15618)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 281ms (Views: 237.8ms | ActiveRecord: 5.2ms | Allocations: 27206)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 15:40:09 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (1.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.9ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 16.6ms | Allocations: 1892)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 139ms (Views: 130.0ms | ActiveRecord: 2.1ms | Allocations: 7886)
+
+
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 15:40:17 -0300
+Processing by TreinosController#new as HTML
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (1.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:41:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 15.9ms | Allocations: 2298)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 17.4ms | Allocations: 2391)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 117ms (Views: 104.3ms | ActiveRecord: 1.8ms | Allocations: 8380)
+
+
+Started GET "/treino_exercicios/new" for 127.0.0.1 at 2020-10-13 15:42:35 -0300
+Processing by TreinoExerciciosController#new as HTML
+  [1m[36mUsuario Load (1.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/new.html.erb within layouts/application
+  [1m[36mTreino Load (1.1ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:26:in `collect'
+  [1m[36mCACHE Usuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mExercicio Load (1.1ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:31:in `collect'
+  Rendered treino_exercicios/_form.html.erb (Duration: 49.9ms | Allocations: 4430)
+  Rendered treino_exercicios/new.html.erb within layouts/application (Duration: 52.5ms | Allocations: 4728)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 166ms (Views: 153.4ms | ActiveRecord: 3.4ms | Allocations: 22212)
+
+
+Started GET "/treino_exercicios/1" for 127.0.0.1 at 2020-10-13 15:52:30 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TreinoExerciciosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreinoExercicio Load (0.8ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios" WHERE "treino_exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:36:in `set_treino_exercicio'
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/show.html.erb within layouts/application
+  [1m[36mTreino Load (0.9ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/show.html.erb:15
+  [1m[36mExercicio Load (0.8ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/show.html.erb:20
+  Rendered treino_exercicios/show.html.erb within layouts/application (Duration: 34.9ms | Allocations: 3745)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 141ms (Views: 126.6ms | ActiveRecord: 3.2ms | Allocations: 22209)
+
+
+Started GET "/treino_exercicios/1/edit" for 127.0.0.1 at 2020-10-13 16:28:44 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TreinoExerciciosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreinoExercicio Load (0.4ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios" WHERE "treino_exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:36:in `set_treino_exercicio'
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+Completed 406 Not Acceptable in 19ms (ActiveRecord: 0.8ms | Allocations: 3122)
+
+
+  
+ActionController::MissingExactTemplate (TreinoExerciciosController#edit is missing a template for request formats: text/html):
+  
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/treino_exercicios/1" for 127.0.0.1 at 2020-10-13 16:28:49 -0300
+Processing by TreinoExerciciosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreinoExercicio Load (1.1ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios" WHERE "treino_exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:36:in `set_treino_exercicio'
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/show.html.erb within layouts/application
+  [1m[36mTreino Load (1.0ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/show.html.erb:15
+  [1m[36mExercicio Load (0.9ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/show.html.erb:20
+  Rendered treino_exercicios/show.html.erb within layouts/application (Duration: 14.7ms | Allocations: 2317)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 199ms (Views: 181.4ms | ActiveRecord: 3.5ms | Allocations: 19249)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-13 16:42:09 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/usuarios/5
+Filter chain halted as :block_access rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.8ms | Allocations: 921)
+
+
+Started GET "/usuarios/5" for 127.0.0.1 at 2020-10-13 16:42:09 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_professor.html.erb within layouts/application
+  Rendered usuarios/show_professor.html.erb within layouts/application (Duration: 2.1ms | Allocations: 196)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 348ms (Views: 336.7ms | ActiveRecord: 1.3ms | Allocations: 31072)
+
+
+Started GET "/usuarios/5" for 127.0.0.1 at 2020-10-13 16:51:23 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_professor.html.erb within layouts/application
+  Rendered usuarios/show_professor.html.erb within layouts/application (Duration: 3.2ms | Allocations: 469)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 119ms (Views: 111.2ms | ActiveRecord: 1.0ms | Allocations: 7994)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 16:51:24 -0300
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 76.7ms | Allocations: 2240)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 156ms (Views: 149.7ms | ActiveRecord: 1.0ms | Allocations: 8795)
+
+
+Started GET "/exercicios" for 127.0.0.1 at 2020-10-13 16:51:28 -0300
+Processing by ExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering exercicios/index.html.erb within layouts/application
+  [1m[36mExercicio Load (0.7ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/exercicios/index.html.erb:16
+  Rendered exercicios/index.html.erb within layouts/application (Duration: 74.8ms | Allocations: 1129)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 193ms (Views: 186.8ms | ActiveRecord: 1.1ms | Allocations: 7676)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 16:51:30 -0300
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 13.2ms | Allocations: 1865)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 101ms (Views: 95.7ms | ActiveRecord: 1.1ms | Allocations: 7829)
+
+
+Started GET "/exercicios" for 127.0.0.1 at 2020-10-13 16:51:33 -0300
+Processing by ExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering exercicios/index.html.erb within layouts/application
+  [1m[36mExercicio Load (0.5ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/exercicios/index.html.erb:16
+  Rendered exercicios/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 815)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 56ms (Views: 51.1ms | ActiveRecord: 1.1ms | Allocations: 6788)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 16:56:02 -0300
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.4ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1856)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 74ms (Views: 69.2ms | ActiveRecord: 0.9ms | Allocations: 20463)
+
+
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 16:56:08 -0300
+Processing by TreinosController#new as HTML
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (1.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:41:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 101.6ms | Allocations: 5828)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 142.1ms | Allocations: 16838)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 237ms (Views: 222.5ms | ActiveRecord: 1.7ms | Allocations: 24780)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 17:05:41 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.5ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 22.6ms | Allocations: 2242)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 106ms (Views: 99.0ms | ActiveRecord: 1.0ms | Allocations: 9461)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-13 17:05:56 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/usuarios/5
+Filter chain halted as :block_access rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 885)
+
+
+Started GET "/usuarios/5" for 127.0.0.1 at 2020-10-13 17:05:56 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_professor.html.erb within layouts/application
+  Rendered usuarios/show_professor.html.erb within layouts/application (Duration: 2.1ms | Allocations: 468)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 82ms (Views: 76.2ms | ActiveRecord: 0.7ms | Allocations: 7529)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 17:05:59 -0300
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.3ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1865)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 58ms (Views: 55.3ms | ActiveRecord: 0.6ms | Allocations: 7847)
+
+
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 17:06:00 -0300
+Processing by TreinosController#new as HTML
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:41:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 13.7ms | Allocations: 2756)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 29.5ms | Allocations: 3107)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 126ms (Views: 114.7ms | ActiveRecord: 1.3ms | Allocations: 9233)
+
+
+Started POST "/treinos" for 127.0.0.1 at 2020-10-13 17:06:18 -0300
+Processing by TreinosController#create as HTML
+  Parameters: {"authenticity_token"=>"AevMQSPs4aJ8cqfCWkzWYR7eI4bcxlspysju126ibuvF4SbL66taQUt5rcm5KJoJ+GZZI9bUU5AfbiT+q9ek1Q==", "treino"=>{"tipo_treino"=>"B", "descricao"=>"Vamos", "data_inicio"=>"2020-10-13", "data_final"=>"2020-10-20", "quantidade_dias"=>"7", "aluno_id"=>"7"}, "commit"=>"Create Treino"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/treinos_controller.rb:34:in `block in create'
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:34:in `block in create'
+  [1m[36mCACHE Usuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:34:in `block in create'
+  [1m[36mTreino Create (19.7ms)[0m  [1m[32mINSERT INTO "treinos" ("tipo_treino", "descricao", "data_inicio", "data_final", "quantidade_dias", "aluno_id", "professor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["tipo_treino", "B"], ["descricao", "Vamos"], ["data_inicio", "2020-10-13"], ["data_final", "2020-10-20"], ["quantidade_dias", 7], ["aluno_id", 7], ["professor_id", 5], ["created_at", "2020-10-13 20:06:19.017840"], ["updated_at", "2020-10-13 20:06:19.017840"]]
+  ↳ app/controllers/treinos_controller.rb:34:in `block in create'
+  [1m[35m (167.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/treinos_controller.rb:34:in `block in create'
+Redirected to http://127.0.0.1:3000/treinos/2
+Completed 302 Found in 303ms (ActiveRecord: 188.8ms | Allocations: 7247)
+
+
+Started GET "/treinos/2" for 127.0.0.1 at 2020-10-13 17:06:19 -0300
+Processing by TreinosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTreino Load (1.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:71:in `set_treino'
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/show.html.erb within layouts/application
+  Rendered treinos/show.html.erb within layouts/application (Duration: 75.7ms | Allocations: 384)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 193ms (Views: 176.8ms | ActiveRecord: 2.3ms | Allocations: 16070)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 17:07:05 -0300
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.2ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 3124)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 57ms (Views: 53.9ms | ActiveRecord: 0.8ms | Allocations: 9097)
+
+
+Started GET "/treino_exercicios/new" for 127.0.0.1 at 2020-10-13 17:07:25 -0300
+Processing by TreinoExerciciosController#new as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/new.html.erb within layouts/application
+  [1m[36mTreino Load (0.3ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:26:in `collect'
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mExercicio Load (0.4ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:31:in `collect'
+  Rendered treino_exercicios/_form.html.erb (Duration: 110.3ms | Allocations: 16765)
+  Rendered treino_exercicios/new.html.erb within layouts/application (Duration: 137.7ms | Allocations: 17071)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 232ms (Views: 223.6ms | ActiveRecord: 1.3ms | Allocations: 23675)
+
+
+Started POST "/treino_exercicios" for 127.0.0.1 at 2020-10-13 17:07:37 -0300
+Processing by TreinoExerciciosController#create as HTML
+  Parameters: {"authenticity_token"=>"XQ6rNEI3dsZLJMJBtQcmIk7wgT6IDPt6ZxjCmeqs2B11pDF/HKb8f7eUK/loRksTSTmD4CMLH7XnBWLQ1mf1/A==", "treino_exercicio"=>{"serie"=>"3", "repeticoes"=>"5", "treino_id"=>"2", "exercicio_id"=>"1"}, "commit"=>"Create Treino exercicio"}
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/treino_exercicios_controller.rb:23:in `block in create'
+  [1m[36mTreino Load (0.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:23:in `block in create'
+  [1m[36mExercicio Load (0.6ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:23:in `block in create'
+  [1m[36mTreinoExercicio Create (2.8ms)[0m  [1m[32mINSERT INTO "treino_exercicios" ("serie", "repeticoes", "treino_id", "exercicio_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["serie", 3], ["repeticoes", 5], ["treino_id", 2], ["exercicio_id", 1], ["created_at", "2020-10-13 20:07:37.985904"], ["updated_at", "2020-10-13 20:07:37.985904"]]
+  ↳ app/controllers/treino_exercicios_controller.rb:23:in `block in create'
+  [1m[35m (162.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/treino_exercicios_controller.rb:23:in `block in create'
+Redirected to http://127.0.0.1:3000/treino_exercicios/2
+Completed 302 Found in 204ms (ActiveRecord: 166.8ms | Allocations: 5794)
+
+
+Started GET "/treino_exercicios/2" for 127.0.0.1 at 2020-10-13 17:07:38 -0300
+Processing by TreinoExerciciosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTreinoExercicio Load (0.8ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios" WHERE "treino_exercicios"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:36:in `set_treino_exercicio'
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/show.html.erb within layouts/application
+  [1m[36mTreino Load (0.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/show.html.erb:15
+  [1m[36mExercicio Load (0.6ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/show.html.erb:20
+  Rendered treino_exercicios/show.html.erb within layouts/application (Duration: 50.3ms | Allocations: 1769)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 145ms (Views: 129.1ms | ActiveRecord: 2.6ms | Allocations: 8459)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 17:08:52 -0300
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.8ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 21.7ms | Allocations: 3130)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 127ms (Views: 120.4ms | ActiveRecord: 2.2ms | Allocations: 9106)
+
+
+Started GET "/treinos/1" for 127.0.0.1 at 2020-10-13 17:09:19 -0300
+Processing by TreinosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreino Load (0.7ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:71:in `set_treino'
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/show.html.erb within layouts/application
+  Rendered treinos/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 129ms (Views: 102.7ms | ActiveRecord: 1.3ms | Allocations: 6642)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 17:09:46 -0300
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 13.1ms | Allocations: 3121)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 79ms (Views: 74.7ms | ActiveRecord: 1.3ms | Allocations: 9087)
+
+
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 17:17:37 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TreinosController#new as HTML
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:41:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 13.1ms | Allocations: 2366)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 14.4ms | Allocations: 2460)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 232ms (Views: 91.4ms | ActiveRecord: 1.6ms | Allocations: 25165)
+
+
+Started POST "/treinos" for 127.0.0.1 at 2020-10-13 17:17:51 -0300
+Processing by TreinosController#create as HTML
+  Parameters: {"authenticity_token"=>"QJKe7UNXDquVcwwpjEeFO0S5boZ3oLwm4vFMxhDq0zyEmHRnixC1SKJ4BiJvI8lTogEUI32ytJ83V4bv1Z8ZAg==", "treino"=>{"tipo_treino"=>"C", "descricao"=>"teste", "data_inicio"=>"", "data_final"=>"", "quantidade_dias"=>"", "aluno_id"=>"1"}, "commit"=>"Create Treino"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/treinos_controller.rb:34:in `block in create'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:34:in `block in create'
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:34:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/treinos_controller.rb:34:in `block in create'
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:41:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 83.5ms | Allocations: 2919)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 84.9ms | Allocations: 3012)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 209ms (Views: 158.7ms | ActiveRecord: 1.4ms | Allocations: 16004)
+
+
+Started POST "/treinos" for 127.0.0.1 at 2020-10-13 17:18:14 -0300
+Processing by TreinosController#create as HTML
+  Parameters: {"authenticity_token"=>"ko7e/X9h0O7R7tHQEOpp+zmHMDCyxmV8UghwULfMHy66JES2IfBaVy1eOGjNqwTKPk4y7hnBgbPSFdAZiwcyzw==", "treino"=>{"tipo_treino"=>"C", "descricao"=>"teste", "data_inicio"=>"2020-10-13", "data_final"=>"2020-10-14", "quantidade_dias"=>"-1", "aluno_id"=>"1"}, "commit"=>"Create Treino"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/treinos_controller.rb:34:in `block in create'
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:34:in `block in create'
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:34:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/treinos_controller.rb:34:in `block in create'
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:41:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 9.4ms | Allocations: 2462)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 10.2ms | Allocations: 2555)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 84ms (Views: 68.6ms | ActiveRecord: 1.6ms | Allocations: 13243)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 17:18:27 -0300
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.5ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 15.6ms | Allocations: 3266)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 130ms (Views: 83.0ms | ActiveRecord: 1.3ms | Allocations: 9259)
+
+
+Started GET "/treino_exercicios/new" for 127.0.0.1 at 2020-10-13 17:22:20 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TreinoExerciciosController#new as HTML
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/new.html.erb within layouts/application
+  [1m[36mTreino Load (0.4ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:26:in `collect'
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mExercicio Load (0.4ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:31:in `collect'
+  Rendered treino_exercicios/_form.html.erb (Duration: 109.1ms | Allocations: 14475)
+  Rendered treino_exercicios/new.html.erb within layouts/application (Duration: 109.7ms | Allocations: 14546)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 266ms (Views: 175.4ms | ActiveRecord: 6.9ms | Allocations: 38773)
+
+
+Started POST "/treino_exercicios" for 127.0.0.1 at 2020-10-13 17:22:33 -0300
+Processing by TreinoExerciciosController#create as HTML
+  Parameters: {"authenticity_token"=>"ugxwcBS4WhVU4WOhF7e7zFFnuNUAaT3lvX61FAdoGwSSpuo7SinQrKhRihnK9tb9Vq66C6tu2So9YxVdO6M25Q==", "treino_exercicio"=>{"serie"=>"-2", "repeticoes"=>"2", "treino_id"=>"1", "exercicio_id"=>"1"}, "commit"=>"Create Treino exercicio"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/treino_exercicios_controller.rb:23:in `block in create'
+  [1m[36mTreino Load (0.7ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:23:in `block in create'
+  [1m[36mExercicio Load (0.5ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:23:in `block in create'
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/treino_exercicios_controller.rb:23:in `block in create'
+  Rendering treino_exercicios/new.html.erb within layouts/application
+  [1m[36mTreino Load (1.0ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:26:in `collect'
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mExercicio Load (0.6ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:31:in `collect'
+  Rendered treino_exercicios/_form.html.erb (Duration: 32.8ms | Allocations: 3900)
+  Rendered treino_exercicios/new.html.erb within layouts/application (Duration: 35.1ms | Allocations: 3971)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 137ms (Views: 110.4ms | ActiveRecord: 4.5ms | Allocations: 16037)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-13 17:22:45 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUsuario Load (1.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/usuarios/5
+Filter chain halted as :block_access rendered or redirected
+Completed 302 Found in 23ms (ActiveRecord: 1.0ms | Allocations: 1030)
+
+
+Started GET "/usuarios/5" for 127.0.0.1 at 2020-10-13 17:22:45 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_professor.html.erb within layouts/application
+  Rendered usuarios/show_professor.html.erb within layouts/application (Duration: 1.7ms | Allocations: 222)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 135ms (Views: 109.5ms | ActiveRecord: 1.5ms | Allocations: 16335)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 17:22:51 -0300
+Processing by TreinosController#index as HTML
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.3ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 12.8ms | Allocations: 3189)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 98ms (Views: 92.9ms | ActiveRecord: 1.3ms | Allocations: 14414)
+
+
+Started GET "/treino_exercicios/new" for 127.0.0.1 at 2020-10-13 17:22:59 -0300
+Processing by TreinoExerciciosController#new as HTML
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/new.html.erb within layouts/application
+  [1m[36mTreino Load (0.7ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:26:in `collect'
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mUsuario Load (0.9ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mExercicio Load (0.9ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:31:in `collect'
+  Rendered treino_exercicios/_form.html.erb (Duration: 38.1ms | Allocations: 3683)
+  Rendered treino_exercicios/new.html.erb within layouts/application (Duration: 39.2ms | Allocations: 3754)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 143ms (Views: 133.6ms | ActiveRecord: 3.3ms | Allocations: 9763)
+
+
+Started POST "/treino_exercicios" for 127.0.0.1 at 2020-10-13 17:23:14 -0300
+Processing by TreinoExerciciosController#create as HTML
+  Parameters: {"authenticity_token"=>"CJHcTF9/giKzZ7+w6C/91cgUvSWktm00rEY9PNcISYIgO0YHAe4Im0/XVgg1bpDkz92/+w+xifssW51168NkYw==", "treino_exercicio"=>{"serie"=>"1", "repeticoes"=>"2", "treino_id"=>"1", "exercicio_id"=>"1"}, "commit"=>"Create Treino exercicio"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/treino_exercicios_controller.rb:23:in `block in create'
+  [1m[36mTreino Load (0.3ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:23:in `block in create'
+  [1m[36mExercicio Load (0.1ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:23:in `block in create'
+  [1m[36mTreinoExercicio Create (2.4ms)[0m  [1m[32mINSERT INTO "treino_exercicios" ("serie", "repeticoes", "treino_id", "exercicio_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["serie", 1], ["repeticoes", 2], ["treino_id", 1], ["exercicio_id", 1], ["created_at", "2020-10-13 20:23:14.361188"], ["updated_at", "2020-10-13 20:23:14.361188"]]
+  ↳ app/controllers/treino_exercicios_controller.rb:23:in `block in create'
+  [1m[35m (160.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/treino_exercicios_controller.rb:23:in `block in create'
+Redirected to http://127.0.0.1:3000/treino_exercicios/3
+Completed 302 Found in 185ms (ActiveRecord: 163.5ms | Allocations: 6307)
+
+
+Started GET "/treino_exercicios/3" for 127.0.0.1 at 2020-10-13 17:23:14 -0300
+Processing by TreinoExerciciosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTreinoExercicio Load (1.2ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios" WHERE "treino_exercicios"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:36:in `set_treino_exercicio'
+  [1m[36mUsuario Load (1.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/show.html.erb within layouts/application
+  [1m[36mTreino Load (0.8ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/show.html.erb:15
+  [1m[36mExercicio Load (1.1ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/show.html.erb:20
+  Rendered treino_exercicios/show.html.erb within layouts/application (Duration: 16.6ms | Allocations: 2338)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 124ms (Views: 103.3ms | ActiveRecord: 4.1ms | Allocations: 12846)
+
+
+Started GET "/treino_exercicios/new" for 127.0.0.1 at 2020-10-13 17:24:04 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TreinoExerciciosController#new as HTML
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/new.html.erb within layouts/application
+  [1m[36mTreino Load (0.9ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:26:in `collect'
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mUsuario Load (0.6ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mExercicio Load (0.8ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:31:in `collect'
+  Rendered treino_exercicios/_form.html.erb (Duration: 76.1ms | Allocations: 14748)
+  Rendered treino_exercicios/new.html.erb within layouts/application (Duration: 77.3ms | Allocations: 14819)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 339ms (Views: 214.1ms | ActiveRecord: 30.2ms | Allocations: 39185)
+
+
+Started POST "/treino_exercicios" for 127.0.0.1 at 2020-10-13 17:24:21 -0300
+Processing by TreinoExerciciosController#create as HTML
+  Parameters: {"authenticity_token"=>"mZo1wg+V7oZrfF17F0SEdidCgyikhmOm9SRMiBStq/KxMK+JUQRkP5fMtMPKBelHIIuB9g+Bh2l1OezBKGaGEw==", "treino_exercicio"=>{"serie"=>"2", "repeticoes"=>"3", "treino_id"=>"1", "exercicio_id"=>"1"}, "commit"=>"Create Treino exercicio"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/treino_exercicios_controller.rb:23:in `block in create'
+  [1m[36mTreino Load (0.5ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:23:in `block in create'
+  [1m[36mExercicio Load (0.3ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:23:in `block in create'
+  [1m[36mTreinoExercicio Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "treino_exercicios" WHERE "treino_exercicios"."exercicio_id" = ? LIMIT ?[0m  [["exercicio_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:23:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/treino_exercicios_controller.rb:23:in `block in create'
+  Rendering treino_exercicios/new.html.erb within layouts/application
+  [1m[36mTreino Load (0.6ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:26:in `collect'
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mExercicio Load (0.3ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:31:in `collect'
+  Rendered treino_exercicios/_form.html.erb (Duration: 19.1ms | Allocations: 3902)
+  Rendered treino_exercicios/new.html.erb within layouts/application (Duration: 20.4ms | Allocations: 3973)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 96ms (Views: 73.4ms | ActiveRecord: 3.3ms | Allocations: 17111)
+
+
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 17:24:42 -0300
+Processing by TreinosController#new as HTML
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:41:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 8.8ms | Allocations: 2361)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 2455)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 89ms (Views: 84.1ms | ActiveRecord: 1.2ms | Allocations: 8679)
+
+
+Started POST "/treinos" for 127.0.0.1 at 2020-10-13 17:24:59 -0300
+Processing by TreinosController#create as HTML
+  Parameters: {"authenticity_token"=>"s6vbLf6ei45PVlNUPgP7zlcHHHkQ0sOw8zDqRapmRr+bAUFmoA8BN7PmuuzjQpb/UM4ep7vVJ39zLUoMlq1rXg==", "treino"=>{"tipo_treino"=>"D", "descricao"=>"Vamos", "data_inicio"=>"2020-10-14", "data_final"=>"2020-10-20", "quantidade_dias"=>"6", "aluno_id"=>"1"}, "commit"=>"Create Treino"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/treinos_controller.rb:34:in `block in create'
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:34:in `block in create'
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:34:in `block in create'
+  [1m[36mTreino Create (7.5ms)[0m  [1m[32mINSERT INTO "treinos" ("tipo_treino", "descricao", "data_inicio", "data_final", "quantidade_dias", "aluno_id", "professor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["tipo_treino", "D"], ["descricao", "Vamos"], ["data_inicio", "2020-10-14"], ["data_final", "2020-10-20"], ["quantidade_dias", 6], ["aluno_id", 1], ["professor_id", 5], ["created_at", "2020-10-13 20:24:59.385079"], ["updated_at", "2020-10-13 20:24:59.385079"]]
+  ↳ app/controllers/treinos_controller.rb:34:in `block in create'
+  [1m[35m (111.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/treinos_controller.rb:34:in `block in create'
+Redirected to http://127.0.0.1:3000/treinos/3
+Completed 302 Found in 151ms (ActiveRecord: 119.9ms | Allocations: 6995)
+
+
+Started GET "/treinos/3" for 127.0.0.1 at 2020-10-13 17:24:59 -0300
+Processing by TreinosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTreino Load (0.8ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:71:in `set_treino'
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treinos/show.html.erb within layouts/application
+  Rendered treinos/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 116)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 110ms (Views: 88.3ms | ActiveRecord: 1.5ms | Allocations: 6765)
+
+
+Started GET "/exercicios/new" for 127.0.0.1 at 2020-10-13 17:25:11 -0300
+Processing by ExerciciosController#new as HTML
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering exercicios/new.html.erb within layouts/application
+  Rendered exercicios/_form.html.erb (Duration: 147.8ms | Allocations: 13189)
+  Rendered exercicios/new.html.erb within layouts/application (Duration: 165.2ms | Allocations: 13544)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 231ms (Views: 225.7ms | ActiveRecord: 0.5ms | Allocations: 20168)
+
+
+Started GET "/treino_exercicios/new" for 127.0.0.1 at 2020-10-13 17:25:17 -0300
+Processing by TreinoExerciciosController#new as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/new.html.erb within layouts/application
+  [1m[36mTreino Load (0.3ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:26:in `collect'
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mExercicio Load (0.3ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:31:in `collect'
+  Rendered treino_exercicios/_form.html.erb (Duration: 20.3ms | Allocations: 4359)
+  Rendered treino_exercicios/new.html.erb within layouts/application (Duration: 21.0ms | Allocations: 4430)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 105ms (Views: 100.1ms | ActiveRecord: 1.8ms | Allocations: 10441)
+
+
+Started POST "/treino_exercicios" for 127.0.0.1 at 2020-10-13 17:25:30 -0300
+Processing by TreinoExerciciosController#create as HTML
+  Parameters: {"authenticity_token"=>"jq9zd/4Md/RRU7HBb5DwuURI+pYyK3jrd9OghVjq8eymBek8oJ39Ta3jWHmy0Z2IQ4H4SJksnCT3zgDMZCHcDQ==", "treino_exercicio"=>{"serie"=>"5", "repeticoes"=>"5", "treino_id"=>"3", "exercicio_id"=>"1"}, "commit"=>"Create Treino exercicio"}
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/treino_exercicios_controller.rb:23:in `block in create'
+  [1m[36mTreino Load (0.3ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:23:in `block in create'
+  [1m[36mExercicio Load (0.2ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:23:in `block in create'
+  [1m[36mTreinoExercicio Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "treino_exercicios" WHERE "treino_exercicios"."exercicio_id" = ? LIMIT ?[0m  [["exercicio_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:23:in `block in create'
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/treino_exercicios_controller.rb:23:in `block in create'
+  Rendering treino_exercicios/new.html.erb within layouts/application
+  [1m[36mTreino Load (0.7ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:26:in `collect'
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mUsuario Load (1.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mExercicio Load (0.5ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:31:in `collect'
+  Rendered treino_exercicios/_form.html.erb (Duration: 36.7ms | Allocations: 6053)
+  Rendered treino_exercicios/new.html.erb within layouts/application (Duration: 38.4ms | Allocations: 6352)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 154ms (Views: 126.2ms | ActiveRecord: 5.3ms | Allocations: 27935)
+
+

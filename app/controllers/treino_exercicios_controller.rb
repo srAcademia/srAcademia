@@ -2,6 +2,10 @@ class TreinoExerciciosController < ApplicationController
   before_action :set_treino_exercicio, only: [:show, :edit]
   before_action :authorize_admin_professor
 
+  def index
+    @treino_exercicio = TreinoExercicio.all
+  end
+
   def show
   end
 
