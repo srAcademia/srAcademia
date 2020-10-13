@@ -1,9 +1,14 @@
 class TreinoExerciciosController < ApplicationController
-  before_action :set_treino_exercicio, only: [:edit]
+  before_action :set_treino_exercicio, only: [:show, :edit]
   before_action :authorize_admin_professor
+
+  def show
+  end
 
   def new
     @treino_exercicio = TreinoExercicio.new
+    @treinos = Treino.all
+    @exercicios = Exercicio.all
   end
 
   def edit
@@ -11,6 +16,8 @@ class TreinoExerciciosController < ApplicationController
 
   def create
     @treino_exercicio = TreinoExercicio.new(treino_exercicio_params)
+    @treinos = Treino.all
+    @exercicios = Exercicio.all
 
     respond_to do |format|
       if @treino_exercicio.save
@@ -31,6 +38,6 @@ class TreinoExerciciosController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def treino_exercicio_params
-    params.require(:treino_exercicio).permit(:serie, :repeticoes)
+    params.require(:treino_exercicio).permit(:serie, :repeticoes, :treino_id, :exercicio_id)
   end
 end

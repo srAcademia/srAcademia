@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Serie:</strong>
+  <%= @treino_exercicio.serie %>
+</p>
+
+<p>
+  <strong>Repeticoes:</strong>
+  <%= @treino_exercicio.repeticoes %>
+</p>
+
+<p>
+  <strong>Id Aluno:</strong>
+  <%= @treino_exercicio.treino.aluno_id %>
+</p>
+
+<p>
+  <strong>Id Exercicio:</strong>
+  <%= @treino_exercicio.exercicio.nome %>
+</p>
+
+<%= link_to 'Editar', edit_treino_exercicio_path(@treino_exercicio) %> |

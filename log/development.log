@@ -19962,3 +19962,1309 @@ Processing by UsuariosController#show as HTML
 Completed 200 OK in 45ms (Views: 42.7ms | ActiveRecord: 0.3ms | Allocations: 6627)
 
 
+Started GET "/treinos_exercicios/new" for 127.0.0.1 at 2020-10-13 12:51:41 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/treinos_exercicios/new"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/treino_exercicios/new" for 127.0.0.1 at 2020-10-13 12:51:50 -0300
+Processing by TreinoExerciciosController#new as HTML
+  Rendering treino_exercicios/new.html.erb within layouts/application
+  Rendered treino_exercicios/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 88)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 509ms (Views: 506.6ms | ActiveRecord: 0.0ms | Allocations: 23251)
+
+
+Started GET "/treino_exercicios" for 127.0.0.1 at 2020-10-13 13:05:44 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for TreinoExerciciosController):
+  
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/treino_exercicios/new" for 127.0.0.1 at 2020-10-13 13:05:51 -0300
+Processing by TreinoExerciciosController#new as HTML
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/new.html.erb within layouts/application
+  Rendered treino_exercicios/_form.html.erb (Duration: 1.6ms | Allocations: 1240)
+  Rendered treino_exercicios/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1553)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 63ms (Views: 44.0ms | ActiveRecord: 1.0ms | Allocations: 22399)
+
+
+Started GET "/treino_exercicios/new" for 127.0.0.1 at 2020-10-13 14:02:07 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TreinoExerciciosController#new as HTML
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/new.html.erb within layouts/application
+  Rendered treino_exercicios/_form.html.erb (Duration: 2.0ms | Allocations: 1069)
+  Rendered treino_exercicios/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1404)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 60ms (Views: 56.3ms | ActiveRecord: 0.2ms | Allocations: 8340)
+
+
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:08:00 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  Rendered treinos/_form.html.erb (Duration: 11.2ms | Allocations: 1514)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 13.0ms | Allocations: 1845)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms | Allocations: 11110)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with(model: treino, local: true) do |form| %>
+  <% if treino.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(treino.errors.count, "error") %> prohibited this treino from being saved:</h2>
+
+      <ul>
+        <% treino.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tipo_treino %>
+    <%= form.text_field :tipo_treino %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descricao %>
+    <%= form.text_field :descricao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data_inicio %>
+    <%= form.date_select :data_inicio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data_final %>
+    <%= form.date_select :data_final %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantidade_dias %>
+    <%= form.number_field :quantidade_dias %>
+  </div>
+
+  <div class="field">
+    <%= form.label :aluno_id %>
+    <%= form.select :tipo, options_for_select(Usuario.all)% %>
+  </div>
+
+  <div class="field">
+    <%= form.label :professor_id %>
+    <%= form.text_field :professor_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+):
+1:    <%= form_with(model: treino, local: true) do |form| %>
+2:      <% if treino.errors.any? %>
+3:        <div id="error_explanation">
+4:          <h2><%= pluralize(treino.errors.count, "error") %> prohibited this treino from being saved:</h2>
+5:    
+6:          <ul>
+7:            <% treino.errors.full_messages.each do |message| %>
+8:              <li><%= message %></li>
+9:            <% end %>
+10:          </ul>
+11:        </div>
+12:      <% end %>
+13:    
+14:      <div class="field">
+15:        <%= form.label :tipo_treino %>
+16:        <%= form.text_field :tipo_treino %>
+17:      </div>
+18:    
+19:      <div class="field">
+20:        <%= form.label :descricao %>
+21:        <%= form.text_field :descricao %>
+22:      </div>
+23:    
+24:      <div class="field">
+25:        <%= form.label :data_inicio %>
+26:        <%= form.date_select :data_inicio %>
+27:      </div>
+28:    
+29:      <div class="field">
+30:        <%= form.label :data_final %>
+31:        <%= form.date_select :data_final %>
+32:      </div>
+33:    
+34:      <div class="field">
+35:        <%= form.label :quantidade_dias %>
+36:        <%= form.number_field :quantidade_dias %>
+37:      </div>
+38:    
+39:      <div class="field">
+40:        <%= form.label :aluno_id %>
+41:        <%= form.select :tipo, options_for_select(Usuario.all)% %>
+42:      </div>
+43:    
+44:      <div class="field">
+45:        <%= form.label :professor_id %>
+46:        <%= form.text_field :professor_id %>
+47:      </div>
+48:    
+49:      <div class="actions">
+50:        <%= form.submit %>
+51:      </div>
+52:    <% end %>
+  
+app/views/treinos/_form.html.erb:41: syntax error, unexpected ')'
+app/views/treinos/_form.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/treinos/_form.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/treinos/_form.html.erb:41: syntax error, unexpected ')'
+app/views/treinos/_form.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/treinos/_form.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/treinos/_form.html.erb:41: syntax error, unexpected ')'
+app/views/treinos/_form.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/treinos/_form.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/treinos/_form.html.erb:41: syntax error, unexpected ')'
+app/views/treinos/_form.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/treinos/_form.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/treinos/_form.html.erb:41: syntax error, unexpected ')'
+app/views/treinos/_form.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/treinos/_form.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/treinos/_form.html.erb:41: syntax error, unexpected ')'
+app/views/treinos/_form.html.erb:52: syntax error, unexpected end, expecting ')'
+app/views/treinos/_form.html.erb:54: syntax error, unexpected end, expecting ')'
+app/views/treinos/new.html.erb:3
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:08:21 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:41
+  Rendered treinos/_form.html.erb (Duration: 28.2ms | Allocations: 5271)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 30.5ms | Allocations: 5622)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 77ms (Views: 74.8ms | ActiveRecord: 0.3ms | Allocations: 11973)
+
+
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:12:36 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  Rendered treinos/_form.html.erb (Duration: 5.2ms | Allocations: 4547)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 5253)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 71ms (Views: 68.8ms | ActiveRecord: 0.0ms | Allocations: 35099)
+
+
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:12:52 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/treinos/new.html.erb:3
+  Rendered treinos/_form.html.erb (Duration: 29.1ms | Allocations: 7205)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 31.1ms | Allocations: 7536)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.3ms | Allocations: 8756)
+
+
+  
+ActionView::Template::Error (undefined method `nome' for #<Usuario::ActiveRecord_Relation:0x000000000c7b4178>
+Did you mean?  none
+               name):
+    38: 
+    39:   <div class="field">
+    40:     <%= form.label :aluno_id %>
+    41:     <%= form.select :tipo, options_for_select(Usuario.all.nome) %>
+    42:   </div>
+    43: 
+    44:   <div class="field">
+  
+app/views/treinos/_form.html.erb:41
+app/views/treinos/_form.html.erb:1
+app/views/treinos/new.html.erb:3
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:17:12 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  Rendered treinos/_form.html.erb (Duration: 3.8ms | Allocations: 5121)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 5458)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 6695)
+
+
+  
+ActionView::Template::Error (undefined method `collect' for nil:NilClass):
+    38: 
+    39:   <div class="field">
+    40:     <%= form.label :aluno_id %>
+    41:     <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }, @usuario.id), {}, {} %>
+    42:   </div>
+    43: 
+    44:   <div class="field">
+  
+app/views/treinos/_form.html.erb:41
+app/views/treinos/_form.html.erb:1
+app/views/treinos/new.html.erb:3
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:18:18 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  Rendered treinos/_form.html.erb (Duration: 5.1ms | Allocations: 5148)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 7.9ms | Allocations: 5479)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 6722)
+
+
+  
+ActionView::Template::Error (undefined method `collect' for nil:NilClass):
+    39:   <div class="field">
+    40:     <%= form.label :aluno_id %>
+    41:     <% @usarios = Usuario.all %>
+    42:     <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }, @usuario.id), {}, {} %>
+    43:   </div>
+    44: 
+    45:   <div class="field">
+  
+app/views/treinos/_form.html.erb:42
+app/views/treinos/_form.html.erb:1
+app/views/treinos/new.html.erb:3
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:18:19 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  Rendered treinos/_form.html.erb (Duration: 3.1ms | Allocations: 4639)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 4713)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 5191)
+
+
+  
+ActionView::Template::Error (undefined method `collect' for nil:NilClass):
+    39:   <div class="field">
+    40:     <%= form.label :aluno_id %>
+    41:     <% @usarios = Usuario.all %>
+    42:     <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }, @usuario.id), {}, {} %>
+    43:   </div>
+    44: 
+    45:   <div class="field">
+  
+app/views/treinos/_form.html.erb:42
+app/views/treinos/_form.html.erb:1
+app/views/treinos/new.html.erb:3
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:18:21 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  Rendered treinos/_form.html.erb (Duration: 4.6ms | Allocations: 4638)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 4712)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 5189)
+
+
+  
+ActionView::Template::Error (undefined method `collect' for nil:NilClass):
+    39:   <div class="field">
+    40:     <%= form.label :aluno_id %>
+    41:     <% @usarios = Usuario.all %>
+    42:     <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }, @usuario.id), {}, {} %>
+    43:   </div>
+    44: 
+    45:   <div class="field">
+  
+app/views/treinos/_form.html.erb:42
+app/views/treinos/_form.html.erb:1
+app/views/treinos/new.html.erb:3
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:22:16 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  Rendered treinos/_form.html.erb (Duration: 42.7ms | Allocations: 7003)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 43.1ms | Allocations: 7077)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 1.1ms | Allocations: 16405)
+
+
+  
+ActionView::Template::Error (undefined method `collect' for nil:NilClass):
+    39:   <div class="field">
+    40:     <%= form.label :aluno_id %>
+    41:     <% @usarios = Usuario.all %>
+    42:     <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }, @usuario.id), {}, {} %>
+    43:   </div>
+    44: 
+    45:   <div class="field">
+  
+app/views/treinos/_form.html.erb:42
+app/views/treinos/_form.html.erb:1
+app/views/treinos/new.html.erb:3
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:22:18 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  Rendered treinos/_form.html.erb (Duration: 3.3ms | Allocations: 4638)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 4712)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 5189)
+
+
+  
+ActionView::Template::Error (undefined method `collect' for nil:NilClass):
+    39:   <div class="field">
+    40:     <%= form.label :aluno_id %>
+    41:     <% @usarios = Usuario.all %>
+    42:     <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }, @usuario.id), {}, {} %>
+    43:   </div>
+    44: 
+    45:   <div class="field">
+  
+app/views/treinos/_form.html.erb:42
+app/views/treinos/_form.html.erb:1
+app/views/treinos/new.html.erb:3
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:22:19 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  Rendered treinos/_form.html.erb (Duration: 7.5ms | Allocations: 4638)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 4712)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 5189)
+
+
+  
+ActionView::Template::Error (undefined method `collect' for nil:NilClass):
+    39:   <div class="field">
+    40:     <%= form.label :aluno_id %>
+    41:     <% @usarios = Usuario.all %>
+    42:     <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }, @usuario.id), {}, {} %>
+    43:   </div>
+    44: 
+    45:   <div class="field">
+  
+app/views/treinos/_form.html.erb:42
+app/views/treinos/_form.html.erb:1
+app/views/treinos/new.html.erb:3
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:22:20 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  Rendered treinos/_form.html.erb (Duration: 3.2ms | Allocations: 4638)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 4712)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 5189)
+
+
+  
+ActionView::Template::Error (undefined method `collect' for nil:NilClass):
+    39:   <div class="field">
+    40:     <%= form.label :aluno_id %>
+    41:     <% @usarios = Usuario.all %>
+    42:     <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }, @usuario.id), {}, {} %>
+    43:   </div>
+    44: 
+    45:   <div class="field">
+  
+app/views/treinos/_form.html.erb:42
+app/views/treinos/_form.html.erb:1
+app/views/treinos/new.html.erb:3
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:22:39 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:42:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 17.0ms | Allocations: 12571)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 19.3ms | Allocations: 13451)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.0ms | Allocations: 15858)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    39:   <div class="field">
+    40:     <%= form.label :aluno_id %>
+    41:     <% @usuarios = Usuario.all %>
+    42:     <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }, @usuario.id), {}, {} %>
+    43:   </div>
+    44: 
+    45:   <div class="field">
+  
+app/views/treinos/_form.html.erb:42
+app/views/treinos/_form.html.erb:1
+app/views/treinos/new.html.erb:3
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:22:40 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:42:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 9.2ms | Allocations: 5324)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 9.9ms | Allocations: 5398)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms | Allocations: 5876)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    39:   <div class="field">
+    40:     <%= form.label :aluno_id %>
+    41:     <% @usuarios = Usuario.all %>
+    42:     <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }, @usuario.id), {}, {} %>
+    43:   </div>
+    44: 
+    45:   <div class="field">
+  
+app/views/treinos/_form.html.erb:42
+app/views/treinos/_form.html.erb:1
+app/views/treinos/new.html.erb:3
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:22:41 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:42:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 5.0ms | Allocations: 5330)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 5404)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms | Allocations: 5881)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    39:   <div class="field">
+    40:     <%= form.label :aluno_id %>
+    41:     <% @usuarios = Usuario.all %>
+    42:     <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }, @usuario.id), {}, {} %>
+    43:   </div>
+    44: 
+    45:   <div class="field">
+  
+app/views/treinos/_form.html.erb:42
+app/views/treinos/_form.html.erb:1
+app/views/treinos/new.html.erb:3
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:23:12 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  Rendered treinos/_form.html.erb (Duration: 5.9ms | Allocations: 5115)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 5446)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms | Allocations: 6666)
+
+
+  
+ActionView::Template::Error (undefined method `collect' for nil:NilClass):
+    38: 
+    39:   <div class="field">
+    40:     <%= form.label :aluno_id %>
+    41:     <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }, @usuario.id), {}, {} %>
+    42:   </div>
+    43: 
+    44:   <div class="field">
+  
+app/views/treinos/_form.html.erb:41
+app/views/treinos/_form.html.erb:1
+app/views/treinos/new.html.erb:3
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:23:15 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  Rendered treinos/_form.html.erb (Duration: 4.4ms | Allocations: 4627)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 4701)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 5179)
+
+
+  
+ActionView::Template::Error (undefined method `collect' for nil:NilClass):
+    38: 
+    39:   <div class="field">
+    40:     <%= form.label :aluno_id %>
+    41:     <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }, @usuario.id), {}, {} %>
+    42:   </div>
+    43: 
+    44:   <div class="field">
+  
+app/views/treinos/_form.html.erb:41
+app/views/treinos/_form.html.erb:1
+app/views/treinos/new.html.erb:3
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:23:32 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:42:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 4.7ms | Allocations: 5838)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 6169)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.2ms | Allocations: 7391)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    39:   <div class="field">
+    40:     <%= form.label :aluno_id %>
+    41:     <% @usuarios = Usuario.all %>
+    42:     <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }, @usuario.id), {}, {} %>
+    43:   </div>
+    44: 
+    45:   <div class="field">
+  
+app/views/treinos/_form.html.erb:42
+app/views/treinos/_form.html.erb:1
+app/views/treinos/new.html.erb:3
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:24:22 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:41:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 11.0ms | Allocations: 11821)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 12.6ms | Allocations: 12152)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.5ms | Allocations: 24395)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    38: 
+    39:   <div class="field">
+    40:     <%= form.label :aluno_id %>
+    41:     <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }, @usuario.id), {}, {} %>
+    42:   </div>
+    43: 
+    44:   <div class="field">
+  
+app/views/treinos/_form.html.erb:41
+app/views/treinos/_form.html.erb:1
+app/views/treinos/new.html.erb:3
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:24:24 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:41:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 4.7ms | Allocations: 5319)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 5393)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms | Allocations: 5884)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    38: 
+    39:   <div class="field">
+    40:     <%= form.label :aluno_id %>
+    41:     <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }, @usuario.id), {}, {} %>
+    42:   </div>
+    43: 
+    44:   <div class="field">
+  
+app/views/treinos/_form.html.erb:41
+app/views/treinos/_form.html.erb:1
+app/views/treinos/new.html.erb:3
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:24:24 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:41:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 9.2ms | Allocations: 5319)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 5393)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.5ms | Allocations: 5883)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    38: 
+    39:   <div class="field">
+    40:     <%= form.label :aluno_id %>
+    41:     <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }, @usuario.id), {}, {} %>
+    42:   </div>
+    43: 
+    44:   <div class="field">
+  
+app/views/treinos/_form.html.erb:41
+app/views/treinos/_form.html.erb:1
+app/views/treinos/new.html.erb:3
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:24:25 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:41:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 8.9ms | Allocations: 5319)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 5393)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms | Allocations: 5883)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    38: 
+    39:   <div class="field">
+    40:     <%= form.label :aluno_id %>
+    41:     <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }, @usuario.id), {}, {} %>
+    42:   </div>
+    43: 
+    44:   <div class="field">
+  
+app/views/treinos/_form.html.erb:41
+app/views/treinos/_form.html.erb:1
+app/views/treinos/new.html.erb:3
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:24:26 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:41:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 4.4ms | Allocations: 5319)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 5393)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 5883)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    38: 
+    39:   <div class="field">
+    40:     <%= form.label :aluno_id %>
+    41:     <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }, @usuario.id), {}, {} %>
+    42:   </div>
+    43: 
+    44:   <div class="field">
+  
+app/views/treinos/_form.html.erb:41
+app/views/treinos/_form.html.erb:1
+app/views/treinos/new.html.erb:3
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:24:34 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:41:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 294.6ms | Allocations: 153519)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 296.6ms | Allocations: 153850)
+Completed 500 Internal Server Error in 303ms (ActiveRecord: 0.2ms | Allocations: 155088)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `usuario' for #<#<Class:0x0000000006a505b8>:0x0000000006a75160>
+Did you mean?  @usuarios):
+    38: 
+    39:   <div class="field">
+    40:     <%= form.label :aluno_id %>
+    41:     <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }, usuario.id), {}, {} %>
+    42:   </div>
+    43: 
+    44:   <div class="field">
+  
+app/views/treinos/_form.html.erb:41
+app/views/treinos/_form.html.erb:1
+app/views/treinos/new.html.erb:3
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:24:52 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:41:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 6.1ms | Allocations: 5812)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 6143)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.2ms | Allocations: 7378)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    38: 
+    39:   <div class="field">
+    40:     <%= form.label :aluno_id %>
+    41:     <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }, @usuario.id), {}, {} %>
+    42:   </div>
+    43: 
+    44:   <div class="field">
+  
+app/views/treinos/_form.html.erb:41
+app/views/treinos/_form.html.erb:1
+app/views/treinos/new.html.erb:3
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:26:21 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:41:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 7.2ms | Allocations: 4897)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 5248)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 59ms (Views: 55.1ms | ActiveRecord: 0.2ms | Allocations: 11649)
+
+
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:30:24 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:41:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 14.3ms | Allocations: 10689)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 15.8ms | Allocations: 11040)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 75ms (Views: 57.4ms | ActiveRecord: 2.1ms | Allocations: 28408)
+
+
+Started GET "/treinos/new" for 127.0.0.1 at 2020-10-13 14:32:00 -0300
+Processing by TreinosController#new as HTML
+  Rendering treinos/new.html.erb within layouts/application
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+  ↳ app/views/treinos/_form.html.erb:41:in `collect'
+  Rendered treinos/_form.html.erb (Duration: 95.4ms | Allocations: 3003)
+  Rendered treinos/new.html.erb within layouts/application (Duration: 96.9ms | Allocations: 3354)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 155ms (Views: 152.9ms | ActiveRecord: 0.3ms | Allocations: 9729)
+
+
+Started POST "/treinos" for 127.0.0.1 at 2020-10-13 14:32:34 -0300
+Processing by TreinosController#create as HTML
+  Parameters: {"authenticity_token"=>"LWAC7fV+t2geQ6EVxqx+HNPkBdvTkvbb4B/13pwspQwFypimq+890eLzSK0b7RMt1C0HBXiVEhRgAlWXoOeI7Q==", "treino"=>{"tipo_treino"=>"A", "descricao"=>"Nao sei", "data_inicio"=>"2020-10-13", "data_final"=>"2020-10-27", "quantidade_dias"=>"14", "aluno_id"=>"5"}, "commit"=>"Create Treino"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:33:in `block in create'
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:33:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/treinos_controller.rb:33:in `block in create'
+  [1m[36mTreino Create (1.2ms)[0m  [1m[32mINSERT INTO "treinos" ("tipo_treino", "descricao", "data_inicio", "data_final", "quantidade_dias", "aluno_id", "professor_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["tipo_treino", "A"], ["descricao", "Nao sei"], ["data_inicio", "2020-10-13"], ["data_final", "2020-10-27"], ["quantidade_dias", 14], ["aluno_id", 5], ["professor_id", 5], ["created_at", "2020-10-13 17:32:34.668212"], ["updated_at", "2020-10-13 17:32:34.668212"]]
+  ↳ app/controllers/treinos_controller.rb:33:in `block in create'
+  [1m[35m (120.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/treinos_controller.rb:33:in `block in create'
+Redirected to http://127.0.0.1:3000/treinos/1
+Completed 302 Found in 628ms (ActiveRecord: 121.7ms | Allocations: 29905)
+
+
+Started GET "/treinos/1" for 127.0.0.1 at 2020-10-13 14:32:34 -0300
+Processing by TreinosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreino Load (0.3ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:70:in `set_treino'
+  Rendering treinos/show.html.erb within layouts/application
+  Rendered treinos/show.html.erb within layouts/application (Duration: 15.7ms | Allocations: 402)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 63ms (Views: 58.3ms | ActiveRecord: 0.3ms | Allocations: 6670)
+
+
+Started GET "/treinos/1" for 127.0.0.1 at 2020-10-13 14:36:39 -0300
+Processing by TreinosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreino Load (0.4ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:70:in `set_treino'
+  Rendering treinos/show.html.erb within layouts/application
+  Rendered treinos/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 384)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 61ms (Views: 55.8ms | ActiveRecord: 0.4ms | Allocations: 7316)
+
+
+Started GET "/treinos/1" for 127.0.0.1 at 2020-10-13 14:36:41 -0300
+Processing by TreinosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreino Load (0.2ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:70:in `set_treino'
+  Rendering treinos/show.html.erb within layouts/application
+  Rendered treinos/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 117)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 53ms (Views: 50.4ms | ActiveRecord: 0.2ms | Allocations: 6077)
+
+
+Started GET "/treinos/1" for 127.0.0.1 at 2020-10-13 14:36:42 -0300
+Processing by TreinosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreino Load (0.2ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:70:in `set_treino'
+  Rendering treinos/show.html.erb within layouts/application
+  Rendered treinos/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 110)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 49ms (Views: 46.2ms | ActiveRecord: 0.2ms | Allocations: 6064)
+
+
+Started GET "/treinos/1" for 127.0.0.1 at 2020-10-13 14:36:42 -0300
+Processing by TreinosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreino Load (0.3ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:70:in `set_treino'
+  Rendering treinos/show.html.erb within layouts/application
+  Rendered treinos/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 110)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 71ms (Views: 66.0ms | ActiveRecord: 0.3ms | Allocations: 6425)
+
+
+Started GET "/treinos/1" for 127.0.0.1 at 2020-10-13 14:36:42 -0300
+Processing by TreinosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreino Load (0.2ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:70:in `set_treino'
+  Rendering treinos/show.html.erb within layouts/application
+  Rendered treinos/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 110)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 46.4ms | ActiveRecord: 0.2ms | Allocations: 6048)
+
+
+Started GET "/treinos/1" for 127.0.0.1 at 2020-10-13 14:36:58 -0300
+Processing by TreinosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreino Load (0.3ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:70:in `set_treino'
+  Rendering treinos/show.html.erb within layouts/application
+  Rendered treinos/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 110)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 49ms (Views: 46.1ms | ActiveRecord: 0.3ms | Allocations: 6069)
+
+
+Started GET "/treinos/" for 127.0.0.1 at 2020-10-13 14:37:01 -0300
+Processing by TreinosController#index as HTML
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.3ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2427)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 46.2ms | ActiveRecord: 0.4ms | Allocations: 7972)
+
+
+Started GET "/treinos/1" for 127.0.0.1 at 2020-10-13 14:37:17 -0300
+Processing by TreinosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreino Load (0.2ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:70:in `set_treino'
+  Rendering treinos/show.html.erb within layouts/application
+  Rendered treinos/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 111)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 46.8ms | ActiveRecord: 0.2ms | Allocations: 6084)
+
+
+Started GET "/treinos/1" for 127.0.0.1 at 2020-10-13 14:38:16 -0300
+Processing by TreinosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreino Load (0.3ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treinos_controller.rb:70:in `set_treino'
+  Rendering treinos/show.html.erb within layouts/application
+  Rendered treinos/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 384)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 59ms (Views: 54.5ms | ActiveRecord: 0.3ms | Allocations: 7317)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 14:38:18 -0300
+Processing by TreinosController#index as HTML
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.2ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 3529)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 60ms (Views: 57.9ms | ActiveRecord: 0.4ms | Allocations: 18433)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-13 14:41:07 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/usuarios/5
+Filter chain halted as :block_access rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1046)
+
+
+Started GET "/usuarios/5" for 127.0.0.1 at 2020-10-13 14:41:07 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_admin.html.erb within layouts/application
+  Rendered usuarios/show_admin.html.erb within layouts/application (Duration: 1.0ms | Allocations: 479)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 43.6ms | ActiveRecord: 0.3ms | Allocations: 7616)
+
+
+Started GET "/treino_exercicios" for 127.0.0.1 at 2020-10-13 14:41:57 -0300
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for TreinoExerciciosController):
+  
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/treino_exercicios/new" for 127.0.0.1 at 2020-10-13 14:42:02 -0300
+Processing by TreinoExerciciosController#new as HTML
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/new.html.erb within layouts/application
+  Rendered treino_exercicios/_form.html.erb (Duration: 1.6ms | Allocations: 1159)
+  Rendered treino_exercicios/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1471)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 64ms (Views: 53.3ms | ActiveRecord: 0.8ms | Allocations: 13383)
+
+
+Started GET "/treino_exercicios/new" for 127.0.0.1 at 2020-10-13 14:56:09 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TreinoExerciciosController#new as HTML
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/new.html.erb within layouts/application
+  [1m[36mTreino Load (0.2ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:26:in `collect'
+  [1m[36mTreino Load (0.3ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  Rendered treino_exercicios/_form.html.erb (Duration: 19.6ms | Allocations: 11088)
+  Rendered treino_exercicios/new.html.erb within layouts/application (Duration: 21.6ms | Allocations: 11991)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 0.8ms | Allocations: 35281)
+
+
+  
+ActionView::Template::Error (Couldn't find Treino with 'id'=5):
+    23: 
+    24:   <div class="field">
+    25:     <%= form.label :treino_id %>
+    26:     <%= form.select :treino_id, options_for_select(@treinos.collect { | treino | [@treinos.find(treino.aluno_id).nome, treino.id] }), {}, {} %>
+    27:   </div>
+    28: 
+    29:   <div class="field">
+  
+app/views/treino_exercicios/_form.html.erb:26
+app/views/treino_exercicios/_form.html.erb:26:in `collect'
+app/views/treino_exercicios/_form.html.erb:26
+app/views/treino_exercicios/_form.html.erb:1
+app/views/treino_exercicios/new.html.erb:3
+Started GET "/treino_exercicios/new" for 127.0.0.1 at 2020-10-13 14:56:50 -0300
+Processing by TreinoExerciciosController#new as HTML
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/new.html.erb within layouts/application
+  [1m[36mTreino Load (0.2ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:26:in `collect'
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mExercicio Load (0.3ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:31:in `collect'
+  Rendered treino_exercicios/_form.html.erb (Duration: 12.7ms | Allocations: 7706)
+  Rendered treino_exercicios/new.html.erb within layouts/application (Duration: 14.2ms | Allocations: 8018)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 62ms (Views: 57.1ms | ActiveRecord: 1.4ms | Allocations: 14963)
+
+
+Started GET "/exercicios" for 127.0.0.1 at 2020-10-13 14:57:19 -0300
+Processing by ExerciciosController#index as HTML
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering exercicios/index.html.erb within layouts/application
+  [1m[36mExercicio Load (0.3ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/exercicios/index.html.erb:16
+  Rendered exercicios/index.html.erb within layouts/application (Duration: 69.4ms | Allocations: 1185)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 118ms (Views: 113.5ms | ActiveRecord: 0.6ms | Allocations: 7797)
+
+
+Started GET "/treinos" for 127.0.0.1 at 2020-10-13 14:57:25 -0300
+Processing by TreinosController#index as HTML
+  Rendering treinos/index.html.erb within layouts/application
+  [1m[36mTreino Load (0.2ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treinos/index.html.erb:20
+  [1m[36mUsuario Load (0.5ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:27
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treinos/index.html.erb:28
+  Rendered treinos/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 2336)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 59ms (Views: 56.6ms | ActiveRecord: 0.7ms | Allocations: 20705)
+
+
+Started GET "/exercicio_treinos" for 127.0.0.1 at 2020-10-13 14:57:38 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/exercicio_treinos"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/treino_exercicios/new" for 127.0.0.1 at 2020-10-13 14:57:47 -0300
+Processing by TreinoExerciciosController#new as HTML
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/new.html.erb within layouts/application
+  [1m[36mTreino Load (0.1ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:26:in `collect'
+  [1m[36mCACHE Usuario Load (0.0ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/_form.html.erb:26
+  [1m[36mExercicio Load (0.1ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios"[0m
+  ↳ app/views/treino_exercicios/_form.html.erb:31:in `collect'
+  Rendered treino_exercicios/_form.html.erb (Duration: 4.6ms | Allocations: 3046)
+  Rendered treino_exercicios/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 3117)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 45.7ms | ActiveRecord: 0.4ms | Allocations: 9129)
+
+
+Started POST "/treino_exercicios" for 127.0.0.1 at 2020-10-13 14:59:07 -0300
+Processing by TreinoExerciciosController#create as HTML
+  Parameters: {"authenticity_token"=>"A+gD0/V3m+PsjtBQmXgdPOs4tp8SabYqss5HHwRaSZwrQpmYq+YRWhA+OehEOXAN7PG0QbluUuUy0+dWOJFkfQ==", "treino_exercicio"=>{"serie"=>"3", "repeticoes"=>"10", "treino_id"=>"1", "exercicio_id"=>"1"}, "commit"=>"Create Treino exercicio"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/treino_exercicios_controller.rb:20:in `block in create'
+  [1m[36mTreino Load (0.1ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:20:in `block in create'
+  [1m[36mExercicio Load (0.1ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:20:in `block in create'
+  [1m[36mTreinoExercicio Create (1.1ms)[0m  [1m[32mINSERT INTO "treino_exercicios" ("serie", "repeticoes", "treino_id", "exercicio_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["serie", 3], ["repeticoes", 10], ["treino_id", 1], ["exercicio_id", 1], ["created_at", "2020-10-13 17:59:07.309836"], ["updated_at", "2020-10-13 17:59:07.309836"]]
+  ↳ app/controllers/treino_exercicios_controller.rb:20:in `block in create'
+  [1m[35m (227.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/treino_exercicios_controller.rb:20:in `block in create'
+Redirected to http://127.0.0.1:3000/treino_exercicios/1
+Completed 302 Found in 239ms (ActiveRecord: 229.0ms | Allocations: 7262)
+
+
+Started GET "/treino_exercicios/1" for 127.0.0.1 at 2020-10-13 14:59:07 -0300
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for TreinoExerciciosController):
+  
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/treino_exercicios/1" for 127.0.0.1 at 2020-10-13 15:08:37 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TreinoExerciciosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/show.html.erb within layouts/application
+  Rendered treino_exercicios/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1452)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.2ms | Allocations: 11733)
+
+
+  
+ActionView::Template::Error (undefined method `serie' for nil:NilClass):
+    2: 
+    3: <p>
+    4:   <strong>Serie:</strong>
+    5:   <%= @treino_exercicio.serie %>
+    6: </p>
+    7: 
+    8: <p>
+  
+app/views/treino_exercicios/show.html.erb:5
+Started GET "/treino_exercicios/1" for 127.0.0.1 at 2020-10-13 15:09:43 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TreinoExerciciosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTreinoExercicio Load (0.1ms)[0m  [1m[34mSELECT "treino_exercicios".* FROM "treino_exercicios" WHERE "treino_exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/treino_exercicios_controller.rb:36:in `set_treino_exercicio'
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  Rendering treino_exercicios/show.html.erb within layouts/application
+  [1m[36mTreino Load (0.2ms)[0m  [1m[34mSELECT "treinos".* FROM "treinos" WHERE "treinos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/show.html.erb:15
+  [1m[36mExercicio Load (0.1ms)[0m  [1m[34mSELECT "exercicios".* FROM "exercicios" WHERE "exercicios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/treino_exercicios/show.html.erb:20
+  Rendered treino_exercicios/show.html.erb within layouts/application (Duration: 28.3ms | Allocations: 16740)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 99ms (Views: 74.7ms | ActiveRecord: 3.5ms | Allocations: 37844)
+
+
+Started GET "/" for 127.0.0.1 at 2020-10-13 15:10:01 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+Redirected to http://127.0.0.1:3000/usuarios/5
+Filter chain halted as :block_access rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1046)
+
+
+Started GET "/usuarios/5" for 127.0.0.1 at 2020-10-13 15:10:01 -0300
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:6:in `current_user'
+  [1m[36mUsuario Load (0.1ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `correct_user?'
+  Rendering usuarios/show_admin.html.erb within layouts/application
+  Rendered usuarios/show_admin.html.erb within layouts/application (Duration: 1.6ms | Allocations: 710)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 61ms (Views: 57.3ms | ActiveRecord: 0.3ms | Allocations: 16353)
+
+

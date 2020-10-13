@@ -1,5 +1,6 @@
 class TreinosController < ApplicationController
   before_action :set_treino, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_admin_professor
 
   # GET /treinos
   # GET /treinos.json
