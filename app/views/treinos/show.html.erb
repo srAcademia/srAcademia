@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo treino:</strong>
+  <%= @treino.tipo_treino %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @treino.descricao %>
+</p>
+
+<p>
+  <strong>Data inicio:</strong>
+  <%= @treino.data_inicio %>
+</p>
+
+<p>
+  <strong>Data final:</strong>
+  <%= @treino.data_final %>
+</p>
+
+<p>
+  <strong>Quantidade dias:</strong>
+  <%= @treino.quantidade_dias %>
+</p>
+
+<p>
+  <strong>Aluno:</strong>
+  <%= @treino.aluno_id %>
+</p>
+
+<p>
+  <strong>Professor:</strong>
+  <%= @treino.professor_id %>
+</p>
+
+<%= link_to 'Edit', edit_treino_path(@treino) %> |
+<%= link_to 'Back', treinos_path %>
