@@ -9,6 +9,6 @@ class Usuario < ApplicationRecord
   validates :data_nascimento,presence: true, length: {minimum: 10, maximum: 10}
   enum tipo: [:aluno, :professor, :admin]
 
-  has_many :aluno_treino, :class_name => 'Treino', :foreign_key => 'aluno_id'
-  has_many :professor_treino, :class_name => 'Treino', :foreign_key => 'professor_id'
+  has_many :aluno_treino, :class_name => 'Treino', :foreign_key => 'aluno_id', dependent: :destroy
+  has_many :professor_treino, :class_name => 'Treino', :foreign_key => 'professor_id', dependent: :destroy
 end
