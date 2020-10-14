@@ -35,6 +35,33 @@
   <%= Usuario.find(@treino.professor_id).nome %>
 </p>
 
+<br>
+
+<table>
+  <thead>
+  <tr>
+    <th>Exercicios</th>
+    <th>Serie</th>
+    <th>Repeticoes</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @treino_exercicio = TreinoExercicio.where(treino_id: @treino.id) %>
+  <% @treino_exercicio.each do |treino_exercicio| %>
+    <tr>
+      <td><%= treino_exercicio.exercicio.nome %></td>
+      <td><%= treino_exercicio.serie %></td>
+      <td><%= treino_exercicio.repeticoes %></td>
+      <td><%= link_to 'Destroy', treino_exercicio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
 <%= link_to 'Adicionar exercicio ao treino', new_treino_exercicio_path %> |
 <%= link_to 'Edit', edit_treino_path(@treino) %> |
 <%= link_to 'Back', treinos_path %>

@@ -1,11 +1,17 @@
 class TreinosController < ApplicationController
   before_action :set_treino, only: [:show, :edit, :update, :destroy]
-  before_action :authorize_admin_professor
+  before_action :authorize
+  before_action :authorize_admin_professor, only: [:new, :create, :edit, :update, :destroy]
+  before_action :correct_user_treino, only: [:show]
 
   # GET /treinos
   # GET /treinos.json
   def index
-    @treinos = Treino.all
+    if current_user.admin? or current_user.professor?
+      @treinos = Treino.all
+    elsif current_user.present?
+      @treinos = Treino.where(aluno_id: current_user.id)
+    end
   end
 
   # GET /treinos/1
@@ -21,6 +27,7 @@ class TreinosController < ApplicationController
 
   # GET /treinos/1/edit
   def edit
+    @usuarios = Usuario.all
   end
 
   # POST /treinos

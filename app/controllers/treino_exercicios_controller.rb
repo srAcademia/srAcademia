@@ -1,5 +1,5 @@
 class TreinoExerciciosController < ApplicationController
-  before_action :set_treino_exercicio, only: [:show, :edit]
+  before_action :set_treino_exercicio, only: [:show, :edit, :destroy]
   before_action :authorize_admin_professor
 
   def index
@@ -31,6 +31,14 @@ class TreinoExerciciosController < ApplicationController
         format.html { render :new }
         format.json { render json: @treino_exercicio.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def destroy
+    @treino_exercicio.destroy
+    respond_to do |format|
+      format.html { redirect_to @treino_exercicio.treino, notice: 'Exercicio was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 
