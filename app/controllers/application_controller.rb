@@ -20,6 +20,17 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def correct_user_treino
+    if logged_in?
+      @treino = Treino.find(params[:id])
+      unless current_user.admin? or current_user.professor? or @treino.aluno_id == current_user.id
+        redirect_to @treino
+      end
+    else
+      redirect_to root_url
+    end
+  end
+
   def correct_user?
     if logged_in?
       @usuario = Usuario.find(params[:id])

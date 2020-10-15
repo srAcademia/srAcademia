@@ -8,4 +8,7 @@ class Usuario < ApplicationRecord
   validates :telefone, presence: true, length: {minimum: 9, maximum: 50}
   validates :data_nascimento,presence: true, length: {minimum: 10, maximum: 10}
   enum tipo: [:aluno, :professor, :admin]
+
+  has_many :aluno_treino, :class_name => 'Treino', :foreign_key => 'aluno_id', dependent: :destroy
+  has_many :professor_treino, :class_name => 'Treino', :foreign_key => 'professor_id', dependent: :destroy
 end
