@@ -1,0 +1,47 @@
+<%= form_with(model: treino, local: true) do |form| %>
+  <% if treino.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(treino.errors.count, "error") %> prohibited this treino from being saved:</h2>
+
+      <ul>
+        <% treino.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tipo_treino %>
+    <%= form.text_field :tipo_treino %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descricao %>
+    <%= form.text_field :descricao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data_inicio %>
+    <%= form.date_field :data_inicio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data_final %>
+    <%= form.date_field :data_final %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantidade_dias %>
+    <%= form.number_field :quantidade_dias %>
+  </div>
+
+  <div class="field">
+    <%= form.label :aluno_id %>
+    <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }), {}, {} %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

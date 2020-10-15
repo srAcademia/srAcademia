@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Treinos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipo treino</th>
+      <th>Descricao</th>
+      <th>Data inicio</th>
+      <th>Data final</th>
+      <th>Quantidade dias</th>
+      <th>Aluno</th>
+      <th>Professor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @treinos.each do |treino| %>
+      <tr>
+        <td><%= treino.tipo_treino %></td>
+        <td><%= treino.descricao %></td>
+        <td><%= treino.data_inicio %></td>
+        <td><%= treino.data_final %></td>
+        <td><%= treino.quantidade_dias %></td>
+        <% usuario_aluno = Usuario.find(treino.aluno_id) %>
+        <% usuario_professor = Usuario.find(treino.professor_id) %>
+        <td><%= usuario_aluno.nome %></td>
+        <td><%= usuario_professor.nome %></td>
+        <td><%= link_to 'Show', treino %></td>
+        <td><%= link_to 'Edit', edit_treino_path(treino) %></td>
+        <td><%= link_to 'Destroy', treino, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<p>
+  <%= link_to 'New Treino', new_treino_path %> |
+  <%= link_to 'Voltar', usuario_path(current_user.id)%>
+</p>

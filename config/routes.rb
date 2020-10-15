@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :treino_exercicios
+  resources :treinos
   resources :exercicios
   get 'sessions/new'
   get    'sign_in'   => 'sessions#new'

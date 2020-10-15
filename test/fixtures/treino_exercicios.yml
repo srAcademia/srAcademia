@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  serie: 1
+  repeticoes: 1
+  treino: one
+  exercicio: one
+
+two:
+  serie: 1
+  repeticoes: 1
+  treino: two
+  exercicio: two
