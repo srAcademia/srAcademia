@@ -1,35 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Exercicios</h1>
+<h1 class="text-center">Exercícios</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Grupo muscular</th>
-      <th>Descricao</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @exercicios.each do |exercicio| %>
+<div class="container text-center">
+  <table class="table text-center">
+    <thead>
       <tr>
-        <td><%= exercicio.nome %></td>
-        <td><%= exercicio.grupo_muscular %></td>
-        <td><%= exercicio.descricao %></td>
-        <td><%= link_to 'Exibir', exercicio %></td>
-        <td><%= link_to 'Editar', edit_exercicio_path(exercicio), id:"e-#{exercicio.nome}"%></td>
-        <td><%= link_to 'Deletar', exercicio, id:"d-#{exercicio.nome}", method: :delete %></td>
+        <th>Nome</th>
+        <th>Grupo muscular</th>
+        <th>Descrição</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @exercicios.each do |exercicio| %>
+        <tr>
+          <td><%= exercicio.nome %></td>
+          <td><%= exercicio.grupo_muscular %></td>
+          <td><%= exercicio.descricao %></td>
+          <td><%= link_to 'Exibir', exercicio, class: 'btn btn-outline-info' %></td>
+          <td><%= link_to 'Editar', edit_exercicio_path(exercicio), class: 'btn btn-outline-info', id:"e-#{exercicio.nome}"%></td>
+          <td><%= link_to 'Deletar', exercicio, class: 'btn btn-outline-danger', id:"d-#{exercicio.nome}", method: :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
 
-<p>
-  <%= link_to 'Novo Exercicio', new_exercicio_path %> |
-  <%= link_to 'Voltar', usuario_path(current_user.id)%>
-</p>
-
+<div class="text-center">
+  <p>
+    <%= link_to 'Novo Exercicio', new_exercicio_path %> |
+    <%= link_to 'Voltar', usuario_path(current_user.id)%>
+  </p>
+</div>
