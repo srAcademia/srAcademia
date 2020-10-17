@@ -30,8 +30,6 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Password authentication
 gem 'bcrypt', '~> 3.1.15'
 
-gem 'bootstrap', '~> 4.0.0'
-
 gem 'sassc'
 
 gem 'jquery-rails'

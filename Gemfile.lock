@@ -63,8 +63,8 @@ GEM
     bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.4.8)
-      msgpack (~> 1.0)
       autoprefixer-rails (>= 6.0.3)
+      msgpack (~> 1.0)
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
     builder (3.2.4)
@@ -297,7 +297,6 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.15)
   bootsnap (>= 1.4.2)
-  bootstrap (~> 4.0.0)
   byebug
   capybara (>= 2.15)
   cucumber (= 4.1.0)
