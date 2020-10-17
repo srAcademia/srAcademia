@@ -1,0 +1,117 @@
+<%= form_with(model: anamnese, local: true) do |form| %>
+  <% if anamnese.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(anamnese.errors.count, "error") %> prohibited this anamnese from being saved:</h2>
+
+      <ul>
+        <% anamnese.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :atividade_trabalho %>
+    <%= form.text_field :atividade_trabalho %>
+  </div>
+
+  <div class="field">
+    <%= form.label :desc_atividade_trabalho %>
+    <%= form.text_area :desc_atividade_trabalho %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data_exame_clinico %>
+    <%= form.text_field :data_exame_clinico %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descricao_exame_clinico %>
+    <%= form.text_area :descricao_exame_clinico %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cardiopatia %>
+    <%= form.text_field :cardiopatia %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cirurgia %>
+    <%= form.text_field :cirurgia %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descricao_cirurgia %>
+    <%= form.text_area :descricao_cirurgia %>
+  </div>
+
+  <div class="field">
+    <%= form.label :problema_saude %>
+    <%= form.text_area :problema_saude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dor_corporal %>
+    <%= form.text_field :dor_corporal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :desc_dor_corporal %>
+    <%= form.text_area :desc_dor_corporal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lesao %>
+    <%= form.text_field :lesao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :desc_lesao %>
+    <%= form.text_area :desc_lesao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :alergia %>
+    <%= form.text_field :alergia %>
+  </div>
+
+  <div class="field">
+    <%= form.label :desc_alergia %>
+    <%= form.text_area :desc_alergia %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fumante %>
+    <%= form.text_field :fumante %>
+  </div>
+
+  <div class="field">
+    <%= form.label :alcolotra %>
+    <%= form.text_field :alcolotra %>
+  </div>
+
+  <div class="field">
+    <%= form.label :atividade_fisica %>
+    <%= form.text_field :atividade_fisica %>
+  </div>
+
+  <div class="field">
+    <%= form.label :desc_atividade_fisica %>
+    <%= form.text_area :desc_atividade_fisica %>
+  </div>
+
+  <div class="field">
+    <%= form.label :objetivo %>
+    <%= form.text_area :objetivo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :usuario_id %>
+    <%= form.text_field :usuario_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
