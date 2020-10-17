@@ -33,7 +33,7 @@ Then('Eu vejo uma mensagem de treino invalido') do
 end
 
 And('O treino com o tipo {string}, a descricao {string}, a data de inicio {string}, a data final {string}, a quantidade de dias {string} e o aluno {string} existe') do |tipo_treino, descricao, data_inicio, data_final, quantidade, nome_aluno|
-  click_link 'New Treino'
+  click_link 'Novo Treino'
   fill_in 'treino[tipo_treino]', :with => tipo_treino
   fill_in 'treino[descricao]', :with => descricao
   fill_in 'treino[data_inicio]', :with => Date.parse(data_inicio)
