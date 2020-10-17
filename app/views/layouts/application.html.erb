@@ -6,10 +6,20 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <% if logged_in? %>
+      <% if current_user.admin? %>
+        <%= render 'layouts/navbar_admin' %>
+      <% elsif current_user.professor? %>
+        <%= render 'layouts/navbar_professor' %>
+      <% elsif current_user.aluno? %>
+        <%= render 'layouts/navbar_aluno' %>
+      <% end %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
