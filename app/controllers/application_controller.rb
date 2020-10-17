@@ -30,6 +30,16 @@ class ApplicationController < ActionController::Base
       redirect_to root_url
     end
   end
+  def correct_user_anamnese
+    if logged_in?
+      @anamnese = Anamnese.find(params[:id])
+      unless current_user.admin? or current_user.professor? or @anamnese.usuario_id == current_user.id
+        redirect_to  @anamnese
+      end
+    else
+      redirect_to root_url
+    end
+  end
 
   def correct_user?
     if logged_in?

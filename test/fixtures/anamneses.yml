@@ -20,6 +20,7 @@ one:
   atividade_fisica: MyString
   desc_atividade_fisica: MyText
   objetivo: MyText
+  usuario: one
 
 two:
   atividade_trabalho: MyString
@@ -41,3 +42,4 @@ two:
   atividade_fisica: MyString
   desc_atividade_fisica: MyText
   objetivo: MyText
+  usuario: two

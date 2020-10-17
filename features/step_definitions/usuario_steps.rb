@@ -55,6 +55,7 @@ And('O usuario com o nome {string}, o email {string}, o telefone {string}, a dat
 end
 
 When('Eu clico em remover usuario do tipo professor com nome {string}') do |nome|
+  visit '/usuarios'
   click_link "d-#{nome}"
 end
 
@@ -63,6 +64,7 @@ Then('Eu vejo que o usuario {string} nao se encontra mais entre os usuarios list
 end
 
 When('Eu clico em editar usuario com o nome {string}') do |nome|
+  visit '/usuarios'
   click_link "e-#{nome}"
 end
 
