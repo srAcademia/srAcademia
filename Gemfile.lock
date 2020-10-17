@@ -311,7 +311,6 @@ DEPENDENCIES
   rails_12factor
   rspec
   sass-rails (>= 6)
-  sassc
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
