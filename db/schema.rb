@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_17_155012) do
+ActiveRecord::Schema.define(version: 2020_10_17_195902) do
 
   create_table "anamneses", force: :cascade do |t|
     t.string "atividade_trabalho"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 2020_10_17_155012) do
     t.text "objetivo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "usuario_id", null: false
+    t.index ["usuario_id"], name: "index_anamneses_on_usuario_id"
   end
 
   create_table "exercicios", force: :cascade do |t|
@@ -80,6 +82,7 @@ ActiveRecord::Schema.define(version: 2020_10_17_155012) do
     t.integer "tipo"
   end
 
+  add_foreign_key "anamneses", "usuarios"
   add_foreign_key "treino_exercicios", "exercicios"
   add_foreign_key "treino_exercicios", "treinos"
 end
