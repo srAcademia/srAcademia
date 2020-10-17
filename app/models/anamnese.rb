@@ -1,3 +1,3 @@
 class Anamnese < ApplicationRecord
-    has_one :usuario, dependent: :destroy
+    belongs_to :usuario
 end

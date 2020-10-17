@@ -11,5 +11,5 @@ class Usuario < ApplicationRecord
 
   has_many :aluno_treino, :class_name => 'Treino', :foreign_key => 'aluno_id', dependent: :destroy
   has_many :professor_treino, :class_name => 'Treino', :foreign_key => 'professor_id', dependent: :destroy
-  belongs_to :anamnese
+  has_one :anamnese, dependent: :destroy
 end
