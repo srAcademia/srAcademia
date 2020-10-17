@@ -1,8 +1,8 @@
 class AnamnesesController < ApplicationController
   before_action :set_anamnese, only: [:show, :edit, :update, :destroy]
   before_action :authorize
-  before_action :authorize_admin_professor, only: [:show]
-  before_action :correct_user_anamnese, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authorize_admin_professor, only: [:create, :new, :edit, :update, :destroy,:index]
+  before_action :correct_user_anamnese, only: [:show]
 
   # GET /anamneses
   # GET /anamneses.json
@@ -18,16 +18,19 @@ class AnamnesesController < ApplicationController
   # GET /anamneses/new
   def new
     @anamnese = Anamnese.new
+    @usuarios = Usuario.all
   end
 
   # GET /anamneses/1/edit
   def edit
+    @usuarios = Usuario.all
   end
 
   # POST /anamneses
   # POST /anamneses.json
   def create
     @anamnese = Anamnese.new(anamnese_params)
+    @usuarios = Usuario.all
 
     respond_to do |format|
       if @anamnese.save
@@ -72,6 +75,6 @@ class AnamnesesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def anamnese_params
-      params.require(:anamnese).permit(:atividade_trabalho, :desc_atividade_trabalho, :data_exame_clinico, :descricao_exame_clinico, :cardiopatia, :cirurgia, :descricao_cirurgia, :problema_saude, :dor_corporal, :desc_dor_corporal, :lesao, :desc_lesao, :alergia, :desc_alergia, :fumante, :alcolotra, :atividade_fisica, :desc_atividade_fisica, :objetivo)
+      params.require(:anamnese).permit(:atividade_trabalho, :desc_atividade_trabalho, :data_exame_clinico, :descricao_exame_clinico, :cardiopatia, :cirurgia, :descricao_cirurgia, :problema_saude, :dor_corporal, :desc_dor_corporal, :lesao, :desc_lesao, :alergia, :desc_alergia, :fumante, :alcolotra, :atividade_fisica, :desc_atividade_fisica, :objetivo, :usuario_id)
     end
 end

@@ -176,6 +176,11 @@
     <%= form.text_area :objetivo %>
   </div>
   <br/>
+   <div class="field">
+    <%= form.label :usuario_id %>
+    <%= form.select :usuario_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }), {}, {} %>
+  </div>
+  <br/>
   <div class="actions">
     <%= form.submit %>
   </div>
