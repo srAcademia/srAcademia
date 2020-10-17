@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :anamneses
   resources :treino_exercicios
   resources :treinos
   resources :exercicios
