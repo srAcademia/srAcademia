@@ -8,9 +8,10 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheets" href="app/assets/images">
   </head>
 
-  <body>
+  <body class="text-center">
     <% if logged_in? %>
       <% if current_user.admin? %>
         <%= render 'layouts/navbar_admin' %>

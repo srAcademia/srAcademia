@@ -1,44 +1,46 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Treinos</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Tipo treino</th>
-      <th>Descricao</th>
-      <th>Data inicio</th>
-      <th>Data final</th>
-      <th>Quantidade dias</th>
-      <th>Aluno</th>
-      <th>Professor</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @treinos.each do |treino| %>
+<h1 class="text-center">Treinos</h1>
+<div class="container text-center">
+  <table class="table-text-center">
+    <thead>
       <tr>
-        <td><%= treino.tipo_treino %></td>
-        <td><%= treino.descricao %></td>
-        <td><%= treino.data_inicio %></td>
-        <td><%= treino.data_final %></td>
-        <td><%= treino.quantidade_dias %></td>
-        <% usuario_aluno = Usuario.find(treino.aluno_id) %>
-        <% usuario_professor = Usuario.find(treino.professor_id) %>
-        <td><%= usuario_aluno.nome %></td>
-        <td><%= usuario_professor.nome %></td>
-        <td><%= link_to 'Show', treino %></td>
-        <td><%= link_to 'Edit', edit_treino_path(treino), id:"e-#{usuario_aluno.nome}" %></td>
-        <td><%= link_to 'Destroy', treino, method: :delete, data: { confirm: 'Are you sure?' }, id:"d-#{usuario_aluno.nome}" %></td>
+        <th>Tipo treino</th>
+        <th>Descricao</th>
+        <th>Data inicio</th>
+        <th>Data final</th>
+        <th>Quantidade dias</th>
+        <th>Aluno</th>
+        <th>Professor</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @treinos.each do |treino| %>
+        <tr>
+          <td><%= treino.tipo_treino %></td>
+          <td><%= treino.descricao %></td>
+          <td><%= treino.data_inicio %></td>
+          <td><%= treino.data_final %></td>
+          <td><%= treino.quantidade_dias %></td>
+          <% usuario_aluno = Usuario.find(treino.aluno_id) %>
+          <% usuario_professor = Usuario.find(treino.professor_id) %>
+          <td><%= usuario_aluno.nome %></td>
+          <td><%= usuario_professor.nome %></td>
+          <td><%= link_to 'Exibir', treino,  class: 'btn btn-outline-info' %></td>
+          <td><%= link_to 'Editar', edit_treino_path(treino), id:"e-#{usuario_aluno.nome}",class: 'btn btn-outline-info' %></td>
+          <td><%= link_to 'Excluir', treino,  class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Tem certeza?' }, id:"d-#{usuario_aluno.nome}" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+</div>
 
-<p>
-  <%= link_to 'New Treino', new_treino_path %> |
-  <%= link_to 'Voltar', usuario_path(current_user.id)%>
-</p>
+<div class="text-center">
+  <p>
+    <%= link_to 'Novo Treino', new_treino_path %> |
+    <%= link_to 'Voltar', usuario_path(current_user.id)%>
+  </p>
+</div>
