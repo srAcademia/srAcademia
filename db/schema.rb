@@ -10,7 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_13_151711) do
+ActiveRecord::Schema.define(version: 2020_10_17_155012) do
+
+  create_table "anamneses", force: :cascade do |t|
+    t.string "atividade_trabalho"
+    t.text "desc_atividade_trabalho"
+    t.string "data_exame_clinico"
+    t.text "descricao_exame_clinico"
+    t.string "cardiopatia"
+    t.string "cirurgia"
+    t.text "descricao_cirurgia"
+    t.text "problema_saude"
+    t.string "dor_corporal"
+    t.text "desc_dor_corporal"
+    t.string "lesao"
+    t.text "desc_lesao"
+    t.string "alergia"
+    t.text "desc_alergia"
+    t.string "fumante"
+    t.string "alcolotra"
+    t.string "atividade_fisica"
+    t.text "desc_atividade_fisica"
+    t.text "objetivo"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "exercicios", force: :cascade do |t|
     t.string "nome"

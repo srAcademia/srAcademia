@@ -1,0 +1,2 @@
+json.extract! anamnese, :id, :atividade_trabalho, :desc_atividade_trabalho, :data_exame_clinico, :descricao_exame_clinico, :cardiopatia, :cirurgia, :descricao_cirurgia, :problema_saude, :dor_corporal, :desc_dor_corporal, :lesao, :desc_lesao, :alergia, :desc_alergia, :fumante, :alcolotra, :atividade_fisica, :desc_atividade_fisica, :objetivo, :created_at, :updated_at
+json.url anamnese_url(anamnese, format: :json)

@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Anamneses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Atividade trabalho</th>
+      <th>Desc atividade trabalho</th>
+      <th>Data exame clinico</th>
+      <th>Descricao exame clinico</th>
+      <th>Cardiopatia</th>
+      <th>Cirurgia</th>
+      <th>Descricao cirurgia</th>
+      <th>Problema saude</th>
+      <th>Dor corporal</th>
+      <th>Desc dor corporal</th>
+      <th>Lesao</th>
+      <th>Desc lesao</th>
+      <th>Alergia</th>
+      <th>Desc alergia</th>
+      <th>Fumante</th>
+      <th>Alcolotra</th>
+      <th>Atividade fisica</th>
+      <th>Desc atividade fisica</th>
+      <th>Objetivo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @anamneses.each do |anamnese| %>
+      <tr>
+        <td><%= anamnese.atividade_trabalho %></td>
+        <td><%= anamnese.desc_atividade_trabalho %></td>
+        <td><%= anamnese.data_exame_clinico %></td>
+        <td><%= anamnese.descricao_exame_clinico %></td>
+        <td><%= anamnese.cardiopatia %></td>
+        <td><%= anamnese.cirurgia %></td>
+        <td><%= anamnese.descricao_cirurgia %></td>
+        <td><%= anamnese.problema_saude %></td>
+        <td><%= anamnese.dor_corporal %></td>
+        <td><%= anamnese.desc_dor_corporal %></td>
+        <td><%= anamnese.lesao %></td>
+        <td><%= anamnese.desc_lesao %></td>
+        <td><%= anamnese.alergia %></td>
+        <td><%= anamnese.desc_alergia %></td>
+        <td><%= anamnese.fumante %></td>
+        <td><%= anamnese.alcolotra %></td>
+        <td><%= anamnese.atividade_fisica %></td>
+        <td><%= anamnese.desc_atividade_fisica %></td>
+        <td><%= anamnese.objetivo %></td>
+        <td><%= link_to 'Show', anamnese %></td>
+        <td><%= link_to 'Edit', edit_anamnese_path(anamnese) %></td>
+        <td><%= link_to 'Destroy', anamnese, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Anamnese', new_anamnese_path %>
