@@ -7,7 +7,7 @@ And('Eu estou na pagina de treinos') do
 end
 
 When('Eu clico em novo treino') do
-  click_link 'New Treino'
+  click_link 'Novo Treino'
 end
 
 And('Eu preencho o tipo do treino com {string}, a descricao {string}, a data de inicio {string}, a data final {string}, a quantidade de dias {string} e o aluno {string}') do |tipo_treino, descricao, data_inicio, data_final, quantidade, nome_aluno|
