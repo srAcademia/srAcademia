@@ -1,5 +1,8 @@
 class AnamnesesController < ApplicationController
   before_action :set_anamnese, only: [:show, :edit, :update, :destroy]
+  before_action :authorize
+  before_action :authorize_admin_professor, only: [:show]
+  before_action :correct_user_anamnese, only: [:new, :create, :edit, :update, :destroy]
 
   # GET /anamneses
   # GET /anamneses.json
