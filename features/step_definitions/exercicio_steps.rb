@@ -61,7 +61,7 @@ end
 
 And ('Eu estou na pagina para editar o exercicio de titulo {string}') do |titulo|
   click_link "e-#{titulo}"
-  expect(page).to have_content('Editando Exercicio')
+  expect(page).to have_content('Editando Exercício')
 end
 
 When ('Eu renomeio a descricao com {string} e clico no botao de update exercicio') do |descricao|
