@@ -1,32 +1,41 @@
 <%= form_with(model: exercicio, local: true) do |form| %>
-  <% if exercicio.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(exercicio.errors.count, "error") %> prohibited this exercicio from being saved:</h2>
+<% if exercicio.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(exercicio.errors.count, "error") %> prohibited this exercicio from being saved:</h2>
 
-      <ul>
-        <% exercicio.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+  <ul>
+    <% exercicio.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="container">
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :nome, :class => "form-label center" %>
+      <%= form.text_field :nome, :class => "form-control", placeholder: 'Nome' %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :nome %>
-    <%= form.text_field :nome %>
   </div>
 
-  <div class="field">
-    <%= form.label :grupo_muscular %>
-    <%= form.text_field :grupo_muscular %>
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :grupo_muscular, :class => "form-label center"%>
+      <%= form.text_field :grupo_muscular, :class => "form-control", placeholder: 'Grupo Muscular' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :descricao %>
-    <%= form.text_field :descricao %>
+  <div class="form-group">
+    <div class="field">
+      <%= form.label :descricao, :class => "form-label center" %>
+      <%= form.text_field :descricao, :class => "form-control", placeholder: 'Descrição' %>
+    </div>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+</div>
+
 <% end %>

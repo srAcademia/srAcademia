@@ -2,7 +2,7 @@
 
 <h1 class="text-center">Exercícios</h1>
 
-<div class="container text-center">
+<div class="container">
   <table class="table text-center">
     <thead>
       <tr>
@@ -21,7 +21,7 @@
           <td><%= exercicio.descricao %></td>
           <td><%= link_to 'Exibir', exercicio, class: 'btn btn-outline-info' %></td>
           <td><%= link_to 'Editar', edit_exercicio_path(exercicio), class: 'btn btn-outline-info', id:"e-#{exercicio.nome}"%></td>
-          <td><%= link_to 'Deletar', exercicio, class: 'btn btn-outline-danger', id:"d-#{exercicio.nome}", method: :delete %></td>
+          <td><%= link_to 'Deletar', exercicio, id:"d-#{exercicio.nome}", method: :delete, class: 'btn btn-outline-danger' %></td>
         </tr>
       <% end %>
     </tbody>
@@ -29,9 +29,9 @@
 </div>
 <br>
 
-<div class="text-center">
+<div class="container">
   <p>
-    <%= link_to 'Novo Exercicio', new_exercicio_path %> |
-    <%= link_to 'Voltar', usuario_path(current_user.id)%>
+    <%= link_to 'Novo Exercicio', new_exercicio_path, :class => "btn btn-info btn-sm" %> |
+    <%= link_to 'Voltar', usuario_path(current_user.id), :class => "btn btn-info btn-sm"%>
   </p>
 </div>
