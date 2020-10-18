@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   resources :treinos
   resources :exercicios
   get 'sessions/new'
-  get    'sign_in'   => 'sessions#new'
-  post   'sign_in'   => 'sessions#create'
-  delete 'sign_out'  => 'sessions#destroy'
+  get 'sign_in'   => 'sessions#new'
+  post 'sign_in'   => 'sessions#create'
+  get 'sign_out'  => 'sessions#destroy'
   root 'sessions#new'
 
   resources :usuarios
