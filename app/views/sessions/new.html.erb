@@ -1,8 +1,7 @@
 <div class="container">
   <div class="container">
     <div class="container">
-      <form class="form-signin">
-        <%= form_for :session, url: sign_in_path do |f| %>
+      <%= form_for :session, url: sign_in_path do |f| %>
         <img class="mb-4" src="../../assets/images/dumbbell-solid.svg" alt="" width="72" height="72" color="#563d7c">
           <h1 class="h3 mb-3 font-weight-normal">Login</h1>
 
@@ -31,8 +30,7 @@
               <%= f.submit "Entrar", class: 'btn btn-lg btn-primary btn-block' %>
             </div>
           </div>
-        <% end %>
-      </form>
+      <% end %>
     </div>
   </div>
 </div>
