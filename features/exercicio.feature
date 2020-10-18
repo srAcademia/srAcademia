@@ -17,7 +17,7 @@ Feature: Exercicio
     And O exercicio de titulo 'exercicio 1', grupo muscular 'abdomen' e descricao 'exemplo' existe
     And Eu estou na pagina de exercicios
     When Eu clico em excluir exercicio de titulo 'exercicio 1'
-    Then Eu vejo uma mensagem 'Exercicio deletado com sucesso.'
+    Then Eu vejo uma mensagem 'Exercício deletado com sucesso.'
 
    Scenario: Criando um novo exercicio com campo nome vazio
     Given Um usuario administrador existe
@@ -34,7 +34,7 @@ Feature: Exercicio
     And O exercicio de titulo 'exercicio 1', grupo muscular 'abdomen' e descricao 'exemplo' existe
     And Eu estou na pagina para editar o exercicio de titulo 'exercicio 1'
     When Eu renomeio a descricao com 'descricao exemplo' e clico no botao de update exercicio
-    Then Eu vejo uma mensagem de 'Exercicio editado com sucesso.'
+    Then Eu vejo uma mensagem de 'Exercício editado com sucesso.'
 
   Scenario: Criando um exercicio invalido
     Given Um usuario administrador existe

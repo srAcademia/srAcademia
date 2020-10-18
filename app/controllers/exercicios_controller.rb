@@ -30,7 +30,7 @@ class ExerciciosController < ApplicationController
 
     respond_to do |format|
       if @exercicio.save
-        format.html { redirect_to @exercicio, notice: 'Exercicio criado com sucesso.' }
+        format.html { redirect_to @exercicio, notice: 'Exercício criado com sucesso.' }
         format.json { render :show, status: :created, location: @exercicio }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class ExerciciosController < ApplicationController
   def update
     respond_to do |format|
       if @exercicio.update(exercicio_params)
-        format.html { redirect_to @exercicio, notice: 'Exercicio editado com sucesso.' }
+        format.html { redirect_to @exercicio, notice: 'Exercício editado com sucesso.' }
         format.json { render :show, status: :ok, location: @exercicio }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class ExerciciosController < ApplicationController
   def destroy
     @exercicio.destroy
     respond_to do |format|
-      format.html { redirect_to exercicios_url, notice: 'Exercicio deletado com sucesso.' }
+      format.html { redirect_to exercicios_url, notice: 'Exercício deletado com sucesso.' }
       format.json { head :no_content }
     end
   end
