@@ -48,7 +48,7 @@ class UsuariosController < ApplicationController
     @usuario = Usuario.new(usuario_params)
 
     if @usuario.save
-      redirect_to usuarios_path
+      redirect_to new_anamnese_path
     else
       render :new
     end
