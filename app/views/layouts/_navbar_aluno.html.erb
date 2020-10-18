@@ -1,12 +1,14 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #00a8cc;">
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="/">Início <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <%= link_to 'Treinos', treinos_path, class: "nav-link" %>
+      <strong> <%= link_to 'Treinos', treinos_path, class: "nav-link" %> </strong>
       </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Conta
@@ -23,7 +25,9 @@
             <%= link_to 'Apagar conta', usuario_path(current_user), method: :delete, data: { confirm: 'Tem certeza?' }, class: "nav-link" %>
           </a>
         </div>
-      </li>
+      </li><strong>
     </ul>
+    <div class="col-1">
+    </div>
   </div>
 </nav>
