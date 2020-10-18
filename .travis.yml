@@ -14,6 +14,7 @@ script:
   - ruby -Itest test/models/exercicio_test.rb
   - ruby -Itest test/models/usuario_test.rb
   - ruby -Itest test/models/treino_test.rb
+  - ruby -Itest test/models/anamnese_test.rb
   - bundle exec rails webpacker:compile
   - bundle exec cucumber
 services:
