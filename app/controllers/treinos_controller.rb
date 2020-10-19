@@ -1,5 +1,5 @@
 class TreinosController < ApplicationController
-  before_action :set_treino, only: [:show, :edit, :update, :destroy]
+  before_action :set_treino, only: [:show, :edit, :update, :destroy, :concluir_treino_do_dia]
   before_action :authorize
   before_action :authorize_admin_professor, only: [:new, :create, :edit, :update, :destroy]
   before_action :correct_user_treino, only: [:show]
@@ -23,6 +23,15 @@ class TreinosController < ApplicationController
   def new
     @treino = Treino.new
     @usuarios = Usuario.all
+  end
+
+  def concluir_treino_do_dia
+    if @treino.quantidade_dias > 0
+      @treino.update_attributes(quantidade_dias: @treino.quantidade_dias-1)
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
   end
 
   # GET /treinos/1/edit
