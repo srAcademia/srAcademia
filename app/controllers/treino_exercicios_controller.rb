@@ -37,7 +37,7 @@ class TreinoExerciciosController < ApplicationController
   def destroy
     @treino_exercicio.destroy
     respond_to do |format|
-      format.html { redirect_to @treino_exercicio.treino, notice: 'Exercicio was successfully destroyed.' }
+      format.html { redirect_to @treino_exercicio.treino, notice: 'Exercicio excluído com sucesso.' }
       format.json { head :no_content }
     end
   end
