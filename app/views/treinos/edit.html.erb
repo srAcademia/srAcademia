@@ -1,6 +1,7 @@
-<h1>Editing Treino</h1>
+<h1>Editando Treino</h1>
 
 <%= render 'form', treino: @treino %>
 
-<%= link_to 'Show', @treino %> |
-<%= link_to 'Back', treinos_path %>
+<br>
+<%= link_to 'Exibir', @treino, :class => "btn btn-info" %> |
+<%= link_to 'Voltar', treinos_path, :class => "btn btn-info" %>

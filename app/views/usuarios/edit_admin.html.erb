@@ -1,4 +1,4 @@
-<h1>Editando Usuário</h1>
+<h1>Editando Usuário</h1> <br>
 
 <%= form_with(model: @usuario, local: true) do |form| %>
   <% if @usuario.errors.any? %>
@@ -14,43 +14,43 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :nome %>
+    <strong> <%= form.label :nome %> </strong>
     <%= form.text_field :nome %>
-  </div>
+  </div> <br>
 
   <div class="field">
-    <%= form.label :email %>
+    <strong> <%= form.label :email %> </strong>
     <%= form.text_field :email %>
-  </div>
+  </div> <br>
 
   <div class="field">
-    <%= form.label :telefone %>
+    <strong> <%= form.label :telefone %> </strong>
     <%= form.text_field :telefone %>
-  </div>
+  </div> <br>
 
   <div class="field">
-    <%= form.label :data_nascimento %>
+    <strong> <%= form.label :data_nascimento %> </strong>
     <%= form.date_field :data_nascimento %>
-  </div>
+  </div> <br>
 
   <div class="field">
-    <%= form.label :senha %>
+    <strong> <%= form.label :senha %> </strong>
     <%= form.password_field :password %>
-  </div>
+  </div> <br>
 
   <div class="field">
-    <%= form.label :confirme_a_senha %>
+    <strong> <%= form.label :confirme_a_senha %> </strong>
     <%= form.password_field :password_confirmation %>
-  </div>
+  </div> <br>
 
   <div class="field">
-    <%= form.label :tipo %>
+    <strong> <%= form.label :tipo %> </strong>
     <%= form.select :tipo, options_for_select([:aluno, :professor, :admin])%>
-  </div>
+  </div> <br>
 
   <div class="actions">
-    <%= form.submit %>
-  </div>
+    <%= form.submit nil, :class => "btn btn-info" %>
+  </div> <br>
 <% end %>
 
 <%= link_to 'Voltar', @usuario %>

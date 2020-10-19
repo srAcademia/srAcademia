@@ -1,52 +1,53 @@
 <%= form_with(model: usuario, local: true) do |form| %>
-  <% if usuario.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(usuario.errors.count, "error") %> prohibited this usuario from being saved:</h2>
+<% if usuario.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(usuario.errors.count, "error") %> prohibited this usuario from being saved:</h2>
 
-      <ul>
-        <% usuario.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% usuario.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= form.label :nome %>
-    <%= form.text_field :nome %>
-  </div>
+<div class="field">
+  <strong> <%= form.label :nome %> </strong>
+  <%= form.text_field :nome %>
+</div><br>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
+<div class="field">
+  <strong> <%= form.label :email %> </strong>
+  <%= form.text_field :email %>
+</div><br>
 
-  <div class="field">
-    <%= form.label :telefone %>
-    <%= form.text_field :telefone %>
-  </div>
+<div class="field">
+  <strong> <%= form.label :telefone %> </strong>
+  <%= form.text_field :telefone %>
+</div><br>
 
-  <div class="field">
-    <%= form.label :data_nascimento %>
-    <%= form.date_field :data_nascimento %>
-  </div>
+<div class="field">
+  <strong> <%= form.label :data_nascimento %> </strong>
+  <%= form.date_field :data_nascimento %>
+</div><br>
 
-  <div class="field">
-    <%= form.label :senha %>
-    <%= form.password_field :password %>
-  </div>
 
-  <div class="field">
-    <%= form.label :confirme_a_senha %>
-    <%= form.password_field :password_confirmation %>
-  </div>
+<div class="field">
+  <strong> <%= form.label :senha %> </strong>
+  <%= form.password_field :password %>
+</div><br>
 
-  <div class="field">
-    <%= form.label :tipo %>
-    <%= form.select :tipo, options_for_select([:aluno, :professor, :admin])%>
-  </div>
+<div class="field">
+  <strong> <%= form.label :confirme_a_senha %> </strong>
+  <%= form.password_field :password_confirmation %>
+</div><br>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<div class="field">
+  <strong> <%= form.label :tipo %> </strong>
+  <%= form.select :tipo, options_for_select([:aluno, :professor, :admin]), :class => "btn btn-primary"%>
+</div><br>
+
+<div class="actions">
+  <%= form.submit nil, :class => "btn btn-info"%>
+</div>
 <% end %>

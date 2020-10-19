@@ -1,37 +1,60 @@
-<%= form_with(model: treino_exercicio, local: true) do |form| %>
-  <% if treino_exercicio.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(treino_exercicio.errors.count, "error") %> prohibited this treino_exercicio from being saved:</h2>
-
-      <ul>
-        <% treino_exercicio.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<div class="container">
+  <div class="row">
+    <div class="col-3">
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :serie %>
-    <%= form.number_field :serie %>
-  </div>
+    <div class="col-6">
+      <%= form_with(model: treino_exercicio, local: true) do |form| %>
+      <% if treino_exercicio.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(treino_exercicio.errors.count, "error") %> prohibited this treino_exercicio from being saved:</h2>
 
-  <div class="field">
-    <%= form.label :repeticoes %>
-    <%= form.number_field :repeticoes %>
-  </div>
+        <ul>
+          <% treino_exercicio.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
 
-  <div class="field">
-    <%= form.label :treino_id %>
-    <%= form.select :treino_id, options_for_select(@treinos.collect { | treino | [Usuario.find(treino.aluno_id).nome, treino.id] }), {}, {} %>
-  </div>
+      <div class="container">
+        <div class="form-group">
+          <div class="field">
+            <%= form.label :série %>
+            <%= form.number_field :serie %>
+          </div>
+        </div>
 
-  <div class="field">
-    <%= form.label :exercicio_id %>
-    <%= form.select :exercicio_id, options_for_select(@exercicios.collect { | exercicio | [exercicio.nome, exercicio.id] }), {}, {} %>
-  </div>
+        <div class="form-group">
+          <div class="field">
+            <%= form.label :repetições %>
+            <%= form.number_field :repeticoes %>
+          </div>
+        </div>
 
-  <div class="actions">
-    <%= form.submit %>
+        <div class="form-group">
+          <div class="field">
+            <%= form.label :treino_id %>
+            <%= form.select :treino_id, options_for_select(@treinos.collect { | treino | [Usuario.find(treino.aluno_id).nome, treino.id] }), {}, {} %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="field">
+            <%= form.label :exercicio_id %>
+            <%= form.select :exercicio_id, options_for_select(@exercicios.collect { | exercicio | [exercicio.nome, exercicio.id] }), {}, {} %>
+          </div>
+        </div>
+
+        <div class="actions">
+          <%= form.submit nil, :class => "btn btn-info btn-sm" %> <br>
+        </div>
+      </div>
+
+      <% end %>
+    </div>
+
+    <div class="col-3">
+    </div>
   </div>
-<% end %>
+</div>

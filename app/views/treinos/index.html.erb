@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <h1 class="text-center">Treinos</h1>
-<div class="container text-center">
-  <table class="table-text-center">
+<div class="container">
+  <table class="table houver">
     <thead>
       <tr>
-        <th>Tipo treino</th>
-        <th>Descricao</th>
-        <th>Data inicio</th>
-        <th>Data final</th>
-        <th>Quantidade dias</th>
-        <th>Aluno</th>
-        <th>Professor</th>
+        <th scope="col" >Tipo de treino</th>
+        <th scope="col" >Descrição</th>
+        <th scope="col" >Data de início</th>
+        <th scope="col" >Data final</th>
+        <th scope="col" >Quantidade de dias</th>
+        <th scope="col" >Aluno</th>
+        <th scope="col" >Professor</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -38,9 +38,9 @@
   <br>
 </div>
 
-<div class="text-center">
+<div class="container">
   <p>
-    <%= link_to 'Novo Treino', new_treino_path %> |
-    <%= link_to 'Voltar', usuario_path(current_user.id)%>
+    <%= link_to 'Novo Treino', new_treino_path, :class => "btn btn-info" %> |
+    <%= link_to 'Voltar', usuario_path(current_user.id), :class => "btn btn-info"%>
   </p>
 </div>
