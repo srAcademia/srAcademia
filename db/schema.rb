@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_17_195902) do
+ActiveRecord::Schema.define(version: 2020_10_19_163614) do
 
   create_table "anamneses", force: :cascade do |t|
     t.string "atividade_trabalho"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 2020_10_17_195902) do
     t.integer "professor_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "ultima_data"
     t.index ["aluno_id"], name: "index_treinos_on_aluno_id"
     t.index ["professor_id"], name: "index_treinos_on_professor_id"
   end
