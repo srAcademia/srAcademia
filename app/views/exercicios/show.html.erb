@@ -40,5 +40,7 @@
 </div>
 <br><br>
 
-<%= link_to 'Editar', edit_exercicio_path(@exercicio), :class => "btn btn-info btn-sm" %> |
+<% if current_user.admin? or current_user.professor? %>
+  <%= link_to 'Editar', edit_exercicio_path(@exercicio), :class => "btn btn-info btn-sm" %> |
+<% end %>
 <%= link_to 'Voltar', exercicios_path, :class => "btn btn-info btn-sm" %>
