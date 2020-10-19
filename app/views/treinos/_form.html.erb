@@ -1,47 +1,72 @@
-<%= form_with(model: treino, local: true) do |form| %>
-  <% if treino.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(treino.errors.count, "error") %> prohibited this treino from being saved:</h2>
-
-      <ul>
-        <% treino.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<div class="container">
+  <div class="row">
+    <div class="col-3">
     </div>
-  <% end %>
+    <div class="col-6">
+      <%= form_with(model: treino, local: true) do |form| %>
+      <% if treino.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(treino.errors.count, "error") %> prohibited this treino from being saved:</h2>
 
-  <div class="field">
-    <%= form.label :tipo_treino %>
-    <%= form.text_field :tipo_treino %>
-  </div>
+        <ul>
+          <% treino.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
 
-  <div class="field">
-    <%= form.label :descricao %>
-    <%= form.text_field :descricao %>
-  </div>
+      <div class="container">
+        <div class="form-group">
+          <div class="field">
+            <strong> <%= form.label :tipo_treino %> </strong>
+            <%= form.text_field :tipo_treino %>
+          </div>
+        </div>
 
-  <div class="field">
-    <%= form.label :data_inicio %>
-    <%= form.date_field :data_inicio %>
-  </div>
+        <div class="form-group">
+          <div class="field">
+            <strong> <%= form.label :descricao %> </strong>
+            <%= form.text_field :descricao %>
+          </div>
+        </div>
 
-  <div class="field">
-    <%= form.label :data_final %>
-    <%= form.date_field :data_final %>
-  </div>
+        <div class="form-group">
+          <div class="field">
+            <strong> <%= form.label :data_inicio %> </strong>
+            <%= form.date_field :data_inicio %>
+          </div>
+        </div>
 
-  <div class="field">
-    <%= form.label :quantidade_dias %>
-    <%= form.number_field :quantidade_dias %>
-  </div>
+        <div class="form-group">
+          <div class="field">
+            <strong> <%= form.label :data_final %> </strong>
+            <%= form.date_field :data_final %>
+          </div>
+        </div>
 
-  <div class="field">
-    <%= form.label :aluno_id %>
-    <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }), {}, {} %>
-  </div>
+        <div class="form-group">
+          <div class="field">
+            <strong> <%= form.label :quantidade_dias %> </strong>
+            <%= form.number_field :quantidade_dias %>
+          </div>
+        </div>
 
-  <div class="actions">
-    <%= form.submit %>
+        <div class="form-group">
+          <div class="field">
+            <strong> <%= form.label :aluno_id %> </strong>
+            <%= form.select :aluno_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }), {}, {} %>
+          </div>
+        </div>
+
+        <div class="actions">
+          <%= form.submit nil, :class  => "btn btn-info" %> <br>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+    <div class="col-3">
+    </div>
   </div>
-<% end %>
+</div>

@@ -6,22 +6,22 @@
 </p>
 
 <p>
-  <strong>Descricao:</strong>
+  <strong>Descrição:</strong>
   <%= @treino.descricao %>
 </p>
 
 <p>
-  <strong>Data inicio:</strong>
+  <strong>Data de início:</strong>
   <%= @treino.data_inicio %>
 </p>
 
 <p>
-  <strong>Data final:</strong>
+  <strong>Data de final:</strong>
   <%= @treino.data_final %>
 </p>
 
 <p>
-  <strong>Quantidade dias:</strong>
+  <strong>Quantidade de dias:</strong>
   <%= @treino.quantidade_dias %>
 </p>
 
@@ -37,12 +37,12 @@
 
 <br>
 
-<table>
+<table class="table houver">
   <thead>
   <tr>
-    <th>Exercicios</th>
-    <th>Serie</th>
-    <th>Repeticoes</th>
+    <th scope="col">Exercícios</th>
+    <th scope="col">Série</th>
+    <th scope="col">Repetições</th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -54,14 +54,13 @@
       <td><%= treino_exercicio.exercicio.nome %></td>
       <td><%= treino_exercicio.serie %></td>
       <td><%= treino_exercicio.repeticoes %></td>
-      <td><%= link_to 'Destroy', treino_exercicio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Excluir', treino_exercicio, method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn btn-outline-danger' %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
-
 <br>
 
-<%= link_to 'Adicionar exercicio ao treino', new_treino_exercicio_path %> |
-<%= link_to 'Edit', edit_treino_path(@treino) %> |
-<%= link_to 'Back', treinos_path %>
+<%= link_to 'Adicionar exercício ao treino', new_treino_exercicio_path, :class => "btn btn-info btn-sm" %> <br><br>
+<%= link_to 'Editar', edit_treino_path(@treino), :class => "btn btn-info btn-sm" %> |
+<%= link_to 'Voltar', treinos_path, :class => "btn btn-info btn-sm" %>
