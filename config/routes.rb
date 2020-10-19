@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
   resources :anamneses
   resources :treino_exercicios
-  resources :treinos
+  resources :treinos do
+    member do
+      get :concluir_treino_do_dia
+    end
+  end
   resources :exercicios
   get 'sessions/new'
   get    'sign_in'   => 'sessions#new'
   post   'sign_in'   => 'sessions#create'
-  get 'sign_out'  => 'sessions#destroy'
+  delete 'sign_out'  => 'sessions#destroy'
   root 'sessions#new'
 
   resources :usuarios

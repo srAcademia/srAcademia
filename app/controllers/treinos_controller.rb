@@ -1,5 +1,5 @@
 class TreinosController < ApplicationController
-  before_action :set_treino, only: [:show, :edit, :update, :destroy]
+  before_action :set_treino, only: [:show, :edit, :update, :destroy, :concluir_treino_do_dia]
   before_action :authorize
   before_action :authorize_admin_professor, only: [:new, :create, :edit, :update, :destroy]
   before_action :correct_user_treino, only: [:show]
@@ -25,6 +25,16 @@ class TreinosController < ApplicationController
     @usuarios = Usuario.all
   end
 
+  def concluir_treino_do_dia
+    if @treino.ultima_data != Time.zone.today and @treino.quantidade_dias > 0
+      @treino.update_attributes(quantidade_dias: @treino.quantidade_dias-1)
+      @treino.update_attributes(ultima_data: Time.zone.today)
+      redirect_to root_path
+    else
+      redirect_to root_path, notice: 'Você já conclui o treino de hoje.'
+    end
+  end
+
   # GET /treinos/1/edit
   def edit
     @usuarios = Usuario.all
@@ -36,6 +46,7 @@ class TreinosController < ApplicationController
     @treino = Treino.new(treino_params)
     @usuarios = Usuario.all
     @treino.professor_id = current_user.id
+    @treino.ultima_data = Time.zone.yesterday
 
     respond_to do |format|
       if @treino.save

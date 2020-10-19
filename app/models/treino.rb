@@ -3,7 +3,7 @@ class Treino < ApplicationRecord
   validates :descricao, presence: true
   validates :data_inicio, presence: true
   validates :data_final, presence: true
-  validates :quantidade_dias, presence: true, numericality: { only_integer: true, greater_than: 0 }
+  validates :quantidade_dias, presence: true, numericality: { only_integer: true, greater_than: -1 }
   validates :aluno_id, presence: true
   belongs_to :aluno, :class_name => 'Usuario'
   belongs_to :professor, :class_name => 'Usuario'

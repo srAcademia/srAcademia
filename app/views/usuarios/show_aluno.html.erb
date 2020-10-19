@@ -11,6 +11,55 @@
   <strong>Email:</strong>
   <%= @usuario.email %>
 </p>
+
+<h2>Treino atual</h2>
+<% @treinos.each do |treino| %>
+  <p>
+    <strong>Tipo do treino:</strong>
+    <%= treino.tipo_treino %>
+  </p>
+
+  <p>
+    <strong>Descrição:</strong>
+    <%= treino.descricao %>
+  </p>
+
+  <p>
+    <strong>Quantidade de dias restantes:</strong>
+    <%= treino.quantidade_dias %>
+  </p>
+
+  <p>
+    <strong>Professor:</strong>
+    <%= Usuario.find(treino.professor_id).nome %>
+  </p>
+
+  <%= link_to 'Concluir o treino do dia', concluir_treino_do_dia_treino_path(treino), class: 'btn btn-outline-danger' %>
+
+  <table class="table houver">
+    <thead>
+    <tr>
+      <th scope="col">Exercícios</th>
+      <th scope="col">Série</th>
+      <th scope="col">Repetições</th>
+      <th colspan="3"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @treino_exercicio = TreinoExercicio.where(treino_id: treino.id) %>
+    <% @treino_exercicio.each do |treino_exercicio| %>
+      <tr>
+        <td><%= treino_exercicio.exercicio.nome %></td>
+        <td><%= treino_exercicio.serie %></td>
+        <td><%= treino_exercicio.repeticoes %></td>
+        <td><%= link_to 'Detalhes', exercicio_path(treino_exercicio.exercicio_id),  class: 'btn btn-outline-info' %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>
+
 <hr>
 <p>
   <%= link_to "Sair", sign_out_path, method: "delete" %> |
