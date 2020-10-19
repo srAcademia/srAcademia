@@ -26,9 +26,9 @@ class TreinosController < ApplicationController
   end
 
   def concluir_treino_do_dia
-    if @treino.ultima_data != Date.today and @treino.quantidade_dias > 0
+    if @treino.ultima_data != Time.zone.today and @treino.quantidade_dias > 0
       @treino.update_attributes(quantidade_dias: @treino.quantidade_dias-1)
-      @treino.update_attributes(ultima_data: Date.today)
+      @treino.update_attributes(ultima_data: Time.zone.today)
       redirect_to root_path
     else
       redirect_to root_path, notice: 'Você já conclui o treino de hoje.'
@@ -46,7 +46,7 @@ class TreinosController < ApplicationController
     @treino = Treino.new(treino_params)
     @usuarios = Usuario.all
     @treino.professor_id = current_user.id
-    @treino.ultima_data = Date.yesterday
+    @treino.ultima_data = Time.zone.yesterday
 
     respond_to do |format|
       if @treino.save
