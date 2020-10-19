@@ -54,13 +54,18 @@
       <td><%= treino_exercicio.exercicio.nome %></td>
       <td><%= treino_exercicio.serie %></td>
       <td><%= treino_exercicio.repeticoes %></td>
-      <td><%= link_to 'Excluir', treino_exercicio, method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn btn-outline-danger' %></td>
+      <% if current_user.admin? or current_user.professor? %>
+        <td><%= link_to 'Excluir', treino_exercicio, method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn btn-outline-danger' %></td>
+      <% end %>
+      <td><%= link_to 'Detalhes', exercicio_path(treino_exercicio.exercicio_id),  class: 'btn btn-outline-info' %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
 <br>
 
-<%= link_to 'Adicionar exercício ao treino', new_treino_exercicio_path, :class => "btn btn-info btn-sm" %> <br><br>
-<%= link_to 'Editar', edit_treino_path(@treino), :class => "btn btn-info btn-sm" %> |
+<% if current_user.admin? or current_user.professor? %>
+  <%= link_to 'Adicionar exercício ao treino', new_treino_exercicio_path, :class => "btn btn-info btn-sm" %> <br><br>
+  <%= link_to 'Editar', edit_treino_path(@treino), :class => "btn btn-info btn-sm" %> |
+<% end %>
 <%= link_to 'Voltar', treinos_path, :class => "btn btn-info btn-sm" %>

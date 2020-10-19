@@ -29,8 +29,10 @@
           <td><%= usuario_aluno.nome %></td>
           <td><%= usuario_professor.nome %></td>
           <td><%= link_to 'Exibir', treino,  class: 'btn btn-outline-info' %></td>
-          <td><%= link_to 'Editar', edit_treino_path(treino), id:"e-#{usuario_aluno.nome}",class: 'btn btn-outline-info' %></td>
-          <td><%= link_to 'Excluir', treino,  class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Tem certeza?' }, id:"d-#{usuario_aluno.nome}" %></td>
+          <% if current_user.admin? or current_user.professor? %>
+            <td><%= link_to 'Editar', edit_treino_path(treino), id:"e-#{usuario_aluno.nome}",class: 'btn btn-outline-info' %></td>
+            <td><%= link_to 'Excluir', treino,  class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Tem certeza?' }, id:"d-#{usuario_aluno.nome}" %></td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>
@@ -40,7 +42,9 @@
 
 <div class="container">
   <p>
-    <%= link_to 'Novo Treino', new_treino_path, :class => "btn btn-info" %> |
+    <% if current_user.admin? or current_user.professor? %>
+      <%= link_to 'Novo Treino', new_treino_path, :class => "btn btn-info" %> |
+    <% end %>
     <%= link_to 'Voltar', usuario_path(current_user.id), :class => "btn btn-info"%>
   </p>
 </div>
