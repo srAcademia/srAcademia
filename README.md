@@ -1,5 +1,5 @@
 # srAcademia
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/ebb2974ab603454abc90172dd244ed32)](https://www.codacy.com/gh/srAcademia/Academia/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=srAcademia/Academia&amp;utm_campaign=Badge_Grade) [![Build Status](https://travis-ci.org/wtfnath/srAcademia.svg?branch=main)](https://travis-ci.org/wtfnath/srAcademia)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/ebb2974ab603454abc90172dd244ed32)](https://www.codacy.com/gh/srAcademia/Academia/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=srAcademia/Academia&amp;utm_campaign=Badge_Grade) [![Build Status](https://travis-ci.com/srAcademia/Academia.svg?branch=main)](https://travis-ci.com/srAcademia/Academia)
 
 *Time:*
 *   [*As 3 mosqueteiras*](https://github.com/srAcademia)
