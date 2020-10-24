@@ -29,11 +29,6 @@ class UsuariosController < ApplicationController
 
   # GET /usuarios/1/edit
   def edit
-    if current_user.admin?
-      render 'edit_admin'
-    else
-      render 'edit'
-    end
   end
 
   # POST /usuarios
