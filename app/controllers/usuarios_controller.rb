@@ -16,13 +16,6 @@ class UsuariosController < ApplicationController
   # GET /usuarios/1.json
   def show
     @treinos = Treino.where("quantidade_dias > ?", 0).where(aluno_id: current_user.id)
-    if current_user.aluno?
-      render 'show_aluno'
-    elsif current_user.professor?
-      render 'show_professor'
-    else
-      render 'show_admin'
-    end
   end
 
   # GET /usuarios/new
