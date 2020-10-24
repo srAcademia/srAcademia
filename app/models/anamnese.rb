@@ -10,4 +10,5 @@ class Anamnese < ApplicationRecord
     validates :alcolotra, presence: true,  length: {minimum:3}
     validates :atividade_fisica, presence: true,  length: {minimum:3}
     validates :objetivo,  presence: true,  length: {minimum:3}
+    validates :usuario_id, presence: true, uniqueness: true
 end
