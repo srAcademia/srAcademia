@@ -1,5 +1,5 @@
-Given('Um usuario administrador existe') do
-  Usuario.create(nome: 'admin', email: 'admin@example.com', telefone: '8799999999', data_nascimento: Date.new(1999, 9, 9), password: 'password', password_confirmation: 'password', tipo: 2)
+Given('Um usuario administrador existe com o nome {string}, o email {string}, o telefone {string}, a data_nascimento {string}, a password {string}, a password_confirmation {string} e o tipo {string}') do |nome, email, telefone, data_nascimento, senha, confirme_senha, tipo|
+  Usuario.create(nome: nome, email: email, telefone: telefone, data_nascimento: Date.parse(data_nascimento), password: senha, password_confirmation: confirme_senha, tipo: tipo.to_i)
 end
 
 And('Eu estou logado como administrador com email {string} e senha {string}') do |email, senha|

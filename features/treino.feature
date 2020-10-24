@@ -4,7 +4,7 @@ Feature: Treino
   So that eu possa controlar os treinos dos alunos da academia
 
   Scenario: Criando novo treino para um aluno
-    Given Um usuario administrador existe
+    Given Um usuario administrador existe com o nome 'admin', o email 'admin@example.com', o telefone '879999999', a data_nascimento '1999-09-09', a password 'password', a password_confirmation 'password' e o tipo '2'
     And Um aluno de nome 'Nathalia', email 'nathalia@example.com', telefone '877777777', data_nascimento '1999-09-09', password 'nathalia123', password_confirmation 'nathalia123' e tipo '0' existe
     And Eu estou logado como administrador com email 'admin@example.com' e senha 'password'
     And Eu estou na pagina de treinos
@@ -14,7 +14,7 @@ Feature: Treino
     Then Eu vejo que o novo treino pra o aluno 'Nathalia' foi criado
 
   Scenario: Criando novo treino para um aluno com campo tipo do treino vazio
-    Given Um usuario administrador existe
+    Given Um usuario administrador existe com o nome 'admin', o email 'admin@example.com', o telefone '879999999', a data_nascimento '1999-09-09', a password 'password', a password_confirmation 'password' e o tipo '2'
     And Um aluno de nome 'Nathalia', email 'nathalia@example.com', telefone '877777777', data_nascimento '1999-09-09', password 'nathalia123', password_confirmation 'nathalia123' e tipo '0' existe
     And Eu estou logado como administrador com email 'admin@example.com' e senha 'password'
     And Eu estou na pagina de treinos
@@ -24,7 +24,7 @@ Feature: Treino
     Then Eu vejo uma mensagem de treino invalido
 
   Scenario: Criando novo treino para um aluno com campo de quantidade de dias negativo
-    Given Um usuario administrador existe
+    Given Um usuario administrador existe com o nome 'admin', o email 'admin@example.com', o telefone '879999999', a data_nascimento '1999-09-09', a password 'password', a password_confirmation 'password' e o tipo '2'
     And Um aluno de nome 'Nathalia', email 'nathalia@example.com', telefone '877777777', data_nascimento '1999-09-09', password 'nathalia123', password_confirmation 'nathalia123' e tipo '0' existe
     And Eu estou logado como administrador com email 'admin@example.com' e senha 'password'
     And Eu estou na pagina de treinos
@@ -34,7 +34,7 @@ Feature: Treino
     Then Eu vejo uma mensagem de treino invalido
 
   Scenario: Removendo um treino existente de um aluno
-    Given Um usuario administrador existe
+    Given Um usuario administrador existe com o nome 'admin', o email 'admin@example.com', o telefone '879999999', a data_nascimento '1999-09-09', a password 'password', a password_confirmation 'password' e o tipo '2'
     And Um aluno de nome 'Nathalia', email 'nathalia@example.com', telefone '877777777', data_nascimento '1999-09-09', password 'nathalia123', password_confirmation 'nathalia123' e tipo '0' existe
     And Eu estou logado como administrador com email 'admin@example.com' e senha 'password'
     And Eu estou na pagina de treinos
@@ -43,7 +43,7 @@ Feature: Treino
     Then Eu vejo que o treino com o aluno 'Nathalia' nao se encontra mais entre os treinos listados
 
   Scenario: Editando um treino existente com o novo tipo
-    Given Um usuario administrador existe
+    Given Um usuario administrador existe com o nome 'admin', o email 'admin@example.com', o telefone '879999999', a data_nascimento '1999-09-09', a password 'password', a password_confirmation 'password' e o tipo '2'
     And Um aluno de nome 'Nathalia', email 'nathalia@example.com', telefone '877777777', data_nascimento '1999-09-09', password 'nathalia123', password_confirmation 'nathalia123' e tipo '0' existe
     And Eu estou logado como administrador com email 'admin@example.com' e senha 'password'
     And Eu estou na pagina de treinos
