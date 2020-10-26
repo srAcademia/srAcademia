@@ -19,9 +19,9 @@
           <tr>
             <% aluno = Usuario.find(anamnese.usuario_id) %>
             <td><%= aluno.nome %></td>
-            <td><%= link_to 'Exibir', anamnese %></td>
-            <td><%= link_to 'Editar', edit_anamnese_path(anamnese), id:"e-#{aluno.nome}" %></td>
-            <td><%= link_to 'Excluir', anamnese, method: :delete, data: { confirm: 'Tem certeza?' }, id:"d-#{aluno.nome}"  %></td>
+            <td><%= link_to 'Exibir', anamnese, class: 'btn btn-outline-info' %></td>
+            <td><%= link_to 'Editar', edit_anamnese_path(anamnese), class: 'btn btn-outline-info', id:"e-#{aluno.nome}" %></td>
+            <td><%= link_to 'Excluir', anamnese, method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn btn-outline-danger', id:"d-#{aluno.nome}"  %></td>
           </tr>
           <% end %>
         </tbody>
@@ -33,4 +33,4 @@
 </div>
 
 
-<%= link_to 'Nova Anamnese', new_anamnese_path %>
+<%= link_to 'Nova Anamnese', new_anamnese_path, class: 'btn btn-info' %>

@@ -34,7 +34,7 @@ class AnamnesesController < ApplicationController
 
     respond_to do |format|
       if @anamnese.save
-        format.html { redirect_to @anamnese, notice: 'Anamnese was successfully created.' }
+        format.html { redirect_to @anamnese, notice: 'Anamnese criada com sucesso.' }
         format.json { render :show, status: :created, location: @anamnese }
       else
         format.html { render :new }
@@ -62,7 +62,7 @@ class AnamnesesController < ApplicationController
   def destroy
     @anamnese.destroy
     respond_to do |format|
-      format.html { redirect_to anamneses_url, notice: 'Anamnese was successfully destroyed.' }
+      format.html { redirect_to anamneses_url, notice: 'Anamnese deletada com sucesso.' }
       format.json { head :no_content }
     end
   end

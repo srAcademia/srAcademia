@@ -1,183 +1,251 @@
-<%= form_with(model: anamnese, local: true) do |form| %>
-  <% if anamnese.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(anamnese.errors.count, "error") %> prohibited this anamnese from being saved:</h2>
+<br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <%= form_with(model: anamnese, local: true) do |form| %>
+        <% if anamnese.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(anamnese.errors.count, "error") %> prohibited this anamnese from being saved:</h2>
 
-      <ul>
-        <% anamnese.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+            <ul>
+              <% anamnese.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
+
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :atividade_trabalho,:value=>'ATIVIDADES DESEMPENHADAS NO DIA A DIA OU NO TRABALHO ( MAIS DE 25%):' %>
+
+          <br>
+          <%= form.radio_button :atividade_trabalho, 'Ficar sentado(a)' %>
+          <%= form.label :atividade_trabalho, "Ficar sentado(a)", :value => "Ficar sentado(a)"  %>
+
+          <br>
+          <%= form.radio_button :atividade_trabalho, 'Levantar ou Carregar objetos pesados' %>
+          <%= form.label :atividade_trabalho, "Levantar ou Carregar objetos pesados", :value => "Levantar ou Carregar objetos pesados" %>
+
+          <br>
+          <%= form.radio_button :atividade_trabalho, 'Ficar de pé' %>
+          <%= form.label :atividade_trabalho, "Ficar de pé", :value => "Ficar de pé" %>
+
+          <br>
+          <%= form.radio_button :atividade_trabalho, 'Caminhar'%>
+          <%= form.label :atividade_trabalho, "Caminhar", :value => "Caminhar" %>
+
+          <br>
+          <%= form.radio_button :atividade_trabalho, 'Outros(Especificar)' %>
+          <%= form.label :atividade_trabalho, "Outros(Especificar)", :value => "Outros(Especificar)" %>
+
+        </div>
+        <br/>
+      </div>
+
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :desc_atividade_trabalho,:value=> "Observações das atividades desempenhadas:" %><br>
+          <%= form.text_area :desc_atividade_trabalho, :class => "form-control" %>
+        </div>
+        <br/>
+      </div>
+
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :data_exame_clinico, :value=>'Data do último exame clínico e/ou médico:' %>
+          <%= form.date_field :data_exame_clinico%>
+        </div>
+        <br/>
+      </div>
+
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :descricao_exame_clinico, :value => 'Qual(is) exame(s) clínico(s):' %><br>
+          <%= form.text_area :descricao_exame_clinico, :class => "form-control" %>
+        </div>
+        <br/>
+      </div>
+
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :cardiopatia , :value => 'Marque aquele que teve problemas cardiopatas antes do 50 anos:'%>
+          <br>
+          <%= form.radio_button :cardiopatia, 'Pai / Mãe' %>
+          <%= form.label :cardiopatia, "Pai / Mãe", :value => "Pai / Mãe" %>
+
+          <br>
+          <%= form.radio_button :cardiopatia, 'Avô / Avó' %>
+          <%= form.label :cardiopatia, "Avô / Avó", :value => "Avô / Avó" %>
+
+          <br>
+          <%= form.radio_button :cardiopatia, 'Irmão(ã)' %>
+          <%= form.label :cardiopatia, "Irmão(ã)", :value => "Irmão(ã)" %>
+          <br>
+          <%= form.radio_button :cardiopatia, 'Nenhum' %>
+          <%= form.label :cardiopatia, "Nenhum", :value => "Nenhum" %>
+
+        </div>
+        <br>
+      </div>
+
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :cirurgia, :value=> 'VocÊ já fez alguma intervenção cirurgica?'%>
+          <br>
+          <%= form.radio_button :cirurgia, 'Sim', id:"simCirurgia" %>
+          <%= form.label :cirurgia, "Sim", :value => "Sim(Especificar)" %>
+          <%= form.radio_button :cirurgia, 'Não', id:"naoCirurgia" %>
+          <%= form.label :cirurgia, "Não", :value => "Não" %>
+        </div>
+        <br/>
+      </div>
+
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :descricao_cirurgia, :value=>'Descreva a intervenção cirurgica:' %>
+          <br>
+          <%= form.text_area :descricao_cirurgia, :class => "form-control" %>
+        </div>
+        <br/>
+      </div>
+
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :problema_saude, :value=>'Descreva algum(s) problema(s) de saúde que tenha sido tratado ou diagnosticado(s) por um médico:' %>
+          <br>
+          <%= form.text_area :problema_saude, :class => "form-control" %>
+        </div>
+        <br/>
+      </div>
+
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :dor_corporal, :value=> 'Sente dor em alguma parte do corpo?' %>
+          <br>
+          <%= form.radio_button :dor_corporal, 'Sim', id:"simDorCorporal" %>
+          <%= form.label :dor_corporal, "Sim", :value => "Sim(Especificar)" %>
+          <%= form.radio_button :dor_corporal, 'Não', id:"naoDorCorporal" %>
+          <%= form.label :dor_corporal, "Não", :value => "Não" %>
+        </div>
+        <br/>
+      </div>
+
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :desc_dor_corporal , :value=>'Descreva a dor:'%>
+          <br>
+          <%= form.text_area :desc_dor_corporal, :class => "form-control" %>
+        </div>
+        <br/>
+      </div>
+
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :lesao,:value=>'NOs últimos 6 meses você sofreu alguma lesão ostereoarticular?' %>
+          <br>
+          <%= form.radio_button :lesao, 'Sim', id:"simLesao" %>
+          <%= form.label :lesao, "Sim", :value => "Sim(Especificar)" %>
+          <%= form.radio_button :lesao, 'Não', id:"naoLesao"%>
+          <%= form.label :lesao, "Não", :value => "Não" %>
+        </div>
+        <br/>
+      </div>
+
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :desc_lesao, :value=>'Descreva a sua lesão:' %><br>
+          <%= form.text_area :desc_lesao, :class => "form-control" %>
+        </div>
+        <br/>
+      </div>
+
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :alergia, :value =>'Você possui alguma alergia?' %><br>
+          <%= form.radio_button :alergia, 'Sim', id:"simAlergia" %>
+          <%= form.label :alergia, "Sim", :value => "Sim(Especificar)" %>
+          <%= form.radio_button :alergia, 'Não', id:"naoAlergia" %>
+          <%= form.label :alergia, "Não", :value => "Não" %>
+        </div>
+        <br/>
+      </div>
+
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :desc_alergia, :value=>'Descreva a sua alergia:' %><br>
+          <%= form.text_area :desc_alergia, :class => "form-control" %>
+        </div>
+        <br/>
+      </div>
+
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :fumante, :value=>'Você fuma?' %>
+          <br>
+          <%= form.radio_button :fumante, 'Sim', id:"simFumante" %>
+          <%= form.label :fumante, "Sim", :value => "Sim(Especificar)" %>
+          <%= form.radio_button :fumante, 'Não', id:"naoFumante" %>
+          <%= form.label :fumante, "Não", :value => "Não" %>
+        </div>
+        <br/>
+      </div>
+
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :alcolotra , :value=>'Você consome bebida alcólica?'%>
+          <br>
+          <%= form.radio_button :alcolotra, 'Sim', id:"simAlcolotra" %>
+          <%= form.label :alcolotra, "Sim", :value => "Sim(Especificar)" %>
+          <%= form.radio_button :alcolotra, 'Não', id:"naoAlcolotra"%>
+          <%= form.label :alcolotra, "Não", :value => "Não" %>
+        </div>
+        <br/>
+      </div>
+
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :atividade_fisica, :value=>'Você pratica ou já praticou alguma atividade física?' %>
+          <br>
+          <%= form.radio_button :atividade_fisica, 'Sim', id:"simAtividadeFisica" %>
+          <%= form.label :atividade_fisica, "Sim", :value => "Sim(Especificar)" %>
+          <%= form.radio_button :atividade_fisica, 'Não', id:"naoAtividadeFisica" %>
+          <%= form.label :atividade_fisica, "Não", :value => "Não" %>
+        </div>
+        <br/>
+      </div>
+
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :desc_atividade_fisica, :value => 'Descreva a atividade física:' %><br>
+          <%= form.text_area :desc_atividade_fisica, :class => "form-control" %>
+        </div>
+        <br/>
+      </div>
+
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :objetivo, :value => 'Descreva o Objetivo:' %><br>
+          <%= form.text_area :objetivo, :class => "form-control" %>
+        </div>
+        <br/>
+      </div>
+
+      <div class="form-group">
+        <div class="field">
+          <%= form.label :usuario_id %>
+          <%= form.select :usuario_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }), {}, {} %>
+        </div>
+        <br/>
+      </div>
+
+        <div class="actions">
+          <%= form.submit nil, :class => "btn btn-info" %>
+        </div>
+      <% end %>
+      <br><br>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :atividade_trabalho,:value=>'ATIVIDADES DESEMPENHADAS NO DIA A DIA OU NO TRABALHO ( MAIS DE 25% ):' %>
-
-    <br>
-    <%= form.radio_button :atividade_trabalho, 'Ficar sentado(a)' %>
-    <%= form.label :atividade_trabalho, "Ficar sentado(a)", :value => "Ficar sentado(a)"  %>
-
-    <br>
-    <%= form.radio_button :atividade_trabalho, 'Levantar ou Carregar objetos pesados' %>
-    <%= form.label :atividade_trabalho, "Levantar ou Carregar objetos pesados", :value => "Levantar ou Carregar objetos pesados" %>
-
-    <br>
-    <%= form.radio_button :atividade_trabalho, 'Ficar de pé' %>
-    <%= form.label :atividade_trabalho, "Ficar de pé", :value => "Ficar de pé" %>
-
-    <br>
-    <%= form.radio_button :atividade_trabalho, 'Caminhar'%>
-    <%= form.label :atividade_trabalho, "Caminhar", :value => "Caminhar" %>
-
-    <br>
-    <%= form.radio_button :atividade_trabalho, 'Outros(Especificar)' %>
-    <%= form.label :atividade_trabalho, "Outros(Especificar)", :value => "Outros(Especificar)" %>
-
+    <div class="col-2"></div>
   </div>
-  <br/>
-  <div class="field">
-    <%= form.label :desc_atividade_trabalho,:value=> "Observações das atividades desempenhadas:" %><br>
-    <%= form.text_area :desc_atividade_trabalho %>
-  </div>
-  <br/>
-  <div class="field">
-    <%= form.label :data_exame_clinico, :value=>'DATA DO úLTIMO EXAME ClíNICO E/OU MéDICO:' %>
-    <%= form.date_field :data_exame_clinico%>
-  </div>
-  <br/>
-  <div class="field">
-    <%= form.label :descricao_exame_clinico, :value => 'QUAL(IS) EXAME(S) CLíNICO(S):' %><br>
-    <%= form.text_area :descricao_exame_clinico %>
-  </div>
-  <br/>
-  <div class="field">
-    <%= form.label :cardiopatia , :value => 'MARQUE AQUELE QUE TENHA TIDO ALGUMA CARDIOPATIA ANTES DOS 50 ANOS:'%>
-    <br>
-    <%= form.radio_button :cardiopatia, 'Pai / Mãe' %>
-    <%= form.label :cardiopatia, "Pai / Mãe", :value => "Pai / Mãe" %>
-
-    <br>
-    <%= form.radio_button :cardiopatia, 'Avô / Avó' %>
-    <%= form.label :cardiopatia, "Avô / Avó", :value => "Avô / Avó" %>
-
-    <br>
-    <%= form.radio_button :cardiopatia, 'Irmão(ã)' %>
-    <%= form.label :cardiopatia, "Irmão(ã)", :value => "Irmão(ã)" %>
-    <br>
-    <%= form.radio_button :cardiopatia, 'Nenhum' %>
-    <%= form.label :cardiopatia, "Nenhum", :value => "Nenhum" %>
-
-  </div>
-  <br>
-  <div class="field">
-    <%= form.label :cirurgia, :value=> 'VOCê Já FEZ ALGUMA INTERVENçãO CIRURGICA?'%>
-    <br>
-    <%= form.radio_button :cirurgia, 'Sim', id:"simCirurgia" %>
-    <%= form.label :cirurgia, "Sim", :value => "Sim(Especificar)" %>
-    <%= form.radio_button :cirurgia, 'Não', id:"naoCirurgia" %>
-    <%= form.label :cirurgia, "Não", :value => "Não" %>
-  </div>
-  <br/>
-  <div class="field">
-    <%= form.label :descricao_cirurgia, :value=>'Descreva a INTERVENçãO CIRURGICA:' %>
-    <br>
-    <%= form.text_area :descricao_cirurgia %>
-  </div>
-  <br/>
-  <div class="field">
-    <%= form.label :problema_saude, :value=>'DESCREVA ALGUM(S) PROBLEMA(S) DE SAúDE QUE TENHA SIDO TRATADO(A) OU
-    DIAGNOSTICADO(A) POR UM MéDICO:' %>
-    <br>
-    <%= form.text_area :problema_saude %>
-  </div>
-  <br/>
-  <div class="field">
-    <%= form.label :dor_corporal, :value=> 'SENTE DOR EM ALGUMA PARTE DO CORPO?' %>
-    <br>
-    <%= form.radio_button :dor_corporal, 'Sim', id:"simDorCorporal" %>
-    <%= form.label :dor_corporal, "Sim", :value => "Sim(Especificar)" %>
-    <%= form.radio_button :dor_corporal, 'Não', id:"naoDorCorporal" %>
-    <%= form.label :dor_corporal, "Não", :value => "Não" %>
-
-  </div>
-  <br/>
-  <div class="field">
-    <%= form.label :desc_dor_corporal , :value=>'Descreva a dor:'%>
-    <br>
-    <%= form.text_area :desc_dor_corporal %>
-  </div>
-  <br/>
-  <div class="field">
-    <%= form.label :lesao,:value=>'NOS ÚLTIMOS 6 MESES, VOCê SOFREU ALGUMA LESÃO OSTEOARTICULAR?' %>
-    <br>
-    <%= form.radio_button :lesao, 'Sim', id:"simLesao" %>
-    <%= form.label :lesao, "Sim", :value => "Sim(Especificar)" %>
-    <%= form.radio_button :lesao, 'Não', id:"naoLesao"%>
-    <%= form.label :lesao, "Não", :value => "Não" %>
-  </div>
-  <br/>
-  <div class="field">
-    <%= form.label :desc_lesao, :value=>'Descreva a sua lesão:' %><br>
-    <%= form.text_area :desc_lesao %>
-  </div>
-  <br/>
-  <div class="field">
-    <%= form.label :alergia, :value =>'VOCê POSSUI ALGUMA ALERGIA?' %><br>
-    <%= form.radio_button :alergia, 'Sim', id:"simAlergia" %>
-    <%= form.label :alergia, "Sim", :value => "Sim(Especificar)" %>
-    <%= form.radio_button :alergia, 'Não', id:"naoAlergia" %>
-    <%= form.label :alergia, "Não", :value => "Não" %>
-  </div>
-  <br/>
-  <div class="field">
-    <%= form.label :desc_alergia, :value=>'Descreva a sua alergia:' %><br>
-    <%= form.text_area :desc_alergia %>
-  </div>
-  <br/>
-  <div class="field">
-    <%= form.label :fumante, :value=>'VOCê FUMA?' %>
-    <br>
-    <%= form.radio_button :fumante, 'Sim', id:"simFumante" %>
-    <%= form.label :fumante, "Sim", :value => "Sim(Especificar)" %>
-    <%= form.radio_button :fumante, 'Não', id:"naoFumante" %>
-    <%= form.label :fumante, "Não", :value => "Não" %>
-  </div>
-  <br/>
-  <div class="field">
-    <%= form.label :alcolotra , :value=>'VOCê CONSOME BEBIDA ALCOóLICA?'%>
-    <br>
-    <%= form.radio_button :alcolotra, 'Sim', id:"simAlcolotra" %>
-    <%= form.label :alcolotra, "Sim", :value => "Sim(Especificar)" %>
-    <%= form.radio_button :alcolotra, 'Não', id:"naoAlcolotra"%>
-    <%= form.label :alcolotra, "Não", :value => "Não" %>
-  </div>
-  <br/>
-  <div class="field">
-    <%= form.label :atividade_fisica, :value=>'VOCê PRATICA OU Jé PRATICOU ALGUMA ATIVIDADE FíSICA?' %>
-    <br>
-    <%= form.radio_button :atividade_fisica, 'Sim', id:"simAtividadeFisica" %>
-    <%= form.label :atividade_fisica, "Sim", :value => "Sim(Especificar)" %>
-    <%= form.radio_button :atividade_fisica, 'Não', id:"naoAtividadeFisica" %>
-    <%= form.label :atividade_fisica, "Não", :value => "Não" %>
-  </div>
-  <br/>
-  <div class="field">
-    <%= form.label :desc_atividade_fisica, :value => 'Descreva a atividade física:' %><br>
-    <%= form.text_area :desc_atividade_fisica %>
-  </div>
-  <br/>
-  <div class="field">
-    <%= form.label :objetivo, :value => 'Descreva o Objetivo:' %><br>
-    <%= form.text_area :objetivo %>
-  </div>
-  <br/>
-   <div class="field">
-    <%= form.label :usuario_id %>
-    <%= form.select :usuario_id, options_for_select(@usuarios.collect { | usuario | [usuario.nome, usuario.id] }), {}, {} %>
-  </div>
-  <br/>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
