@@ -12,13 +12,7 @@
 
   <body class="text-center">
     <% if logged_in? %>
-      <% if current_user.admin? %>
-        <%= render 'layouts/navbar_admin' %>
-      <% elsif current_user.professor? %>
-        <%= render 'layouts/navbar_professor' %>
-      <% elsif current_user.aluno? %>
-        <%= render 'layouts/navbar_aluno' %>
-      <% end %>
+      <%= render 'layouts/navbar_usuario' %>
     <% end %>
     <%= yield %>
   </body>
