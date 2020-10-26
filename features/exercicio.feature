@@ -4,7 +4,7 @@ Feature: Exercicio
   So that eu possa interagir com os treinos dos alunos da academia
 
   Scenario: Criando um novo exercicio
-    Given Um usuario administrador existe
+    Given Um usuario administrador existe com o nome 'admin', o email 'admin@example.com', o telefone '879999999', a data_nascimento '1999-09-09', a password 'password', a password_confirmation 'password' e o tipo '2'
     And Eu estou logado como administrador com email 'admin@example.com' e senha 'password'
     And Eu estou na pagina de exercicios
     And Eu clico no botao novo exercicio
@@ -12,7 +12,7 @@ Feature: Exercicio
     Then Eu vejo que o exercicio de titulo 'exercicio 1' foi criado com sucesso
 
   Scenario: Excluindo um exercicio existente
-    Given Um usuario administrador existe
+    Given Um usuario administrador existe com o nome 'admin', o email 'admin@example.com', o telefone '879999999', a data_nascimento '1999-09-09', a password 'password', a password_confirmation 'password' e o tipo '2'
     And Eu estou logado como administrador com email 'admin@example.com' e senha 'password'
     And O exercicio de titulo 'exercicio 1', grupo muscular 'abdomen' e descricao 'exemplo' existe
     And Eu estou na pagina de exercicios
@@ -20,7 +20,7 @@ Feature: Exercicio
     Then Eu vejo uma mensagem 'Exercício deletado com sucesso.'
 
    Scenario: Criando um novo exercicio com campo nome vazio
-    Given Um usuario administrador existe
+    Given Um usuario administrador existe com o nome 'admin', o email 'admin@example.com', o telefone '879999999', a data_nascimento '1999-09-09', a password 'password', a password_confirmation 'password' e o tipo '2'
     And Eu estou logado como administrador com email 'admin@example.com' e senha 'password'
     Given Eu estou na pagina de exercicios
     And Eu clico no botao novo exercicio
@@ -28,7 +28,7 @@ Feature: Exercicio
     Then Eu vejo uma mensagem de exercicio invalido
 
    Scenario: Editando a descricao de um exercicio existente
-    Given Um usuario administrador existe
+    Given Um usuario administrador existe com o nome 'admin', o email 'admin@example.com', o telefone '879999999', a data_nascimento '1999-09-09', a password 'password', a password_confirmation 'password' e o tipo '2'
     And Eu estou logado como administrador com email 'admin@example.com' e senha 'password'
     And Eu estou na pagina de exercicios
     And O exercicio de titulo 'exercicio 1', grupo muscular 'abdomen' e descricao 'exemplo' existe
@@ -37,7 +37,7 @@ Feature: Exercicio
     Then Eu vejo uma mensagem de 'Exercício editado com sucesso.'
 
   Scenario: Criando um exercicio invalido
-    Given Um usuario administrador existe
+    Given Um usuario administrador existe com o nome 'admin', o email 'admin@example.com', o telefone '879999999', a data_nascimento '1999-09-09', a password 'password', a password_confirmation 'password' e o tipo '2'
     And Eu estou logado como administrador com email 'admin@example.com' e senha 'password'
     And Eu estou na pagina de exercicios
     And Eu clico no botao novo exercicio
